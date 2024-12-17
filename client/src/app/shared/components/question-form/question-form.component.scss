@@ -1,0 +1,86 @@
+.choice-input {
+    margin-top: 1rem;
+    width: 60%;
+}
+
+.input-description {
+    width: 100%;
+}
+
+.input-type {
+    width: 15%;
+}
+
+.points {
+    width: 40%;
+}
+
+.icon {
+    background-color: #cbd7e0;
+    margin-top: 6%;
+}
+
+.delete-icon {
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+p {
+    color: black;
+    font-size: 1.5rem;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    .description {
+        padding-top: 2rem;
+    }
+}
+
+#add-choice-button {
+    margin-top: 1.8rem;
+    color: black;
+    font-size: 1.2rem;
+    margin-left: 81%;
+    width: 19%;
+}
+
+button[disabled] {
+    border: 1px solid #999999 !important;
+    background-color: #cccccc !important;
+    color: #666666 !important;
+}
+
+.toggle-button {
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+    height: max-content;
+}
+
+.is-correct {
+    color: #10c08b;
+}
+
+.list-item {
+    margin-top: 1rem;
+    border: 1px solid #79b5eb;
+}
+
+.cursor-item {
+    cursor: move;
+}
+
+.validity {
+    font-size: 14px;
+    margin-top: 0.3rem;
+    margin-right: 1.5rem;
+}
+.image-preview-container {
+    margin-top: 10px;
+}
+
+.image-preview {
+    max-width: 100%;
+    max-height: 200px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    object-fit: cover;
+}

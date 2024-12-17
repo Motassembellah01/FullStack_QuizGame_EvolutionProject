@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Overlay Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp">
+
+        <!-- CommonHeader Component -->
+        <com.auth0.androidlogin.components.CommonHeader
+            android:id="@+id/commonHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!--                TODO: delete marginTop testing is done-->
+        <!-- Logo Image -->
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/commonHeader"
+                android:layout_centerHorizontal="true"
+                android:src="?attr/logo" />
+
+            <!-- App Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:fontFamily="@font/quicksand_bold"
+                android:textSize="60sp"
+                android:textColor="?attr/titleColor"
+                android:layout_below="@id/logoImageView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="30dp"/>
+
+        <!-- Buttons Layout -->
+
+        <!-- Channels Container -->
+        <LinearLayout
+            android:id="@+id/buttonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Join Game Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/joinGameButton"
+                android:background="?attr/joinGameButtonBackground"
+                android:layout_width="?attr/buttonWidth"
+                android:layout_height="?attr/buttonHeight"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/joinGame"
+                android:textColor="@android:color/white"
+                android:textSize="?attr/buttonTextSize" />
+
+            <!-- Create Game Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createGameButton"
+                android:background="?attr/createGameButtonBackground"
+                android:layout_width="?attr/buttonWidth"
+                android:layout_height="?attr/buttonHeight"
+                android:textSize="?attr/buttonTextSize"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/createGame"
+                android:textColor="@android:color/white" />
+
+
+        <!--TODO: delete these buttons when testing done-->
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/match"-->
+<!--                android:background="?attr/createGameButtonBackground"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:fontFamily="@font/quicksand_bold"-->
+<!--                android:text="Partie"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="30sp" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/matchPlayer"-->
+<!--                android:background="?attr/joinGameButtonBackground"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:fontFamily="@font/quicksand_bold"-->
+<!--                android:text="Partie Joueur"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="33sp" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/matchTeamResults"-->
+<!--                android:background="?attr/logoutButtonBackground"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:fontFamily="@font/quicksand_bold"-->
+<!--                android:text="Résultats match team"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="30sp" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/matchSoloResults"-->
+<!--                android:background="?attr/createGameButtonBackground"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:fontFamily="@font/quicksand_bold"-->
+<!--                android:text="Résultats match solo"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="30sp" />-->
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/channelsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <include layout="@layout/all_channels_page"/>
+        </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

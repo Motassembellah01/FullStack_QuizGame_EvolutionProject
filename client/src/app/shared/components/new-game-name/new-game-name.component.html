@@ -1,0 +1,11 @@
+<div class="page">
+    <p class="color-red">{{ 'NEW_GAME_NAME.NAME_EXISTS' | translate }}</p>
+    <p class="label">{{ 'NEW_GAME_NAME.CHOOSE_NAME' | translate }}</p>
+    <mat-form-field class="input">
+        <input [(ngModel)]="this.name" matInput required placeholder="{{ 'NEW_GAME_NAME.NEW_NAME' | translate }}" />
+    </mat-form-field>
+    <mat-dialog-actions class="buttons page" id="space-between">
+        <button mat-raised-button class="background-red end" (click)="onCancel()">{{ 'BUTTONS.CANCEL' | translate }}</button>
+        <button mat-raised-button class="background-green save-button" (click)="onSave()">{{ 'BUTTONS.VALIDATE' | translate }}</button>
+    </mat-dialog-actions>
+</div>

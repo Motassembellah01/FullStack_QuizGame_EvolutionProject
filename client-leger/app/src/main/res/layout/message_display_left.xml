@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="8dp"
+    android:gravity="start"> <!-- Alignement à gauche -->
+
+    <!-- Username TextView -->
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="?attr/defaultTextColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="-3dp"/> <!-- Alignement du texte à gauche -->
+
+    <!-- Conteneur horizontal pour le triangle et la bulle -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"> <!-- Alignement à gauche -->
+
+        <!-- Triangle bleu à gauche de la bulle -->
+        <ImageView
+            android:id="@+id/userAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/image_not_found"/> <!-- Triangle pointant vers la gauche -->
+
+        <!-- Conteneur du message (bulle) -->
+        <LinearLayout
+            android:id="@+id/messageContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_bubble_background"
+            android:padding="8dp"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+
+            <!-- Message TextView -->
+            <TextView
+                android:id="@+id/messageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message goes here"
+                android:fontFamily="@font/quicksand"
+                android:maxWidth="500dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/timestampTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="10:00 AM"
+                android:fontFamily="@font/quicksand_bold"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

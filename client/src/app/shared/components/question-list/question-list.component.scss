@@ -1,0 +1,44 @@
+.card {
+    margin-bottom: 10px;
+    width: 97.5%;
+}
+
+#qcm-icon {
+    margin-top: 0.8rem;
+    font-size: 30px;
+    color: #1178c1;
+}
+
+#qrl-icon {
+    margin-top: 1rem;
+    color: #1178c1;
+}
+
+#qre-icon {
+    margin-top: 1rem;
+    color: #1178c1;
+}
+
+.question-title {
+    margin-left: 2.2rem;
+}
+
+.text {
+    font-size: 1.5rem;
+}
+
+.icons {
+    width: 5%;
+}
+
+.question-text {
+    max-width: 92%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: move;
+}
+
+.list-item {
+    margin-top: 1.2rem;
+}

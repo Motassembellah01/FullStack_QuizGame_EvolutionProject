@@ -1,0 +1,143 @@
+<div class="header">
+    <div class="header-buttons">
+        <button
+            *ngIf="!accountService.isInGame && !accountService.isInHomePage && accountService.account.avatarUrl"
+            class="nav-button background-turquoise home"
+            mat-raised-button
+            routerLink="/home"
+            (click)="navToHome()"
+        >
+            {{ 'NAV_BUTTONS.HOME' | translate }}
+        </button>
+        <button *ngIf="!accountService.isInGame" mat-button class="money" (click)="toggleShop()" [class.toggled]="generalChatService.isShopOpen">
+            <div class="content-line">
+                <span class="span money-amount bold">{{ accountService.money }}</span>
+                <img src="assets/cookie_icon.png" alt="Cookie Icon" class="money-icon" />
+            </div>
+        </button>
+        <button
+            *ngIf="!accountService.isInGame"
+            mat-button
+            class="friends"
+            (click)="toggleFriends()"
+            [class.toggled]="generalChatService.isFriendsOpen"
+        >
+            <img src="assets/icons/ic_friends.png" alt="Money Icon" class="money-icon" />
+            <span *ngIf="accountListenerService.friendRequestsReceived.length > 0" class="tab-badge">
+                {{ accountListenerService.friendRequestsReceived.length }}
+            </span>
+        </button>
+        <button
+            mat-button
+            *ngIf="getTotalUnreadMessages() === 0"
+            (click)="toggleChat()"
+            class="pointer chat-btn chat"
+            [class.toggled]="generalChatService.isChatOpen"
+            [matTooltip]="this.generalChatService.isChatClosed ? 'Clavardage en mode fenêtré' : ''"
+        >
+            <img src="assets/icons/chat.png" alt="Money Icon" class="money-icon" />
+        </button>
+        <button
+            mat-button
+            *ngIf="getTotalUnreadMessages() > 0"
+            (click)="toggleChat()"
+            class="pointer chat-btn-unread chat"
+            [class.toggled]="generalChatService.isChatOpen"
+        >
+            <i class="material-icons">mark_chat_unread</i>
+        </button>
+        <button
+            *ngIf="!accountService.isInGame"
+            mat-button
+            class="money"
+            (click)="toggleSettings()"
+            [class.toggled]="generalChatService.isSettingsOpen"
+        >
+            <img src="assets/icons/ic_settings.png" alt="Money Icon" class="money-icon settings" />
+        </button>
+        <div *ngIf="!accountService.isInGame" class="profile">
+            <button mat-button class="profile-btn" (click)="toggleProfile()" [class.toggled]="generalChatService.isProfileOpen">
+                <img [src]="accountService.getLocalAvatar()" alt="avatar" />
+                <p
+                    class="pseudo"
+                    [ngClass]="{
+                        'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                    }"
+                >
+                    {{ accountService.account.pseudonym }}
+                </p>
+            </button>
+        </div>
+    </div>
+</div>
+<section
+    [hidden]="!this.generalChatService.isChatOpen"
+    [@headerAnimation]="generalChatService.isChatOpen && !generalChatService.isChatClosed ? 'open' : 'closed'"
+    class="chat-box"
+    [ngClass]="{
+        'light-mode': this.accountService.theme === 'light',
+        'dark-mode': this.accountService.theme === 'dark',
+        christmas: this.accountService.theme === 'christmas',
+        valentines: this.accountService.theme === 'valentines',
+    }"
+>
+    <app-general-chat *ngIf="generalChatService.isChatOpen && !generalChatService.isChatClosed"></app-general-chat>
+</section>
+<section
+    [hidden]="!this.generalChatService.isProfileOpen && !accountService.isInGame"
+    class="chat-box"
+    [@headerAnimation]="generalChatService.isProfileOpen ? 'open' : 'closed'"
+    *ngIf="!accountService.isInGame"
+    [ngClass]="{
+        'light-mode': this.accountService.theme === 'light',
+        'dark-mode': this.accountService.theme === 'dark',
+        christmas: this.accountService.theme === 'christmas',
+        valentines: this.accountService.theme === 'valentines',
+    }"
+>
+    <app-profile></app-profile>
+</section>
+<section
+    [ngClass]="{
+        'light-mode': this.accountService.theme === 'light',
+        'dark-mode': this.accountService.theme === 'dark',
+        christmas: this.accountService.theme === 'christmas',
+        valentines: this.accountService.theme === 'valentines',
+    }"
+    [hidden]="!this.generalChatService.isFriendsOpen && !accountService.isInGame"
+    class="chat-box"
+    [@headerAnimation]="generalChatService.isFriendsOpen ? 'open' : 'closed'"
+    *ngIf="!accountService.isInGame"
+>
+    <app-friends></app-friends>
+</section>
+
+<section
+    [hidden]="!this.generalChatService.isShopOpen && !accountService.isInGame"
+    class="chat-box"
+    [@headerAnimation]="generalChatService.isShopOpen ? 'open' : 'closed'"
+    *ngIf="!accountService.isInGame"
+    [ngClass]="{
+        'light-mode': this.accountService.theme === 'light',
+        'dark-mode': this.accountService.theme === 'dark',
+        christmas: this.accountService.theme === 'christmas',
+        valentines: this.accountService.theme === 'valentines',
+    }"
+>
+    <app-shop></app-shop>
+</section>
+
+<section
+    [ngClass]="{
+        'light-mode': this.accountService.theme === 'light',
+        'dark-mode': this.accountService.theme === 'dark',
+        christmas: this.accountService.theme === 'christmas',
+        valentines: this.accountService.theme === 'valentines',
+    }"
+    [hidden]="!this.generalChatService.isSettingsOpen && !accountService.isInGame"
+    class="chat-box"
+    [@headerAnimation]="generalChatService.isSettingsOpen ? 'open' : 'closed'"
+    *ngIf="!accountService.isInGame"
+>
+    <app-settings></app-settings>
+</section>

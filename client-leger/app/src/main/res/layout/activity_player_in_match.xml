@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerInMatchActivity"
+    android:padding="16dp">
+
+<!--    &lt;!&ndash; Common Header Component &ndash;&gt;-->
+<!--    <com.auth0.androidlogin.components.CommonHeader-->
+<!--        android:id="@+id/commonHeader"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/quitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/quit"
+            android:backgroundTint="@color/lightCoral"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/playerScore"
+            tools:ignore="MissingConstraints,NotSibling" />
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="use chat"
+            android:scaleType="fitCenter"
+            android:src="@drawable/chat"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/playerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score actuel : 0 points"
+            android:background="@drawable/rectangle_skyblue"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:padding="20dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/quicksand_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/timerContainer"
+            app:layout_constraintTop_toBottomOf="@+id/quitButton"
+            tools:ignore="NotSibling" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/controlButtonsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playerScore"
+            tools:ignore="NotSibling">
+
+            <RelativeLayout
+                android:id="@+id/timerContainer"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints,NotSibling">
+
+                <TextView
+                    android:id="@+id/timerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="60"
+                    android:textColor="?attr/defaultTextColor"
+                    android:textSize="30sp" />
+
+                <!-- Circular Progress Bar -->
+                <ProgressBar
+                    android:id="@+id/timerProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/timer_progress"
+                    android:rotation="-90" />
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/questionImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/timerContainer"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Question Points Layout positioned below PlayersTab -->
+        <RelativeLayout
+            android:id="@+id/questionContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/controlButtonsContainer">
+
+            <!-- Points TextView -->
+            <TextView
+                android:id="@+id/questionPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Pointage de la qs"
+                android:textColor="?attr/chatTextColor"
+                android:textSize="30sp" />
+
+            <!-- Question TextView below Points TextView -->
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="600dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/questionPoints"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:background="@drawable/rectangle_aqua_box"
+                android:padding="10dp"
+                android:text="Parmi les pays suivant lequel/lesquels n'ont jamais remporté de coupe du monde"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:id="@+id/answersContainer"
+                android:layout_width="600dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:text="Answer 1"
+                android:textColor="@color/black"
+                android:textSize="20sp" >
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:foreground="?attr/selectableItemBackground"
+            android:backgroundTint="@color/lightGreen"
+            android:textColor="@color/white"
+            android:fontFamily="@font/quicksand_bold"
+            app:layout_constraintTop_toBottomOf="@id/questionContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/channelsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <include layout="@layout/all_channels_page"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<div cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <div *ngFor="let question of questionService.questions; index as i" cdkDrag class="list-item">
+        <p
+            class="question-title text"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Question {{ i + 1 }}
+        </p>
+        <div id="space-between">
+            <mat-icon *ngIf="question.type === 'QCM'" id="qcm-icon">format_list_bulleted</mat-icon>
+            <mat-icon *ngIf="question.type === 'QRL'" id="qrl-icon">edit_note</mat-icon>
+            <mat-icon *ngIf="question.type === 'QRE'" id="qre-icon">compare_arrows</mat-icon>
+            <mat-card class="card" id="question-color">
+                <mat-card-content id="space-between">
+                    <span class="question-text text"> {{ question.text }} </span>
+                    <div class="icons" id="space-between">
+                        <mat-icon fontIcon="edit" class="pointer icon" (click)="onModifyQuestion(i)"></mat-icon>
+                        <mat-icon fontIcon="delete" class="pointer icon" (click)="onDeleteQuestion(i)"></mat-icon>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

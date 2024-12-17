@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Overlay Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp">
+
+        <com.auth0.androidlogin.components.CommonHeader
+            android:id="@+id/commonHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="150dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/homeButton"
+                android:layout_width="225dp"
+                android:layout_height="68dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/rounded_pink_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/accueil"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/createGameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/creation"
+                android:textColor="@color/blue"
+                android:textSize="40sp"
+                android:fontFamily="@font/quicksand_bold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/availableGamesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dispo"
+                android:textColor="#FF6868"
+                android:fontFamily="@font/quicksand"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gamesList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+        <!-- Channels Container -->
+        <FrameLayout
+            android:id="@+id/channelsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <include layout="@layout/all_channels_page"/>
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>

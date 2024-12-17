@@ -1,0 +1,18 @@
+<div
+    [ngClass]="{
+        'light-mode': this.accountService.theme === 'light',
+        'dark-mode': this.accountService.theme === 'dark',
+        christmas: this.accountService.theme === 'christmas',
+        valentines: this.accountService.theme === 'valentines',
+    }"
+>
+    <h1 class="color-brown body-container flex-center">
+        {{ 'DIALOG_MESSAGE.CONFIRMATION' | translate }}{{ this.confirmationService.dialogMessage }} ?
+    </h1>
+    <mat-dialog-actions class="buttons page" id="space-between">
+        <button mat-raised-button mat-dialog-close class="background-red action-button block" (click)="cancel()">
+            {{ 'BUTTONS.NO' | translate }}
+        </button>
+        <button mat-raised-button class="background-green action-button" (click)="confirm()">{{ 'BUTTONS.YES' | translate }}</button>
+    </mat-dialog-actions>
+</div>

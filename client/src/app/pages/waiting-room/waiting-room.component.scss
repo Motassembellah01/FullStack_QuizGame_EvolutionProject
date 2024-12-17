@@ -1,0 +1,129 @@
+h1 {
+    font-size: 3rem;
+    margin-bottom: 3%;
+}
+
+.end {
+    right: 2rem;
+    top: 3rem;
+    margin-right: 0.6rem;
+    font-size: 1.8rem;
+}
+
+.players-title {
+    color: #ff6868;
+    font-size: 2rem;
+    margin: 1.5rem;
+}
+
+.create-team {
+    margin-left: 50%;
+    margin-top: 15px;
+}
+
+.quit {
+    float: right;
+    margin-right: 80px;
+    margin-top: -178px;
+}
+
+.teams-container {
+    display: grid;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: scroll;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 400px;
+}
+
+.team {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.team button[mat-icon-button] {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.team-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #4a90e2;
+}
+
+.players-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    margin-top: 1rem;
+    margin-left: 20px;
+}
+
+.flex-child:first-child {
+    margin-right: 40px;
+}
+
+.flex-container {
+    display: flex;
+    margin-right: 40px;
+}
+
+.mat-dialog-container {
+    width: 400px;
+    padding: 2rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darkened background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px); /* Background blur effect */
+    z-index: 1000;
+}
+
+/* Style for the team creation popup */
+.team-creation-popup {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.player-solo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 1rem;
+    margin-left: 20px;
+}

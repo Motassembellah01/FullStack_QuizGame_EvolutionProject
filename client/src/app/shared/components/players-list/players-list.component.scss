@@ -1,0 +1,85 @@
+.strike-through-text {
+    text-decoration: line-through;
+}
+
+#players-list {
+    max-height: 42vh;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #e9f3fc;
+    width: 100%;
+}
+
+th,
+td {
+    font-size: 18px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.match-list {
+    th,
+    td {
+        width: 100%;
+        padding-right: 50px;
+    }
+}
+
+.results-view-list {
+    th,
+    td {
+        width: 50%;
+        padding-right: 40px;
+    }
+}
+
+.active-btn {
+    color: black;
+}
+
+.not-active-btn {
+    color: rgb(199, 199, 199);
+}
+
+.chat-btn {
+    margin-bottom: -0.3rem;
+    margin-left: 1.3rem;
+    margin-right: 1.3rem;
+}
+
+.arrows {
+    vertical-align: middle;
+    align-self: center;
+    font-size: xx-large;
+    transform: scaleX(0.4) scaleY(0.5) scaleZ(0.7);
+    font-weight: bolder;
+    margin-top: -0.4rem;
+    margin-bottom: -0.2rem;
+    margin-left: -0.4rem;
+    margin-right: -0.4rem;
+    color: #696767;
+}
+
+.first-arrow {
+    color: #b9b9b9;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        visibility 0s,
+        opacity 0.5s;
+}
+
+.arrows-container {
+    margin-left: -0.4rem;
+    margin-right: -0.4rem;
+}
+
+.arrows-container:hover .first-arrow {
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.state:hover {
+    cursor: pointer;
+}

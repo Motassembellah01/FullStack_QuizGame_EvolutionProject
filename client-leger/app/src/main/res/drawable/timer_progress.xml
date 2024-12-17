@@ -1,0 +1,16 @@
+<!-- res/drawable/circular_progress.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="ring" android:innerRadiusRatio="3.2" android:thicknessRatio="15">
+            <solid android:color="#333333" />
+            <size android:width="300dp" android:height="300dp" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <shape android:shape="ring" android:innerRadiusRatio="3.2" android:thicknessRatio="15">
+            <solid android:color="@color/indigoBlue" />
+            <size android:width="300dp" android:height="300dp" />
+        </shape>
+    </item>
+</layer-list>

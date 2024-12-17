@@ -1,0 +1,10 @@
+app-header {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+
+.pages {
+    transition: padding-right 0.7s ease-in-out;
+    min-height: 100vh;
+}

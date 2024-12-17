@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/playerItemLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="3dp"
+    android:gravity="center"
+    android:background="@drawable/rounded_green_button"
+    android:layout_marginBottom="10dp">
+
+    <!-- Profile Picture -->
+    <ImageView
+        android:id="@+id/profilePictureImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_not_found"
+        android:padding="2dp" />
+
+    <!-- Player Name -->
+    <TextView
+        android:id="@+id/playerNameTextView"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Player Name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/quicksand_bold" />
+
+    <!-- Ban Icon -->
+    <ImageView
+        android:id="@+id/banIconImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ban_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        app:tint="@color/red" />
+</LinearLayout>

@@ -1,0 +1,51 @@
+<div class="page">
+    <div class="informations flex-center">
+        <p
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'GAME_FORM.NAME' | translate }}
+        </p>
+        <mat-form-field class="input">
+            <input [(ngModel)]="this.gameService.currentGame.title" name="nameInput" matInput required />
+            <mat-error *ngIf="!validateNameInput()">{{ 'GAME_FORM.MANDATORY' | translate }}</mat-error>
+        </mat-form-field>
+
+        <p
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'GAME_FORM.DESCRIPTION' | translate }}
+        </p>
+        <mat-form-field class="input">
+            <textarea [(ngModel)]="this.gameService.currentGame.description" matInput required></textarea>
+            <mat-error *ngIf="!validateDescriptionInput()">{{ 'GAME_FORM.MANDATORY' | translate }}</mat-error>
+        </mat-form-field>
+
+        <div class="time" id="space-between">
+            <p
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                {{ 'GAME_FORM.QCM_TIME' | translate }}
+            </p>
+            <input
+                class="time-element"
+                type="number"
+                min="10"
+                max="60"
+                [(ngModel)]="this.gameService.currentGame.duration"
+                (change)="validateQcmTime()"
+            />
+        </div>
+    </div>
+
+    <app-question-list></app-question-list>
+
+    <button mat-raised-button id="add-question-button" class="action-button background-beige" (click)="onOpenQuestionForm()">
+        {{ 'BUTTONS.ADD_QUESTION' | translate }}
+    </button>
+</div>

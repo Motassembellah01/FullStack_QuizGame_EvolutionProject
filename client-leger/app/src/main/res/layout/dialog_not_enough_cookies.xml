@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/chatBackground"
+    android:gravity="center">
+
+    <ImageButton
+        android:id="@+id/buttonDismiss"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close settings"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_close" />
+
+    <!-- Custom Image -->
+    <ImageView
+        android:id="@+id/imageViewWarning"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="-40dp"
+        android:src="@drawable/nocookies"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Warning Message -->
+    <TextView
+        android:id="@+id/textViewWarningMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/not_enough_cookies"
+        android:textSize="20dp"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="?attr/defaultTextColor"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+</LinearLayout>

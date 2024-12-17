@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/createNewChannelLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/channelNameEditText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_border"
+            android:hint="@string/nom_channel"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"
+            tools:ignore="MissingConstraints"
+            android:imeOptions="actionDone"/>
+
+        <ImageButton
+            android:id="@+id/addToListButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add channel"
+            android:src="@drawable/new_channel"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

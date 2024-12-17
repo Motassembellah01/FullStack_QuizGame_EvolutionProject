@@ -1,0 +1,97 @@
+.match-view-container {
+    margin-left: auto;
+    margin-right: auto;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+    top: 10rem;
+}
+
+.end {
+    align-self: flex-end;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    float: right;
+    margin-right: 80px;
+    margin-top: 20px;
+
+    .observer-indicator {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 14px;
+        color: #555;
+
+        mat-icon {
+            color: red;
+            font-size: 18px;
+        }
+    }
+}
+
+.score-label {
+    position: relative;
+    top: -6rem;
+    left: -8rem;
+    width: 15rem;
+    text-align: center;
+}
+
+.blue-bg {
+    background-color: #79b5eb;
+    color: white !important;
+}
+
+mat-card-content {
+    font-size: larger;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: -10rem;
+}
+
+audio {
+    display: none;
+}
+
+.panic-Circle {
+    font-size: 200%;
+    color: red;
+    .mat-mdc-progress-spinner {
+        --mdc-circular-progress-active-indicator-color: red;
+    }
+}
+
+.spinner {
+    position: absolute;
+}
+
+app-question-answer {
+    width: 75%;
+    max-width: 950px;
+    position: relative;
+    top: 5rem;
+}
+
+app-chat {
+    position: relative;
+    top: 3.5rem;
+}
+
+#observer-controls {
+    position: fixed;
+    bottom: 16px; 
+    right: 16px;
+    z-index: 1000;
+}

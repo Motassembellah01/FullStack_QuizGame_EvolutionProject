@@ -1,0 +1,80 @@
+<app-logo></app-logo>
+<div class="page">
+    <nav class="absolute">
+        <button mat-raised-button class="nav-button background-red" (click)="cancelGame()">{{ 'BUTTONS.CANCEL' | translate }}</button>
+        <button mat-raised-button class="nav-button background-beige" (click)="onLockWaitingRoom()">
+            {{ getTranslationLock() | translate }}
+        </button>
+        <div class="text-area">
+            <span *ngIf="!matchSrv.match.players.length" class="text-hover">{{ 'TITLES.INVITE_PLAYERS' | translate }}</span>
+            <span
+                *ngIf="matchSrv.match.players.length && isMinPlayersConditionValid() && areAllTeamsValid() && !this.waitingRoomIsLocked"
+                class="text-hover"
+                >{{ 'TITLES.LOCK_MATCH' | translate }}</span
+            >
+            <span *ngIf="matchSrv.match.players.length && !isMinPlayersConditionValid()" class="text-hover">{{
+                'TITLES.MIN_TEAM_PLAYERS' | translate
+            }}</span>
+            <span *ngIf="isMinPlayersConditionValid() && !areAllTeamsValid()" class="text-hover">{{ 'TITLES.VALID_TEAMS' | translate }}</span>
+
+            <button
+                class="nav-button background-green start"
+                mat-raised-button
+                (click)="onBeginMatch()"
+                [disabled]="!matchSrv.match.players.length || !this.waitingRoomIsLocked || !isMinPlayersConditionValid() || !areAllTeamsValid()"
+            >
+                {{ 'NAV_BUTTONS.START_MATCH' | translate }}
+            </button>
+        </div>
+    </nav>
+    <h1
+        class="bold title access-code"
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'JOIN_MATCH.ACCESS_CODE' | translate }}: {{ accessCode }}
+        <button id="copy" [cdkCopyToClipboard]="accessCode" (click)="copyCode()">
+            <mat-icon *ngIf="!isCopied">content_copy</mat-icon>
+            <mat-icon *ngIf="isCopied">done</mat-icon>
+        </button>
+    </h1>
+</div>
+
+<h3 class="players-title">{{ 'TITLES.PLAYERS_CONNECTED' | translate }}</h3>
+<div *ngIf="!matchSrv.match.isTeamMatch">
+    <div class="players-solo-container">
+        <app-player-card
+            *ngFor="let player of matchSrv.getPlayersNotInTeam()"
+            [player]="player"
+            [isManager]="true"
+            [accessCode]="accessCode"
+        ></app-player-card>
+    </div>
+</div>
+<div class="flex-container" *ngIf="matchSrv.match.isTeamMatch">
+    <div class="layout-container flex-child">
+        <div class="players-container">
+            <app-player-card
+                *ngFor="let player of matchSrv.getPlayersNotInTeam()"
+                [player]="player"
+                [isManager]="true"
+                [accessCode]="accessCode"
+            ></app-player-card>
+        </div>
+    </div>
+    <div class="teams-container flex-child">
+        <div *ngFor="let team of matchSrv.match.teams" class="team-card">
+            <h4 class="team-name">{{ team.name }}</h4>
+            <div class="team-players">
+                <app-player-card
+                    *ngFor="let player of team.players"
+                    [player]="{ name: player, isActive: true, score: 0, nBonusObtained: 0, chatBlocked: false, avatar: player }"
+                    [isManager]="true"
+                    [accessCode]="accessCode"
+                ></app-player-card>
+            </div>
+        </div>
+    </div>
+</div>

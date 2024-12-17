@@ -1,0 +1,5 @@
+<div class="container relative" id="space-between">
+    <img [src]="playerAvatarUrl">
+    <h2 class="bold aligned-element">{{ player.name }}</h2>
+    <i *ngIf="isManager" class="material-icons pointer aligned-element relative" (click)="excludePlayer()">block</i>
+</div>

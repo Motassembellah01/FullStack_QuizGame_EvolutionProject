@@ -1,0 +1,282 @@
+{
+    "MAIN_PAGE": {
+        "TITLE": "Poly Quiz",
+        "JOIN_GAME": "Join a Game",
+        "CREATE_GAME": "Create a Game",
+        "ADMINISTER_GAMES": "Manage Games",
+        "TEAM_NAME": "Team 111"
+    },
+    "SET_AVATAR": {
+        "SELECT_AVATAR": "Select Your Avatar",
+        "SELECTED": "Selected",
+        "SELECTED_AVATAR": "Selected Avatar",
+        "UPLOAD_AVATAR": "Upload your avatar"
+    },
+    "BUTTONS": {
+        "SUBMIT": "Submit",
+        "CANCEL": "Cancel",
+        "CLOSE": "Close",
+        "SAVE": "Save",
+        "VALIDATE": "Validate",
+        "YES": "Yes",
+        "NO": "No",
+        "ADD_QUESTION": "Add a question",
+        "ADD_CHOICE": "Add a choice",
+        "ADD_IMAGE": "Add Image",
+        "MODIFY_IMAGE": "Modify Image",
+        "SEND": "Send",
+        "NEXT": "Next",
+        "ABANDON": "Abandon",
+        "CREATE": "Create",
+        "PANIC_MODE": "Panic mode"
+    },
+    "NAV_BUTTONS": {
+        "HOME": "Home",
+        "CREATE_GAME": "Create a game",
+        "IMPORT_GAME": "Import a game",
+        "PREVIOUS_PAGE": "Previous page",
+        "CREATE_MATCH": "Create a match",
+        "START_MATCH": "Start",
+        "UNLOCK": "Unlock",
+        "LOCK": "Lock",
+        "QUIT": "Leave"
+    },
+    "PROFILE": {
+        "HISTORY": "History",
+        "STATISTICS": "Statistics",
+        "SETTINGS": "Settings",
+        "LIGHT_MODE": "Light mode",
+        "DARK_MODE": "Dark mode",
+        "LOGOUT": "Logout",
+        "LANGUAGE": "Language",
+        "FRENCH": "French",
+        "ENGLISH": "English",
+        "USER_NAME": "User name"
+    },
+    "CHAT": {
+        "CHANNELS": "Channels",
+        "ALL_CHANNELS": "All channels",
+        "JOIN": "Join",
+        "JOINED": "Joined",
+        "NEW_CHANNEL": "New channel",
+        "SEARCH": "Search..."
+    },
+    "QUESTIONS": {
+        "POINTS": "Points for the question : ",
+        "USER_ANSWER": "Your answer : ",
+        "NO_ANSWER": "The player did not respond",
+        "PLAYER_NAME": "Answer from : "
+    },
+    "TITLES": {
+        "QRL_EVALUATION": "Evaluating player responses",
+        "GRADE": "Grade",
+        "ADMIN": "Administration",
+        "GAMES_AVAILABLE": "Games available",
+        "CREATE_MATCH": "Create a match",
+        "WAITING_ROOM": "Waiting for the start of the game ",
+        "PLAYERS_CONNECTED": "Players connected ",
+        "QUESTION_RESULT": "Question results",
+        "SCORE": "Current score : ",
+        "MATCH_RESULTS": "Match results ",
+        "QUESTION_STATISTICS": "Question statistics ",
+        "INVITE_PLAYERS": "Invite players to start ",
+        "LOCK_MATCH": "Lock the match to start ",
+        "ANSWER_STATISTICS": "Response statistics ",
+        "PLAYERS": "Players",
+        "PRESENT_ANSWERS": "Present answers",
+        "NEXT_QUESTION": "Next question",
+        "JOIN_MATCH": "Join a match",
+        "ENTER_NAME": "Please enter your player name",
+        "SET_NEW_NAME": "Choose a new name",
+        "CURRENT_NAME": "Current name : ",
+        "ENTER_NEW_NAME": "Enter your new name",
+        "CREATE_TEAM": "Create a team",
+        "CREATE_NEW_TEAM": "Create a new team",
+        "TEAM_NAME": "Team name",
+        "ENTER_TEAM_NAME": "Enter your team name ",
+        "VALID_TEAMS": "Each team must have exactly two players. Empty teams will be ignored.",
+        "MIN_TEAM_PLAYERS": "A minimum of four players is required to start a team game.",
+        "PLAYERS_TO_OBSERVE": "Choose a player to observe"
+    },
+    "QUESTION_FORM": {
+        "POINTS": "Points for the question ",
+        "QUESTION_TITLE": "Question statement ",
+        "QUESTION_TYPE": "Question type ",
+        "CHOICE": "Answer choice ",
+        "WRONG_ANSWER": "Wrong answer ",
+        "RIGHT_ANSWER": "Right answer ",
+        "LOWER_BOUND": "Lower bound ",
+        "UPPER_BOUND": "Upper bound ",
+        "TOLERANCE": "Tolerance margin ",
+        "VALIDITY": "Validity of the choice "
+    },
+    "NEW_GAME_NAME": {
+        "NAME_EXISTS": "The name of the game already exists",
+        "CHOOSE_NAME": "Please choose another name",
+        "NEW_NAME": "New name"
+    },
+    "GAME_FORM": {
+        "NAME": "Game name ",
+        "DESCRIPTION": "Game description ",
+        "QCM_TIME": "QCM duration ",
+        "MANDATORY": "This field is required "
+    },
+    "GAME_PANEL": {
+        "MODIFICATION_DATE": "Last modification : ",
+        "CREATOR_NAME": "Creator name : "
+    },
+    "HISTORY_PROFILE": {
+        "TITLE": "My history",
+        "GAMES_PLAYED": "Games played",
+        "GAME": "Game ",
+        "START_TIME": "Start time ",
+        "STATUS": "Status",
+        "SESSION_ACTIVITY": "Session activity",
+        "CONNECTIONS": "Connections",
+        "LOGOUTS": "Logouts",
+        "WON": "Won",
+        "LOST": "Lost"
+    },
+    "JOIN_MATCH": {
+        "INCORRECT_CODE": "Incorrect access code !",
+        "INCORRECT_NAME": "The name entered is invalid or already exists ! Please choose a new name ",
+        "JOIN": "Join",
+        "WAITING_ROOM": "Waiting room ",
+        "LOCKED_GAME": "Game locked ",
+        "NO_GAME_WAITING": "No games waiting ",
+        "ALREADY_STARTED": "Already started ",
+        "NO_GAME_STARTED": "No game in progress",
+        "ACCESS_CODE": "Access code"
+    },
+    "STATISTICS": {
+        "TITLE": "Statistics ",
+        "MATCHES_PLAYED": "Matches played ",
+        "MATCHES_WON": "Matches won",
+        "AVERAGE_WON": "Average correct answers / Match ",
+        "AVERAGE_TIME": "Average time "
+    },
+    "GENERAL": {
+        "ERROR": "The operation could not be completed. If the problem persists, please contact support.",
+        "IN": "in",
+        "SECONDS": "seconds",
+        "NAME": "Name",
+        "OF": " of "
+    },
+    "ERROR_MESSAGE_FOR": {
+        "NAME": "A name is required",
+        "NAME_TYPE": "A name in text format is required",
+        "EXISTING_NAME": "The chosen name already exists",
+        "DESCRIPTION": "A description is required",
+        "DESCRIPTION_TYPE": "A description in text format is required",
+        "QCM_TIME": "The time for the QCM must be between 10 and 60 seconds",
+        "QCM_TIME_TYPE": "A number for the QCM time is required",
+        "QUESTIONS": "The game must have at least one valid question",
+        "QUESTION_TYPE": "A table of questions is required",
+        "IMPORT_FAILED": "The import failed",
+        "IMPORT_FAILED_INVALID_JSON": "The import failed because the JSON is invalid",
+        "INVALID_FILE_TYPE": "Only PNG and JPG files are accepted.",
+        "GAME_CANCELLED": "The game was cancelled by the organizer."
+    },
+    "ERROR_TITLE": {
+        "CREATE_GAME": "The game creation failed due to the following errors:",
+        "GAME_NOT_ACCESSIBLE": "This game is no longer accessible. Please choose another game from the following list.",
+        "GAME_NOT_FOUND": "The game was not found. Please choose another game from the following list.",
+        "QCM_TIME_INVALID": "The QCM time must be between 10 and 60 seconds.",
+        "VISIBILITY_UPDATE_ERROR": "Error occurred while updating visibility.",
+        "GAME_ALREADY_DELETED": "This game has already been deleted.",
+        "GAME_DELETE_ERROR": "Error occurred while deleting the game."
+    },
+    "ERROR_QUESTION": {
+        "SAVE": "Saving the question failed due to the following errors:",
+        "POINTS": "The points assigned to the question must be between 10 and 100 points.",
+        "STATEMENT": "The question statement is required.",
+        "TYPE": "The question type has not been selected.",
+        "ALL_CHOICES": "The text for one or more answer choices has not been entered.",
+        "UNIQUE_CHOICE": "Each answer choice must contain a unique response.",
+        "CORRECT_CHOICE": "The question must have at least one correct answer among the choices.",
+        "WRONG_CHOICE": "The question must have at least one incorrect answer among the choices.",
+        "CHOICES": "The question must include answer choices.",
+        "TOLERANCE": "The tolerance must not exceed 25% of the interval.",
+        "LOWER_BOUND": "The lower bound must be less than or equal to the correct answer.",
+        "UPPER_BOUND": "The upper bound must be greater than or equal to the correct answer.",
+        "ALL_RESPONSES": "All fields in the QRE must be filled.",
+        "LOWER_GREATER_THAN_UPPER": "The lower bound must be less than the upper bound."
+    },
+    "DIALOG_MESSAGE": {
+        "CONFIRMATION": "Are you sure that you want to "
+    },
+    "FRIENDS": {
+        "SEARCH": "Search accounts...",
+        "PENDING_REQUESTS": "Pending Friend Requests",
+        "ACCEPT": "Accept",
+        "DECLINE": "Decline",
+        "REMOVE": "Remove Friend",
+        "ADD": "Add Friend",
+        "FRIEND_REQUEST": "Friend Requests",
+        "PENDING": "Pending",
+        "DISCOVER": "Discover Community",
+        "FRIENDS": "Friends"
+    },
+    "FILTERS": {
+        "TITLE": "Filters",
+        "SORT_BY": "Sort by :",
+        "CATEGORY": "Category",
+        "RATING": "Rating",
+        "TYPE": "Type :",
+        "DIFFICULTY": "Difficulty",
+        "INTEREST": "Interest",
+        "DURATION": "Duration",
+        "TAG": "Tag :",
+        "APPLY": "Apply filters",
+        "FILTER": "Filter games",
+        "REMOVE": "Remove filters"
+    },
+    "categories": {
+        "difficulties": ["Easy", "Medium", "Hard"],
+        "interests": ["Interesting", "Boring"],
+        "durations": ["Short", "Long"],
+        "ratings": ["1", "2", "3", "4"]
+    },
+    "paginator": {
+        "itemsPerPage": "Games per page",
+        "nextPage": "Next page",
+        "previousPage": "Previous page",
+        "rangeEmpty": "0 of {{length}}",
+        "range": "{{start}} -- {{end}} of {{length}}"
+    },
+    "CONFIGURE_MATCH": {
+        "TITLE": "Configure the match",
+        "DESCRIPTION": "Game setup",
+        "TYPE": "Match type",
+        "SOLO": "Individual match",
+        "TEAM": "Team match",
+        "ENTRY_PRICE": "Entry price",
+        "WITHOUT_PRICE": "With entry price",
+        "WITH_PRICE": "Without entry price",
+        "ACCESSIBILITY": "Accessibility",
+        "EVERYONE": "Everyone",
+        "FRIENDS": "Friends",
+        "ENTER_PRICE": "Enter entry price :"
+    },
+    "PRICE_WON": {
+        "WON": "You won ! You win 100 cookies.",
+        "WON_PRICE": "You also win 2/3 of the cookies from the entry prices.",
+        "LOST": "You lost. You win 50 cookies.",
+        "LOST_PRICE": " You also win a consolation prize of cookies."
+    },
+    "EVALUATION": {
+        "OPEN": "Open game review",
+        "TITLE": "Rate out of 5 stars and choose a tag",
+        "DIFFICULTY": "Difficulty",
+        "EASY": "Easy",
+        "MEDIUM": "Medium",
+        "HARD": "Hard",
+        "INTEREST": "Interest",
+        "INTERESTING": "Interesting",
+        "BORING": "Boring",
+        "DURATION": "Duration",
+        "SHORT": "Short",
+        "LONG": "Long"
+    }
+    
+}

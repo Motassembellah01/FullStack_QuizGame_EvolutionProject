@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Dropdown pour choisir le type de match -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/matchType"
+        android:textSize="16sp"
+        android:textColor="?attr/settingTextColor"
+        android:fontFamily="@font/quicksand_bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerMatchType"
+        android:background="?attr/settingSpinnerBackground"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown"/>
+
+    <!-- Dropdown pour choisir le type de match -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accessibility"
+        android:textSize="16sp"
+        android:textColor="?attr/settingTextColor"
+        android:fontFamily="@font/quicksand_bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerMatchAccessibility"
+        android:background="?attr/settingSpinnerBackground"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown"/>
+
+    <!-- Dropdown pour choisir si le match est payant -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/matchFee"
+        android:textColor="?attr/settingTextColor"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerMatchPaid"
+        android:background="?attr/settingSpinnerBackground"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown"/>
+
+    <!-- TextView pour sélectionner le nombre de cookies (visible seulement si match payant) -->
+    <TextView
+        android:id="@+id/textViewCookiesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chooseFee"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/editTextCookies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterFee"
+        android:inputType="number"
+        android:visibility="gone"/>
+
+</LinearLayout>

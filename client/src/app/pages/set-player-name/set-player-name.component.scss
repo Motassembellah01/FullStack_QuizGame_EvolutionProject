@@ -1,0 +1,90 @@
+.avatar-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 20px;
+    background: linear-gradient(135deg, #8798b1, #e0e0e0);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selected-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.avatar-preview {
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.nft-avatar-preview {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.submit-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+}
+
+.margin {
+    margin: 50px;
+}
+
+#top-button {
+    margin: 0;
+    border: 0;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    left: 63.5rem;
+    top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+mat-form-field {
+    width: 30rem;
+}
+
+input {
+    text-align: center;
+}
+
+.error {
+    margin-bottom: 15px;
+}

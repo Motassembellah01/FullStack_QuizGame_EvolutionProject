@@ -1,0 +1,99 @@
+.light-mode-main {
+    min-height: 78vh;
+    height: auto;
+    width: 100%;
+    display: flex;
+    // background: url('/assets/christmas_mode.jpg') no-repeat center center fixed;
+    // background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.dark-mode-main {
+    min-height: 78vh;
+    height: auto;
+    width: 100%;
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.justified {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+    width: 350px;
+    height: 60px;
+    border: #ffffff;
+    font-size: 25px;
+}
+
+.clr-turquoise {
+    background-color: #0ebccc !important;
+}
+
+.team-name {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-size: 80px;
+}
+
+.light-mode {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    background-color: #ffffff;
+}
+.dark-mode {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    background-color: rgba(44, 45, 49, 255);
+}
+
+.christmas {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    background-color: #002D24;
+}
+
+.valentines {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    background-color: #e8bdb5;
+}
+
+.color-green {
+    background-color: #77DD77 !important;
+}
+
+.color-pink {
+    background-color: #FFB6C1 !important;
+}

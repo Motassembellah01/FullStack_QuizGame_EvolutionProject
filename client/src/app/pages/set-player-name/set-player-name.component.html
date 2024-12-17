@@ -1,0 +1,26 @@
+<app-logo></app-logo>
+<div class="avatar-selection-container">
+    <h1 class="title color-blue margin">{{ 'TITLES.SET_NEW_NAME' | translate }}</h1>
+    <app-error-message class="block error"></app-error-message>
+    <h2>{{ 'TITLES.CURRENT_NAME' | translate }}{{ this.accountService.account.pseudonym }}</h2>
+    <br />
+    <mat-form-field id="input-form">
+        <input 
+          matInput 
+          type="text" 
+          placeholder="{{ 'TITLES.ENTER_NEW_NAME' | translate }}" 
+          [(ngModel)]="newName" 
+          required 
+          minlength="4" 
+          maxlength="12" />
+        <mat-error *ngIf="newName && (newName.length < 4 || newName.length > 12)">
+          Le nom doit contenir entre 4 et 12 caractères.
+        </mat-error>
+      </mat-form-field>
+      
+    <div class="submit-container">
+        <button mat-raised-button color="primary" (click)="submitName()" [disabled]="newName.trim() === ''" class="submit-btn">
+            {{ 'BUTTONS.SUBMIT' | translate }}
+        </button>
+    </div>
+</div>

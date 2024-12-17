@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{ data.title | translate }}</h1>
+<div mat-dialog-content *ngIf="data.messages.length > 0">
+    <ul>
+        <li *ngFor="let message of data.messages">
+            {{ message | translate }}
+        </li>
+    </ul>
+</div>
+<div mat-dialog-actions [align]="data.messages.length > 0 ? 'end' : 'center'">
+    <button mat-button mat-dialog-close mat-dialog-close class="background-red action-button block">{{ 'BUTTONS.CLOSE' | translate }}</button>
+</div>

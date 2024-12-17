@@ -1,0 +1,204 @@
+<body>
+    <header>
+        <h1
+            class="bold"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Shop
+        </h1>
+    </header>
+    <main>
+        <section class="section-one">
+            <h2
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                Thèmes
+            </h2>
+            <div class="images-container">
+                <div class="item">
+                    <img class="img" src="assets/christmas_mode.jpg" [ngClass]="{ 'owned-theme': !accountService.isThemeOwned('christmas') }" />
+                    <div class="content-line">
+                        <span
+                            class="span italic"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                            >{{ MONEY.priceThemes }}</span
+                        >
+                        <img src="assets/cookie_icon.png" alt="Cookie Icon" />
+                    </div>
+                    <button
+                        mat-raised-button
+                        class="background-blue buy"
+                        *ngIf="!accountService.isThemeOwned('christmas')"
+                        (click)="buyTheme([themes[0]], MONEY.priceThemes)"
+                    >
+                        Acheter
+                    </button>
+                </div>
+                <div class="item">
+                    <img class="img" src="assets/valentines_mode.jpg" [ngClass]="{ 'owned-theme': !accountService.isThemeOwned('valentines') }" />
+                    <div class="content-line">
+                        <span
+                            class="span italic"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                            >{{ MONEY.priceThemes }}</span
+                        >
+                        <img src="assets/cookie_icon.png" alt="Cookie Icon" />
+                    </div>
+                    <button
+                        mat-raised-button
+                        class="background-blue buy"
+                        *ngIf="!accountService.isThemeOwned('valentines')"
+                        (click)="buyTheme([themes[1]], MONEY.priceThemes)"
+                    >
+                        Acheter
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="section-two">
+            <h2
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                Avatars
+            </h2>
+            <div class="images-container">
+                <div class="item">
+                    <img class="img" src="assets/avatars/ww.png" [ngClass]="{ 'owned-theme': !accountService.isAvatarOwned('ww.png') }" />
+                    <div class="content-line">
+                        <span
+                            class="span italic"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                            >{{ MONEY.priceAvatars }}</span
+                        >
+                        <img src="assets/cookie_icon.png" alt="Cookie Icon" />
+                    </div>
+                    <button
+                        mat-raised-button
+                        class="background-blue buy"
+                        *ngIf="!accountService.isAvatarOwned('ww.png')"
+                        (click)="buyAvatar(['ww.png'], MONEY.priceAvatars)"
+                    >
+                        Acheter
+                    </button>
+                </div>
+                <div class="item">
+                    <img class="img" src="assets/avatars/ahri.png" [ngClass]="{ 'owned-theme': !accountService.isAvatarOwned('ahri.png') }" />
+                    <div class="content-line">
+                        <span
+                            class="span italic"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                            >{{ MONEY.priceAvatars }}</span
+                        >
+                        <img src="assets/cookie_icon.png" alt="Cookie Icon" />
+                    </div>
+                    <button
+                        mat-raised-button
+                        class="background-blue buy"
+                        *ngIf="!accountService.isAvatarOwned('ahri.png')"
+                        (click)="buyAvatar(['ahri.png'], MONEY.priceAvatars)"
+                    >
+                        Acheter
+                    </button>
+                </div>
+                <div class="item">
+                    <img class="img" src="assets/avatars/akali.png" [ngClass]="{ 'owned-theme': !accountService.isAvatarOwned('akali.png') }" />
+                    <div class="content-line">
+                        <span
+                            class="span italic"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                            >{{ MONEY.priceAvatars }}</span
+                        >
+                        <img src="assets/cookie_icon.png" alt="Cookie Icon" />
+                    </div>
+                    <button
+                        mat-raised-button
+                        class="background-blue buy"
+                        *ngIf="!accountService.isAvatarOwned('akali.png')"
+                        (click)="buyAvatar(['akali.png'], MONEY.priceAvatars)"
+                    >
+                        Acheter
+                    </button>
+                </div>
+                <div class="item">
+                    <img class="img" src="assets/avatars/yone.png" [ngClass]="{ 'owned-theme': !accountService.isAvatarOwned('yone.png') }" />
+                    <div class="content-line">
+                        <span
+                            class="span italic"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                            >{{ MONEY.priceAvatars }}</span
+                        >
+                        <img src="assets/cookie_icon.png" alt="Cookie Icon" />
+                    </div>
+                    <button
+                        mat-raised-button
+                        class="background-blue buy"
+                        *ngIf="!accountService.isAvatarOwned('yone.png')"
+                        (click)="buyAvatar(['yone.png'], MONEY.priceAvatars)"
+                    >
+                        Acheter
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <ng-template #insufficientFundsDialog>
+        <div
+            class="dialog-container"
+            [ngClass]="{
+                'light-mode': this.accountService.theme === 'light',
+                'dark-mode': this.accountService.theme === 'dark',
+                christmas: this.accountService.theme === 'christmas',
+                valentines: this.accountService.theme === 'valentines',
+            }"
+        >
+            <h2
+                mat-dialog-title
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                Fonds insuffisants
+            </h2>
+            <div class="dialog-content">
+                <img class="no-cookies" src="assets/no_cookies.png" alt="No cookies" />
+                <mat-dialog-content
+                    [ngClass]="{
+                        'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                        'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                    }"
+                    >Vous avez mangé tous les cookies.</mat-dialog-content
+                >
+            </div>
+        </div>
+        <mat-dialog-actions align="end">
+            <button mat-raised-button class="background-beige" mat-dialog-close>OK</button>
+        </mat-dialog-actions>
+    </ng-template>
+</body>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backgrounds -->
+    <attr name="chatBackground" format="reference|color" />
+    <attr name="historyBackground" format="reference|color" />
+    <attr name="spinnerBackground" format="reference|color" />
+    <attr name="frameBackground" format="reference|color" />
+    <attr name="landscapeBackground" format="reference|color" />
+
+    <!-- Text Colors -->
+    <attr name="titleColor" format="color" />
+    <attr name="chatTextColor" format="color" />
+    <attr name="historyTextColor" format="color" />
+    <attr name="settingTextColor" format="color" />
+    <attr name="defaultTextColor" format="color" />
+
+    <!-- Icons -->
+    <attr name="chatCloseIcon" format="reference" />
+    <attr name="chatBackIcon" format="reference" />
+    <attr name="lockIcon" format="reference" />
+    <attr name="editIcon" format="reference" />
+    <attr name="addChannelIcon" format="reference" />
+    <attr name="searchChannelIcon" format="reference" />
+    <attr name="editChannelIcon" format="reference" />
+    <attr name="logo" format="reference" />
+
+    <!-- Button Backgrounds -->
+    <attr name="logoutButtonBackground" format="reference|color" />
+    <attr name="joinGameButtonBackground" format="reference|color" />
+    <attr name="createGameButtonBackground" format="reference|color" />
+    <attr name="buttonWidth" format="dimension" />
+    <attr name="buttonHeight" format="dimension" />
+    <attr name="buttonTextSize" format="dimension" />
+    <!-- Spinner Backgrounds -->
+    <attr name="settingSpinnerBackground" format="reference|color" />
+    <attr name="generalButtonBG" format="reference|color" />
+
+    <!-- Channel Buttons Style -->
+    <attr name="channelButtonsStyle" format="reference" />
+</resources>
+

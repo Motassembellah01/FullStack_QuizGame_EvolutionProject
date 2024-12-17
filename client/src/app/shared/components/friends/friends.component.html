@@ -1,0 +1,130 @@
+<div class="container">
+    <!-- Search Section -->
+    <div class="search-section">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filterAccounts()" placeholder="{{ 'FRIENDS.SEARCH' | translate }}" />
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button *ngFor="let tab of tabs" class="tab" [class.active]="currentTab === tab" (click)="switchTab(tab)">
+            {{ tab }}
+            <span
+                *ngIf="tab === ('FRIENDS.FRIEND_REQUEST' | translate) && accountListenerService.friendRequestsReceived.length > 0"
+                class="tab-badge"
+            >
+                {{ accountListenerService.friendRequestsReceived.length }}
+            </span>
+        </button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+        <!-- Friend Requests Section -->
+        <div *ngIf="currentTab === ('FRIENDS.FRIEND_REQUEST' | translate)" class="friend-requests">
+            <div class="requests-header">
+                <span>{{ 'FRIENDS.PENDING_REQUESTS' | translate }}</span>
+            </div>
+            <div class="requests-list">
+                <div *ngFor="let request of accountListenerService.friendRequestsReceived" class="request-item background-blue">
+                    <div class="request-info">
+                        <div
+                            class="avatar"
+                            [ngStyle]="{ 'background-image': 'url(' + accountService.getLocalAvatar(request.senderBasicInfo.avatarUrl) + ')' }"
+                        ></div>
+                        <div class="info">
+                            <div class="name">{{ request.senderBasicInfo.pseudonym }}</div>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button (click)="acceptFriendRequest(request.requestId)">{{ 'FRIENDS.ACCEPT' | translate }}</button>
+                        <button (click)="rejectFriendRequest(request.requestId)">{{ 'FRIENDS.DECLINE' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Default List Section -->
+        <div *ngIf="currentTab === ('FRIENDS.DISCOVER' | translate)" class="list">
+            <ng-container *ngFor="let account of filterAccounts()">
+                <div
+                    *ngIf="!account.isFriend && !account.isBlocked && !account.isBlockingMe && account.userId !== accountService.auth0Id"
+                    class="list-item background-blue"
+                    [attr.data-friend]="account.isFriend"
+                >
+                    <div class="item-left">
+                        <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + accountService.getLocalAvatar(account.avatarUrl) + ')' }"></div>
+                        <div class="info">
+                            <div class="name">{{ account.pseudonym }}</div>
+                        </div>
+                    </div>
+                    <div class="actions" *ngIf="!account.isFriend">
+                        <button
+                            class="action-button add-friend"
+                            *ngIf="!account.isRequestSent && !account.isRequestReceived"
+                            (click)="sendFriendRequest(account.userId)"
+                        >
+                            {{ 'FRIENDS.ADD' | translate }}
+                        </button>
+                        <button
+                            class="action-button pending"
+                            *ngIf="account.isRequestSent && !account.isRequestReceived"
+                            matTooltip="Friend request sent"
+                        >
+                            {{ 'FRIENDS.PENDING' | translate }}
+                        </button>
+                        <button
+                            *ngIf="!account.isRequestSent && !account.isRequestReceived"
+                            class="action-button block"
+                            (click)="blockNormalUser(account.userId, account.pseudonym)"
+                            matTooltip="Block User"
+                        >
+                            <mat-icon>block</mat-icon>
+                        </button>
+
+                        <button
+                            *ngIf="account.isRequestSent && !account.isRequestReceived"
+                            class="action-button block"
+                            (click)="blockUserWithPendingRequest(account.userId, account.pseudonym)"
+                            matTooltip="Block User"
+                        >
+                            <mat-icon>block</mat-icon>
+                        </button>
+
+                        <div *ngIf="!account.isRequestSent && account.isRequestReceived">
+                            <div *ngFor="let request of accountListenerService.friendRequestsReceived">
+                                <div
+                                    class="request-actions"
+                                    *ngIf="account.userId == request.senderBasicInfo.userId && !account.isRequestSent && account.isRequestReceived"
+                                >
+                                    <button (click)="acceptFriendRequest(request.requestId)">{{ 'FRIENDS.ACCEPT' | translate }}</button>
+                                    <button (click)="rejectFriendRequest(request.requestId)">{{ 'FRIENDS.DECLINE' | translate }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <div *ngIf="currentTab === ('FRIENDS.FRIENDS' | translate)" class="list">
+            <ng-container *ngFor="let account of filterAccounts()">
+                <div *ngIf="account.isFriend" class="list-item background-blue" [attr.data-friend]="account.isFriend">
+                    <div class="item-left">
+                        <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + accountService.getLocalAvatar(account.avatarUrl) + ')' }"></div>
+                        <div class="info">
+                            <div class="name">{{ account.pseudonym }}</div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="action-button remove-friend" (click)="removeFriend(account.userId)">
+                            {{ 'FRIENDS.REMOVE' | translate }}
+                        </button>
+                        <button class="action-button block" (click)="blockFriend(account.userId, account.pseudonym)" matTooltip="Block Friend">
+                            <mat-icon>block</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

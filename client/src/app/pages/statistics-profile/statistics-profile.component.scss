@@ -1,0 +1,100 @@
+.vue-profile {
+    font-family: sans-serif;
+}
+
+#home {
+    border: none;
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    margin-top: -180px;
+    margin-bottom: 30px;
+    margin-left: 50rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.styled-table {
+    display: inline-table;
+    table-layout: auto;
+    width: auto;
+}
+
+.data-row:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Hover effect for rows */
+.data-row:hover {
+    background-color: #dfe6e9;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.table-section {
+    width: 45%;
+}
+
+.styled-table-container {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+    background-color: #3498db;
+    color: black;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #2980b9;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.table-cell {
+    padding: 12px;
+    color: #34495e;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.name-cell {
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+}
+
+.played-games-column {
+    width: 20%;
+}
+
+.won-games-column {
+    width: 20%;
+}
+
+.correct-answers-column {
+    width: 40%;
+}
+
+.average-time-column {
+    width: 20%;
+}

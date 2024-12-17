@@ -1,0 +1,30 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/qrlEditText"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:background="@drawable/grey_box_stroke"
+        android:elevation="4dp"
+        android:gravity="top"
+        android:hint="Type your answer here"
+        android:imeOptions="actionDone"
+        android:padding="16dp"
+        android:inputType="textMultiLine"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/characterCounter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="0/200"
+        android:textSize="14sp"
+        android:paddingTop="4dp" />
+</LinearLayout>

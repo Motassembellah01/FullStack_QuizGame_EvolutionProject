@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/soloResultsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:layout_margin="50dp"
+    tools:context=".ResultsPageSoloActivity">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/soloResultsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soloResults"
+        android:textSize="40sp"
+        android:layout_margin="30dp"
+        android:textColor="?attr/historyTextColor"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/soloResultsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:background="?attr/chatBackground"
+        >
+
+        <!-- Player Name Header -->
+        <TextView
+            android:id="@+id/headerPlayerName"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/playerName"
+            android:textStyle="bold"
+            android:textColor="?attr/historyTextColor"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Score Header -->
+        <TextView
+            android:id="@+id/headerScore"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/playerScore"
+            android:textStyle="bold"
+            android:textColor="?attr/historyTextColor"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Bonuses Header -->
+        <TextView
+            android:id="@+id/headerBonuses"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/teamBonus"
+            android:textStyle="bold"
+            android:textColor="?attr/historyTextColor"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Winner Icon Placeholder (Optional) -->
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- RecyclerView for Players -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/soloResultsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backToHomeButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_orange_button"
+        android:text="@string/accueil"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+</LinearLayout>

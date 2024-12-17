@@ -1,0 +1,22 @@
+p {
+    font-size: 1.5rem;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    .label {
+        color: black;
+    }
+}
+
+.input {
+    display: block;
+    width: 80%;
+}
+
+.save-button {
+    font-size: large;
+}
+
+mat-form-field {
+    margin-left: 10%;
+}

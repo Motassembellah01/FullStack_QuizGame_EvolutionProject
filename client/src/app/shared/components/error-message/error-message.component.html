@@ -1,0 +1,26 @@
+@if (errorMessages.length > 0) {
+    @if (errorMessages.length === 1) {
+        @if (errorMessages[0].trim() !== '') {
+            <mat-card>
+                <div class="container">
+                    <mat-icon color="warn">error</mat-icon>
+                    <span>{{ errorMessages[0] }}</span>
+                </div>
+            </mat-card>
+        }
+    } @else {
+        <mat-card>
+            <div class="container">
+                <mat-icon color="warn">error</mat-icon>
+                <p>Errors</p>
+            </div>
+            <ul>
+                @for (error of errorMessages; track $index) {
+                    @if (error.trim() !== '') {
+                        <li>{{ error }}</li>
+                    }
+                }
+            </ul>
+        </mat-card>
+    }
+}

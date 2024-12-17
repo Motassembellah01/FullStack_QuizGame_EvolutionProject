@@ -1,0 +1,281 @@
+{
+    "MAIN_PAGE": {
+        "TITLE": "Poly Quiz",
+        "JOIN_GAME": "Joindre une partie",
+        "CREATE_GAME": "Créer une partie",
+        "ADMINISTER_GAMES": "Administrer les jeux",
+        "TEAM_NAME": "Équipe 111"
+    },
+    "SET_AVATAR": {
+        "SELECT_AVATAR": "Choisissez votre avatar",
+        "SELECTED": "Sélectionné",
+        "SELECTED_AVATAR": "Avatar sélectionné",
+        "UPLOAD_AVATAR": "Téléversez votre avatar"
+    },
+    "BUTTONS": {
+        "SUBMIT": "Soumettre",
+        "CANCEL": "Annuler",
+        "CLOSE": "Fermer",
+        "SAVE": "Enregistrer",
+        "VALIDATE": "Valider",
+        "YES": "Oui",
+        "NO": "Non",
+        "ADD_QUESTION": "Ajouter une question",
+        "ADD_CHOICE": "Ajouter un choix",
+        "ADD_IMAGE": "Ajouter une image",
+        "MODIFY_IMAGE": "Modifier l'image",
+        "SEND": "Envoyer",
+        "NEXT": "Suivant",
+        "ABANDON": "Abandonner",
+        "PANIC_MODE": "Mode panique",
+        "CREATE": "Créer"
+    },
+    "NAV_BUTTONS": {
+        "HOME": "Accueil",
+        "CREATE_GAME": "Créer un jeu",
+        "IMPORT_GAME": "Importer un jeu",
+        "PREVIOUS_PAGE": "Page précédente",
+        "CREATE_MATCH": "Créer une partie",
+        "START_MATCH": "Commencer",
+        "UNLOCK": "Déverouiller",
+        "LOCK": "Verrouiller",
+        "QUIT": "Quitter"
+    },
+    "PROFILE": {
+        "HISTORY": "Historique",
+        "STATISTICS": "Statistiques",
+        "SETTINGS": "Réglages",
+        "LIGHT_MODE": "Mode clair",
+        "DARK_MODE": "Mode sombre",
+        "LOGOUT": "Déconnexion",
+        "LANGUAGE": "Langue",
+        "FRENCH": "Français",
+        "ENGLISH": "Anglais",
+        "USER_NAME": "Nom d'utilisateur"
+    },
+    "CHAT": {
+        "CHANNELS": "Canaux",
+        "ALL_CHANNELS": "Tous les canaux",
+        "JOIN": "Rejoindre",
+        "JOINED": "Rejoint",
+        "NEW_CHANNEL": "Nouveau canal",
+        "SEARCH": "Chercher..."
+    },
+    "QUESTIONS": {
+        "POINTS": "Points pour la question :",
+        "USER_ANSWER": "Votre réponse :",
+        "NO_ANSWER": "Le joueur n'a pas répondu",
+        "PLAYER_NAME": "Réponse de : "
+    },
+    "TITLES": {
+        "QRL_EVALUATION": "Évaluation des réponses des joueurs",
+        "GRADE": "Note",
+        "ADMIN": "Administration",
+        "GAMES_AVAILABLE": "Jeux disponibles",
+        "CREATE_MATCH": "Création d'une partie",
+        "WAITING_ROOM": "Attente du début de la partie ",
+        "PLAYERS_CONNECTED": "Joueurs connectés ",
+        "QUESTION_RESULT": "Résultats de la question",
+        "SCORE": "Score actuel : ",
+        "MATCH_RESULTS": "Résultats de la partie ",
+        "QUESTION_STATISTICS": "Statistiques de la question ",
+        "INVITE_PLAYERS": "Invitez des joueurs pour commencer ",
+        "LOCK_MATCH": "Verrouillez la partie pour commencer ",
+        "ANSWER_STATISTICS": "Statistiques des réponses ",
+        "PLAYERS": "Joueurs ",
+        "PRESENT_ANSWERS": "Présenter les résultats",
+        "NEXT_QUESTION": "Prochaine question",
+        "JOIN_MATCH": "Joindre une partie",
+        "ENTER_NAME": "Veuillez entrer votre nom de joueur",
+        "SET_NEW_NAME": "Choissez un nouveau nom",
+        "CURRENT_NAME": "Nom actuel : ",
+        "ENTER_NEW_NAME": "Entrez votre nouveau nom",
+        "CREATE_TEAM": "Créer une équipe",
+        "CREATE_NEW_TEAM": "Créer une nouvelle équipe",
+        "TEAM_NAME": "Nom de l'équipe",
+        "ENTER_TEAM_NAME": "Entrez le nom de l'équipe",
+        "VALID_TEAMS": "Chaque équipe doit obligatoirement être composée de deux joueurs. Les équipes vides seront ignorées.",
+        "MIN_TEAM_PLAYERS": "Un minimum de quatre joueurs est requis pour démarrer une partie en équipe.",
+        "PLAYERS_TO_OBSERVE": "Choisir un joueur à observer"
+    },
+    "QUESTION_FORM": {
+        "POINTS": "Points de la question ",
+        "QUESTION_TITLE": "Énoncé de la question ",
+        "QUESTION_TYPE": "Type de la question ",
+        "CHOICE": "Choix de réponse ",
+        "WRONG_ANSWER": "Mauvaise réponse ",
+        "RIGHT_ANSWER": "Bonne réponse ",
+        "LOWER_BOUND": "Borne inférieure ",
+        "UPPER_BOUND": "Borne supérieure ",
+        "TOLERANCE": "Marge de tolérance ",
+        "VALIDITY": "Validité du choix "
+    },
+    "NEW_GAME_NAME": {
+        "NAME_EXISTS": "Le nom du jeu existe déjà",
+        "CHOOSE_NAME": "Veuillez choisir un autre nom",
+        "NEW_NAME": "Nouveau nom"
+    },
+    "GAME_FORM": {
+        "NAME": "Nom du jeu ",
+        "DESCRIPTION": "Description du jeu ",
+        "QCM_TIME": "Temps des QCM : ",
+        "MANDATORY": "Ce champ est obligatoire "
+    },
+    "GAME_PANEL": {
+        "MODIFICATION_DATE": "Dernière modification : ",
+        "CREATOR_NAME": "Pseudonym du créateur : "
+    },
+    "HISTORY_PROFILE": {
+        "TITLE": "Mon historique ",
+        "GAMES_PLAYED": "Parties jouées ",
+        "GAME": "Jeu ",
+        "START_TIME": "Heure de début ",
+        "STATUS": "Statut ",
+        "SESSION_ACTIVITY": "Activité de session ",
+        "CONNECTIONS": "Connexions ",
+        "LOGOUTS": "Déconnexions ",
+        "WON": "Gagné",
+        "LOST": "Perdu"
+    },
+    "JOIN_MATCH": {
+        "INCORRECT_CODE": "Code d’accès incorrect !",
+        "INCORRECT_NAME": "Le nom entré est invalide ou il existe déjà ! Veuillez choisir un nouveau nom ",
+        "JOIN": "Rejoindre",
+        "WAITING_ROOM": "Salle d'attente ",
+        "LOCKED_GAME": "Partie verrouillée ",
+        "NO_GAME_WAITING": "Aucune partie en attente ",
+        "ALREADY_STARTED": "Déjà commencé ",
+        "NO_GAME_STARTED": "Aucune partie en cours ",
+        "ACCESS_CODE": "Code d’accès"
+    },
+    "STATISTICS": {
+        "TITLE": "Statistiques ",
+        "MATCHES_PLAYED": "Parties jouées ",
+        "MATCHES_WON": "Parties gagnées",
+        "AVERAGE_WON": "Moyenne bonnes réponses / Partie ",
+        "AVERAGE_TIME": "Temps moyen "
+    },
+    "GENERAL": {
+        "IN": "dans",
+        "SECONDS": "secondes",
+        "NAME": "Nom",
+        "ERROR": "L'opération ne peut pas être coplétée. Si le problème persiste, veuillez contacter l'équipe d'assistance.",
+        "OF": " de "
+    },
+    "ERROR_MESSAGE_FOR": {
+        "NAME": "Un nom est requis",
+        "NAME_TYPE": "Un nom en format texte est requis",
+        "EXISTING_NAME": "Le nom choisi existe déjà",
+        "DESCRIPTION": "Une description est requise",
+        "DESCRIPTION_TYPE": "Une description en format texte est requise",
+        "QCM_TIME": "Le temps des QCM doit être compris entre 10 et 60 secondes",
+        "QCM_TIME_TYPE": "Un nombre pour le temps de QCM est requis",
+        "QUESTIONS": "Le jeu doit comporter au moins une question valide",
+        "QUESTION_TYPE": "Un tableau de questions est requis",
+        "IMPORT_FAILED": "L'importation a échoué",
+        "IMPORT_FAILED_INVALID_JSON": "L'importation a échoué car le JSON n'est pas valide",
+        "INVALID_FILE_TYPE": "Seuls les fichiers PNG et JPG sont acceptés.",
+        "GAME_CANCELLED": "La partie a été annulée par l'organisateur."
+    },
+    "ERROR_TITLE": {
+        "CREATE_GAME": "La création du jeu a échoué à cause des erreurs suivantes :",
+        "GAME_NOT_ACCESSIBLE": "Ce jeu n'est plus accessible. Veuillez choisir un autre jeu de la liste suivante.",
+        "GAME_NOT_FOUND": "Le jeu n'a pas été trouvé. Veuillez choisir un autre jeu de la liste suivante.",
+        "QCM_TIME_INVALID": "Le temps des QCM doit être compris entre 10 et 60 secondes.",
+        "VISIBILITY_UPDATE_ERROR": "Une erreur est survenue lors de la mise à jour de la visibilité.",
+        "GAME_ALREADY_DELETED": "Ce jeu a déjà été supprimé.",
+        "GAME_DELETE_ERROR": "Une erreur est survenue lors de la suppression du jeu."
+    },
+    "ERROR_QUESTION": {
+        "SAVE": "L'enregistrement de la question a échoué à cause des erreurs suivantes :",
+        "POINTS": "Les points accordés à la question doivent être entre 10 et 100 points",
+        "STATEMENT": "L'énoncé de la question est requis",
+        "TYPE": "Le type de la question n'a pas été choisi",
+        "ALL_CHOICES": "Le texte d'un ou plusieurs choix de réponse n'a pas été saisi",
+        "UNIQUE_CHOICE": "Chaque choix de réponse doit contenir une réponse unique",
+        "CORRECT_CHOICE": "La question doit avoir au moins une bonne réponse parmi les choix",
+        "WRONG_CHOICE": "La question doit avoir au moins une mauvaise réponse parmi les choix",
+        "CHOICES": "La question doit contenir des choix de réponse",
+        "TOLERANCE": "La tolérance ne doit pas dépasser 25% de l’intervalle",
+        "LOWER_BOUND": "La limite inférieure doit être inférieure ou égale à la bonne réponse",
+        "UPPER_BOUND": "La limite supérieure doit être supérieure ou égale à la bonne réponse",
+        "ALL_RESPONSES": "Tous les champs de la QRE doivent être remplis",
+        "LOWER_GREATER_THAN_UPPER": "La borne inférieure doit être inférieure à la borne supérieure."
+    },
+    "DIALOG_MESSAGE": {
+        "CONFIRMATION": "Êtes vous sûr de vouloir "
+    },
+    "FRIENDS": {
+        "SEARCH": "Chercher un compte...",
+        "PENDING_REQUESTS": "Demandes d'amis en attente ",
+        "ACCEPT": "Accepter",
+        "DECLINE": "Refuser",
+        "REMOVE": "Supprimer",
+        "ADD": "Ajouter",
+        "FRIEND_REQUEST": "Demandes d'amis",
+        "PENDING": "En attente",
+        "DISCOVER": "Communauté",
+        "FRIENDS": "Amis"
+    },
+    "FILTERS": {
+        "TITLE": "Filtres",
+        "SORT_BY": "Trier par :",
+        "CATEGORY": "Catégorie",
+        "RATING": "Note",
+        "TYPE": "Type :",
+        "DIFFICULTY": "Difficulté",
+        "INTEREST": "Intérêt",
+        "DURATION": "Durée",
+        "TAG": "Étiquette :",
+        "APPLY": "Appliquer les filtres",
+        "FILTER": "Filtrer les jeux",
+        "REMOVE": "Enlever les filtres"
+    },
+    "categories": {
+        "difficulties": ["Facile", "Moyenne", "Difficile"],
+        "interests": ["Intéressant", "Ennuyant"],
+        "durations": ["Court", "Long"],
+        "ratings": ["1", "2", "3", "4"]
+    },
+    "paginator": {
+        "itemsPerPage": "Jeux par page",
+        "nextPage": "Page suivante",
+        "previousPage": "Page précédente",
+        "rangeEmpty": "0 de {{length}}",
+        "range": "{{start}} -- {{end}} de {{length}}"
+    },
+    "CONFIGURE_MATCH": {
+        "TITLE": "Configurer la partie",
+        "DESCRIPTION": "Configuration de la partie",
+        "TYPE": "Type de la partie",
+        "SOLO": "Partie individuelle",
+        "TEAM": "Partie en équipe",
+        "ENTRY_PRICE": "Prix d'entrée",
+        "WITHOUT_PRICE": "Sans prix d'entrée",
+        "WITH_PRICE": "Avec prix d'entrée",
+        "ACCESSIBILITY": "Accessibilité",
+        "EVERYONE": "Tout le monde",
+        "FRIENDS": "Amis",
+        "ENTER_PRICE": "Entrez le prix d'entrée :"
+    },
+    "PRICE_WON": {
+        "WON": "Vous avez gagné ! Vous gagnez 100 cookies.",
+        "WON_PRICE": "Vous gagnez aussi 2/3 des cookies des prix d'entrée.",
+        "LOST": "Vous avez perdu ! Vous gagnez 50 cookies.",
+        "LOST_PRICE": " Vous gagnez aussi un lot de consolation en cookies."
+    },
+    "EVALUATION": {
+        "OPEN": "Ouvrir l'évaluation de jeu",
+        "TITLE": "Noter sur 5 étoiles et choisir une étiquette",
+        "DIFFICULTY": "Difficulté",
+        "EASY": "Facile",
+        "MEDIUM": "Moyenne",
+        "HARD": "Difficile",
+        "INTEREST": "Intérêt",
+        "INTERESTING": "Intéressant",
+        "BORING": "Ennuyant",
+        "DURATION": "Durée",
+        "SHORT": "Court",
+        "LONG": "Long"
+    }
+}

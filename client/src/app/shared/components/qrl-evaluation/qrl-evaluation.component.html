@@ -1,0 +1,46 @@
+<div id="container">
+    <h2
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.QRL_EVALUATION' | translate }}
+    </h2>
+    <p class="title">
+        {{ 'QUESTIONS.PLAYER_NAME' | translate }}
+        <span
+            id="player-name"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+            >{{ questionEvaluationService.nPlayersEvaluated }}</span
+        >
+        {{ 'GENERAL.OF' | translate }}
+        <span
+            id="player-name"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+            >{{ questionEvaluationService.playersNames.length }}</span
+        >
+    </p>
+    <mat-card class="card" id="answer-container">
+        <mat-card-content>
+            <span *ngIf="questionEvaluationService.hasPlayerResponded()" id="answer">{{ questionEvaluationService.currentPlayerAnswer }} </span>
+            <div *ngIf="!questionEvaluationService.hasPlayerResponded()" class="italic color-pink center">
+                {{ 'QUESTIONS.NO_ANSWER' | translate }}
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <p class="title note-title">{{ 'TITLES.GRADE' | translate }}</p>
+    <div id="notes-container">
+        <mat-button-toggle-group name="notes" [(value)]="note" (click)="setNoteFactor()">
+            <mat-button-toggle class="note-button" id="note-0" value="0">0%</mat-button-toggle>
+            <mat-button-toggle class="note-button" id="note-50" value="50">50%</mat-button-toggle>
+            <mat-button-toggle class="note-button" id="note-100" value="100">100%</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</div>

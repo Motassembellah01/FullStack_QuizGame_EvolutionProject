@@ -1,0 +1,172 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+#space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.color-blue {
+    color: #0a436c !important;
+}
+.color-brown {
+    color: #a8846a !important;
+}
+
+#question-color {
+    background-color: #acd2d5;
+}
+
+.color-QCM {
+    color: #f8c299;
+}
+
+.flex {
+    display: flex;
+}
+
+.background-green {
+    background-color: #10c08b !important;
+    color: white !important;
+}
+
+.background-red {
+    background-color: #ff6868 !important;
+    color: white !important;
+}
+
+.color-red {
+    color: #ff6868;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.absolute {
+    position: absolute !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.background-blue {
+    background-color: #cbd7e0 !important;
+}
+
+.background-pink {
+    background-color: #ff9783 !important;
+}
+
+.background-yellow-border {
+    background-color: #f9cba8 !important;
+    border: 5px solid #c2641d !important;
+    // #eb8f49 !important;
+}
+
+.background-beige {
+    background-color: #f7b380 !important;
+}
+
+.background-turquoise {
+    background-color: #0ebccc !important;
+    color: white !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.page {
+    margin: 2em;
+    padding: 10px;
+}
+
+.pointer {
+    cursor: pointer;
+    user-select: none;
+}
+
+.histogram {
+    border: solid;
+    border-color: #f7b380;
+    justify-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 80%;
+    height: 13rem;
+}
+
+.dark-mode {
+    background-color: rgba(44, 45, 49, 255) !important;
+}
+
+.christmas {
+    background-color: #002D24 !important;
+}
+
+.valentines {
+    background-color: #e8bdb5 !important;
+}
+
+.color-white {
+    color: white !important;
+}

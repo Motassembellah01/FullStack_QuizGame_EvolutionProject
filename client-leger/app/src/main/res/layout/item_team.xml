@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/teamItemLayout"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?attr/frameBackground"
+    android:layout_marginBottom="16dp">
+
+    <!-- Team Name -->
+    <TextView
+        android:id="@+id/teamNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team #1"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="?attr/defaultTextColor"
+        />
+
+    <!-- Players List RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/teamPlayersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical" />
+
+    <!-- Quit Team Button -->
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/quitTeamButton"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_gravity="end"
+        android:background="@drawable/rounded_logout_button"
+        android:text="@string/quitTeam"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:textSize="11sp"
+        android:visibility="gone"/> <!-- Initially hidden; shown when player is in the team -->
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/joinTeamButton"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_gravity="end"
+        android:background="@drawable/rounded_green_button"
+        android:text="@string/joinTeam"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"/> <!-- Initially visible; disappears when player is in the team -->
+</LinearLayout>

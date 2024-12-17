@@ -1,0 +1,125 @@
+<app-logo></app-logo>
+<div *ngIf="game$ | async as game">
+    <div class="nav-container">
+        <button class="nav-button background-beige" mat-raised-button routerLink="/create">{{ 'NAV_BUTTONS.PREVIOUS_PAGE' | translate }}</button>
+        <button class="nav-button background-beige" mat-raised-button mat-button (click)="openMatchConfigDialog()">
+            {{ 'CONFIGURE_MATCH.TITLE' | translate }}
+        </button>
+        <!-- {{ 'NAV_BUTTONS.CREATE_MATCH' | translate }}
+        </button> -->
+        <!-- <button class="nav-button background-beige" mat-raised-button (click)="onTestGame(game.id)">Tester le jeu</button> -->
+    </div>
+    <div
+        id="game-infos"
+        class="flex-center content-center"
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        <p id="game-name" class="color-red bold">{{ game.title }}</p>
+        <p id="game-description" class="flex italic content-center">{{ game.description }}</p>
+        <p id="qcmTime" class="color-red">{{ 'GAME_FORM.QCM_TIME' | translate }} {{ game.duration }} s</p>
+    </div>
+    <div *ngFor="let question of game.questions; let i = index">
+        <p
+            class="game-questions"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Question {{ i + 1 }}
+        </p>
+        <div class="question-container flex">
+            <mat-icon *ngIf="question.type === 'QCM'" id="qcm-icon">format_list_bulleted</mat-icon>
+            <mat-icon *ngIf="question.type === 'QRL'" id="qrl-icon">edit_note</mat-icon>
+            <mat-icon *ngIf="question.type === 'QRE'" id="qre-icon">compare_arrows</mat-icon>
+            <mat-card>
+                <mat-card-content>{{ question.text }}</mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<ng-template #matchConfigDialog *ngIf="game$ | async as game">
+    <div
+        [ngClass]="{
+            'light-mode': this.accountService.theme === 'light',
+            'dark-mode': this.accountService.theme === 'dark',
+            christmas: this.accountService.theme === 'christmas',
+            valentines: this.accountService.theme === 'valentines',
+        }"
+    >
+        <h1
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'CONFIGURE_MATCH.DESCRIPTION' | translate }}
+        </h1>
+        <div class="center-container">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ 'CONFIGURE_MATCH.TYPE' | translate }}</mat-label>
+                <mat-select [(value)]="isTeamMatch">
+                    <mat-option [value]="false">{{ 'CONFIGURE_MATCH.SOLO' | translate }}</mat-option>
+                    <mat-option [value]="true">{{ 'CONFIGURE_MATCH.TEAM' | translate }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>{{ 'CONFIGURE_MATCH.ACCESSIBILITY' | translate }}</mat-label>
+                <mat-select [(value)]="isOnlyFriends">
+                    <mat-option [value]="false">{{ 'CONFIGURE_MATCH.EVERYONE' | translate }}</mat-option>
+                    <mat-option [value]="true">{{ 'CONFIGURE_MATCH.FRIENDS' | translate }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>{{ 'CONFIGURE_MATCH.ENTRY_PRICE' | translate }}</mat-label>
+                <mat-select [(value)]="isPricedMatch">
+                    <mat-option [value]="false">{{ 'CONFIGURE_MATCH.WITHOUT_PRICE' | translate }}</mat-option>
+                    <mat-option [value]="true">{{ 'CONFIGURE_MATCH.WITH_PRICE' | translate }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div *ngIf="isPricedMatch">
+            <div class="input-container">
+                <label
+                    for="priceMatchInput"
+                    [ngClass]="{
+                        'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                        'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                    }"
+                    >{{ 'CONFIGURE_MATCH.ENTER_PRICE' | translate }}</label
+                >
+                <input
+                    id="priceMatchInput"
+                    type="number"
+                    [(ngModel)]="priceMatch"
+                    min="0"
+                    step="1"
+                    placeholder="{{ 'CONFIGURE_MATCH.ENTER_PRICE' | translate }}"
+                    class="styled-input"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div
+        mat-dialog-actions
+        id="space-between"
+        [ngClass]="{
+            'light-mode': this.accountService.theme === 'light',
+            'dark-mode': this.accountService.theme === 'dark',
+            christmas: this.accountService.theme === 'christmas',
+            valentines: this.accountService.theme === 'valentines',
+        }"
+    >
+        <button mat-raised-button mat-dialog-close class="background-red buttons-dialog">{{ 'BUTTONS.CANCEL' | translate }}</button>
+        <button mat-raised-button mat-dialog-close class="background-green buttons-dialog" (click)="onCreateMatch(game.id)">
+            {{ 'NAV_BUTTONS.CREATE_MATCH' | translate }}
+        </button>
+    </div>
+</ng-template>

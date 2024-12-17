@@ -1,0 +1,125 @@
+.vue-profile {
+    font-family: sans-serif;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Table Section */
+.table-section {
+    width: 45%;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Table Styling */
+.styled-table-container {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Headers */
+.table-header {
+    background-color: #3498db;
+    color: black;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #2980b9;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* Table Cells */
+.table-cell {
+    padding: 12px;
+    color: #34495e;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* Alternating row colors for better readability */
+.data-row:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Hover effect for rows */
+.data-row:hover {
+    background-color: #dfe6e9;
+    cursor: pointer;
+}
+
+/* Pagination styling */
+.mat-paginator {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-paginator button {
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+}
+
+.mat-paginator button:hover {
+    background-color: #2980b9;
+}
+
+.mat-paginator-range-label,
+.mat-paginator-page-size {
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+#home {
+    border: none;
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    margin-top: -180px;
+    margin-bottom: 30px;
+    margin-left: 50rem;
+}
+
+.styled-table {
+    display: inline-table;
+    table-layout: auto;
+    width: auto;
+}
+
+.game-name-column,
+.start-time-column {
+    width: 40%;
+}
+
+.status-column {
+    width: 20%;
+}
+
+.name-cell {
+    white-space: normal;
+    word-break: break-word;
+}

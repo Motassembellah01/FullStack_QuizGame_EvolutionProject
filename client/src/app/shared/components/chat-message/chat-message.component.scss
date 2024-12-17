@@ -1,0 +1,75 @@
+.a-right {
+    border-left: 16px solid #0a436c;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    margin-top: 13px;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+
+.a-left {
+    border-right: 16px solid #0a436c;
+}
+
+.under-message-right {
+    margin-top: 10px;
+    right: 0;
+}
+
+.under-message-left {
+    margin-top: 10px;
+    left: 0;
+}
+
+.message-right {
+    margin-top: 30px;
+    margin-right: 5px;
+    margin-bottom: -35px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.message-left {
+    margin-left: 5px;
+    margin-top: 25px;
+    margin-bottom: -35px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.c-right {
+    text-align: end;
+}
+
+.c-left {
+    text-align: start;
+}
+
+.container {
+    background-color: #cbd7e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 80px;
+    max-width: 70%;
+    min-width: 20px;
+}
+
+.chat-content {
+    margin-top: 10px;
+}
+
+.name-player-right {
+    margin-top: -30px;
+    right: 0;
+    font-weight: 500;
+}
+
+.name-player-left {
+    margin-top: -20px;
+    left: 20px;
+    font-weight: 500;
+}

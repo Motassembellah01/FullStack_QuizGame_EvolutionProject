@@ -1,0 +1,33 @@
+.vue-creation-partie {
+    font-family: sans-serif;
+
+    p:nth-child(1) {
+        font-size: 3rem;
+        margin-top: 20px;
+    }
+
+    p:nth-child(2) {
+        font-size: 2rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+mat-card {
+    background-color: #afd3f3;
+    margin-top: 20px;
+    width: 30rem;
+    border-radius: 15px;
+}
+
+mat-card-content {
+    font-size: 25px;
+}
+
+#home {
+    border: none;
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    left: 68%;
+    top: -19%;
+}

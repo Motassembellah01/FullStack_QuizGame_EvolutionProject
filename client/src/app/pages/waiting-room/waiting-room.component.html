@@ -1,0 +1,65 @@
+<app-logo></app-logo>
+<button mat-raised-button class="background-red quit" (click)="abandonGame()">{{ 'BUTTONS.ABANDON' | translate }}</button>
+<h1
+    class="bold title flex-center"
+    [ngClass]="{
+        'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+        'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+    }"
+>
+    {{ 'TITLES.WAITING_ROOM' | translate }}
+</h1>
+
+<div *ngIf="!matchSrv.match.isTeamMatch">
+    <h3 class="players-title">{{ 'TITLES.PLAYERS_CONNECTED' | translate }}</h3>
+    <div class="player-solo-container">
+        <app-player-card *ngFor="let player of this.matchSrv.match.players" [player]="player"></app-player-card>
+    </div>
+</div>
+
+<div *ngIf="matchSrv.match.isTeamMatch">
+    <div class="flex-container">
+        <div class="flex-child">
+            <h3 class="players-title">{{ 'TITLES.PLAYERS_CONNECTED' | translate }}</h3>
+            <div class="players-container">
+                <app-player-card *ngFor="let player of this.matchSrv.getPlayersNotInTeam()" [player]="player"></app-player-card>
+            </div>
+        </div>
+        <div class="teams-container flex-child">
+            <div *ngFor="let team of matchSrv.match.teams" class="team">
+                <h4 class="team-name">{{ team.name }}</h4>
+                <button mat-button color="primary" (click)="joinTeam(team.name)" *ngIf="getCurrentPlayerTeam() !== team.name">
+                    {{ 'JOIN_MATCH.JOIN' | translate }}
+                </button>
+                <button mat-button color="warn" (click)="leaveTeam(team.name)" *ngIf="getCurrentPlayerTeam() === team.name">
+                    {{ 'NAV_BUTTONS.QUIT' | translate }}
+                </button>
+                <div class="players-container">
+                    <app-player-card
+                        *ngFor="let player of team.players"
+                        [player]="{ name: player, isActive: true, score: 0, nBonusObtained: 0, chatBlocked: false, avatar: player }"
+                    >
+                    </app-player-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="create-team">
+        <button mat-raised-button color="primary" (click)="openTeamCreationDialog()">{{ 'TITLES.CREATE_TEAM' | translate }}</button>
+    </div>
+    <div class="overlay" *ngIf="isCreatingTeam">
+        <div class="team-creation-popup">
+            <h2>{{ 'TITLES.CREATE_NEW_TEAM' | translate }}</h2>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>{{ 'TITLES.TEAM_NAME' | translate }}</mat-label>
+                <input matInput [(ngModel)]="newTeamName" placeholder="{{ 'TITLES.ENTER_TEAM_NAME' | translate }}" required maxlength="12" />
+                <div class="countdown" align="end">{{ newTeamName.length || 0 }}/12</div>
+            </mat-form-field>
+            <h3 *ngIf="errorMessage.length !== 0">Veuillez entrer un nom d'équipe</h3>
+            <div class="dialog-actions">
+                <button mat-button (click)="cancelTeamCreation()">{{ 'BUTTONS.CANCEL' | translate }}</button>
+                <button mat-raised-button color="primary" (click)="createTeam(newTeamName)">{{ 'BUTTONS.CREATE' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

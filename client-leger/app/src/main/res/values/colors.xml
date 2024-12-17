@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="navyBlue">#203354</color> <!-- Define your navy blue color -->
+    <color name="blue">#0EBCD1</color> <!-- Custom blue color -->
+    <color name="brown">#A8846A</color> <!-- Custom brown color -->
+    <color name="orange">#F7B380</color> <!-- Custom orange color -->
+    <color name="pink">#FF9783</color> <!-- Custom pink color -->
+    <color name="green">#77DD77</color>
+    <color name="red">#FF0000</color>
+    <color name="lightBlue">#CBD7E0</color>
+    <color name="indigoBlue">#3F51B5</color>
+    <color name="lightGreen">#10BF8A</color>
+    <color name="lightCoral">#FF7F7F</color>
+    <color name="aqua">#A8CFD3</color>
+    <color name="lightGrey">#C6C5C5</color>
+    <color name="lightOrange">#F8CAA7</color>
+    <color name="skyBlue">#79B4EA</color>
+    <color name="darkGreen">#00873C</color>
+    <color name="darkOrange">#8D4004</color>
+    <color name="t_grey">#80808080</color>
+    <color name="t_green">#8077DD77</color>
+    <color name="t_red">#80FF0000</color>
+    <color name="lavender">#669DFC</color>
+    <color name="gold">#ECBF2A</color>
+</resources>

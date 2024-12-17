@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    tools:context="ChatFragment"
+    android:background="?attr/chatBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="16dp">
+
+        <ImageButton
+            android:id="@+id/backArrowButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="?attr/chatBackIcon"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/exitButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_exit"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            app:tint="?attr/chatTextColor" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/channelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/general"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="?attr/chatTextColor"
+        android:textSize="80sp"
+        android:layout_marginTop="10dp"
+        android:padding="16dp" />
+
+    <ScrollView
+        android:id="@+id/chatScrollView"
+        android:layout_width="730dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/chatLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:padding="16dp"
+            android:animateLayoutChanges="true"
+            android:layout_marginBottom="15dp">
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="730dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/new_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/writeMessage"
+            android:fontFamily="@font/quicksand_bold"
+            android:minLines="1"
+            android:maxLines="5"
+            android:textColorHint="?attr/defaultTextColor"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionSend"
+            android:imeActionLabel="Envoyer"
+            android:textColor="?attr/defaultTextColor"
+            android:textSize="16sp"
+            android:scrollHorizontally="false"
+            android:overScrollMode="always" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/ic_send_button"
+                android:layout_width="48dp"
+                android:layout_height="36dp"
+                app:tint="#40E0D0"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/send_message" />
+
+            <!-- Character counter below Send Button -->
+            <TextView
+                android:id="@+id/characterCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/200"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

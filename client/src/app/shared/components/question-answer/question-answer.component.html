@@ -1,0 +1,112 @@
+<div class="question-answer relative">
+    <div class="question-title flex">
+        <mat-icon *ngIf="question.type === 'QCM'" id="qcm-icon">format_list_bulleted</mat-icon>
+        <mat-icon *ngIf="question.type === 'QRL'" id="qrl-icon">edit_note</mat-icon>
+        <mat-icon *ngIf="question.type === 'QRE'" id="qre-icon">compare_arrows</mat-icon>
+        <p
+            class="question-num"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'QUESTIONS.POINTS' | translate }}{{ question.points }} points
+        </p>
+    </div>
+    <mat-card class="question-container">
+        <mat-card-content>{{ question.text }}</mat-card-content>
+    </mat-card>
+    <div *ngIf="question.type !== 'QCM' && this.question.image" class="img-container">
+        <img [src]="this.question.image" alt="Uploaded Image" class="image-preview" />
+    </div>
+    <div *ngIf="question.type === 'QRL'">
+        <p
+            class="answer-title"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'QUESTIONS.USER_ANSWER' | translate }}
+        </p>
+        <mat-form-field class="qrl-answer-container" appearance="fill">
+            <textarea
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="10"
+                matInput
+                maxlength="200"
+                (input)="onTextAreaChange()"
+                placeholder="{{ matchSrv.showingResults ? questionEvaluation.currentPlayerAnswer : '...' }}"
+                class="textarea"
+                [(ngModel)]="qrlAnswer"
+                [readonly]="matchSrv.showingResults || sendButtonDisabled || matchSrv.isObserver()"
+                [style.caret-color]="matchSrv.showingResults || sendButtonDisabled || matchSrv.isObserver() ? 'transparent' : 'auto'"
+                #input
+            ></textarea>
+            <mat-hint
+                align="end"
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                >{{ !matchSrv.showingResults ? input.value.length : questionEvaluation.currentPlayerAnswer.length }}/200
+            </mat-hint>
+        </mat-form-field>
+    </div>
+    <div *ngIf="question.type === 'QCM'">
+        <div class="row align-items-center" *ngFor="let choice of question.choices; index as i">
+            <mat-card [ngClass]="getOptionBackgroundColor(choice)" class="qcm-answer-container pointer" (click)="onSelect(choice)">
+                <mat-card-content>{{ i + 1 }}. {{ choice.text }}</mat-card-content>
+            </mat-card>
+            <div class="p-20" *ngIf="matchSrv.showingResults">
+                <mat-icon [ngClass]="getAnswerIcon(choice)">{{ getAnswerIcon(choice) }}</mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="question.type === 'QRE'">
+        <div class="example-label-container">
+            <label
+                id="example-name-label"
+                class="example-name-label answer-title"
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                >{{ 'QUESTIONS.USER_ANSWER' | translate }}</label
+            >
+            <label
+                class="example-value-label answer-title"
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                >{{ slider.value }}</label
+            >
+        </div>
+        <mat-slider
+            class="example-margin"
+            [disabled]="matchSrv.showingResults || sendButtonDisabled || matchSrv.isObserver()"
+            [max]="question.upperBound"
+            [min]="question.lowerBound"
+            [step]="1"
+            [showTickMarks]="1"
+            (input)="onSliderChange($event)"
+        >
+            <input matSliderThumb [(ngModel)]="matchSrv.qreAnswer" #slider />
+        </mat-slider>
+    </div>
+
+    <span *ngIf="!matchSrv.showingResults">
+        <button
+            mat-raised-button
+            class="confirm-button"
+            (click)="onSend()"
+            [disabled]="sendButtonDisabled"
+            [class.gray-bg]="sendButtonDisabled"
+            [class.background-green]="!sendButtonDisabled"
+        >
+            {{ 'BUTTONS.SEND' | translate }}
+        </button>
+    </span>
+</div>

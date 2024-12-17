@@ -1,0 +1,23 @@
+<app-logo></app-logo>
+<nav class="absolute">
+    <button class="nav-button background-beige" mat-raised-button routerLink="/administration/create-game">
+        {{ 'NAV_BUTTONS.CREATE_GAME' | translate }}
+    </button>
+    <button class="nav-button background-beige" (click)="spreadClickOnImport()" mat-raised-button>
+        {{ 'NAV_BUTTONS.IMPORT_GAME' | translate }}
+        <input type="file" id="gameImport" accept=".json" (change)="import($event)" #importButton />
+    </button>
+</nav>
+
+<div class="body-container flex-center">
+    <h1
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.ADMIN' | translate }}
+    </h1>
+    <app-error-message></app-error-message>
+    <app-paginator [inAdminVue]="true"></app-paginator>
+</div>

@@ -1,0 +1,218 @@
+<div class="flex chat-section">
+    <div *ngIf="!generalChatService.currentChannel">
+        <div class="top-buttons">
+            <button
+                mat-button
+                id="open-chat-window-btn"
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                (click)="openExternalChat()"
+            >
+                <i class="material-icons">pin_invoke</i>
+            </button>
+            <div
+                class="close-icon material-icons pointer"
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                (click)="toggleChat()"
+                (click)="backToChannels()"
+            >
+                close
+            </div>
+        </div>
+        <p
+            class="title-chat center"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'CHAT.CHANNELS' | translate }}
+        </p>
+        <div class="add-buttons">
+            <button
+                mat-stroked-button
+                class="channel-btn pointer"
+                (click)="toggleAddChannel()"
+                [attr.title]="this.newChannelName.trim() === '' ? 'Entrez un titre' : ''"
+                [class.toggled]="isAddOpen"
+            >
+                <i class="material-icons">add_circle_outline</i>
+            </button>
+            <button mat-stroked-button class="channel-btn pointer" (click)="toggleModifyChannel()" [class.toggled]="isModifyOpen">
+                <i class="material-icons">edit_note</i>
+            </button>
+            <button mat-stroked-button class="channel-btn pointer" (click)="toggleSearchChannel()" [class.toggled]="isSearchOpen">
+                <i class="material-icons">manage_search</i>
+            </button>
+        </div>
+        <div *ngIf="!this.isSearchOpen" class="chat-zone chat-margin chat-channels">
+            <li
+                *ngFor="let channel of joinedChatRooms"
+                (click)="!this.isModifyOpen ? selectChannel(channel) : null"
+                class="channel-item"
+                [ngClass]="{ 'disabled-click': isModifyOpen, 'enabled-click': !isModifyOpen }"
+            >
+                <!-- <div *ngIf="getUnreadMessageCount(channel) > 0" class="unread-circle">
+                    {{ getUnreadMessageCount(channel) }}
+                </div> -->
+                <span
+                    class="channel-name"
+                    [ngClass]="{
+                        'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                    }"
+                    >{{ channel.chatRoomName }}</span
+                >
+                <button
+                    *ngIf="this.isModifyOpen && channel.chatRoomName !== 'general'"
+                    (click)="this.removeChannel(channel.chatRoomName)"
+                    class="action-button delete-button pointer"
+                >
+                    <i class="material-icons">delete</i>
+                </button>
+
+                <span class="last-message" *ngIf="!this.isModifyOpen">
+                    {{ channel.messages.length > 0 ? channel.messages[channel.messages.length - 1].message.data : 'No messages yet' }}
+                </span>
+            </li>
+        </div>
+        <div *ngIf="isSearchOpen" class="chat-zone chat-margin chat-channels">
+            <li *ngFor="let channel of filteredChannels" class="channel-item">
+                <span
+                    class="channel-name"
+                    [ngClass]="{
+                        'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                    }"
+                    >{{ channel }}</span
+                >
+                <button (click)="this.joinChannel(channel)" *ngIf="!isChannelJoined(channel)" class="join-button">
+                    {{ 'CHAT.JOIN' | translate }}
+                </button>
+
+                <button *ngIf="isChannelJoined(channel)" class="joined-button" disabled>
+                    {{ 'CHAT.JOINED' | translate }}
+                </button>
+            </li>
+        </div>
+        <div *ngIf="this.isAddOpen" class="input-add">
+            <div class="input-container">
+                <input
+                    class="channel-input"
+                    [(ngModel)]="newChannelName"
+                    placeholder="{{ 'CHAT.NEW_CHANNEL' | translate }}"
+                    maxlength="10"
+                    required
+                />
+                <div class="countdown">{{ newChannelName.length || 0 }}/10</div>
+                <button mat-mini-fab (click)="createChannel()" class="add-btn" [disabled]="!newChannelName || newChannelName.trim() === ''">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+        <div *ngIf="this.isSearchOpen" class="input-search">
+            <input type="text" class="input-src" [(ngModel)]="searchTerm" placeholder="{{ 'CHAT.SEARCH' | translate }}" (input)="onSearch()" />
+        </div>
+    </div>
+    <div *ngIf="generalChatService.currentChannel">
+        <div class="close-icon-channels material-icons pointer color-blue" (click)="toggleChat()">close</div>
+        <div
+            class="title-chat title-channel"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ generalChatService.currentChannel.chatRoomName }}
+        </div>
+        <div class="messages chat-margin chat-messages" #chatZone>
+            <div *ngFor="let msg of generalChatService.mappedMessages" class="message-item">
+                <div *ngIf="msg.playerName === this.accountService.account.pseudonym" class="message-right flex-end">
+                    <div class="container relative c-right">
+                        <p
+                            class="name-player-right absolute"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                        >
+                            {{ msg.playerName }}
+                        </p>
+                        <p class="chat-content">{{ msg.data }}</p>
+                        <div class="under-message-right absolute">
+                            <div class="time italic">{{ msg.time }}</div>
+                        </div>
+                    </div>
+                    <img [src]="accountService.getLocalAvatar()" alt="avatar" class="avatar-right" />
+                </div>
+                <div
+                    *ngIf="msg.playerName !== this.accountService.account.pseudonym && !isBlocked(msg.userId) && !isBlockedByHim(msg.userId)"
+                    class="message-left flex-start"
+                >
+                    <img [src]="msg.avatarUrl" alt="avatar" class="avatar-left" />
+                    <div class="container relative c-left">
+                        <p
+                            class="name-player-left absolute"
+                            [ngClass]="{
+                                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                            }"
+                        >
+                            {{ msg.playerName }}
+                        </p>
+                        <p class="chat-content">{{ msg.data }}</p>
+                        <div class="under-message-left absolute">
+                            <p class="time italic">{{ msg.time }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message-input">
+            <span>
+                <mat-form-field appearance="fill">
+                    <textarea
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="4"
+                        class="italic input-field"
+                        id="chat-field"
+                        name="inputMessage"
+                        (focus)="changeTypingState()"
+                        (blur)="changeTypingState()"
+                        [(ngModel)]="this.newMessage"
+                        (keydown)="onEntryKey($event)"
+                        matInput
+                        #input
+                        maxlength="200"
+                        placeholder="Écrire ici..."
+                    ></textarea
+                    ><mat-hint align="end">{{ input.value.length }}/200 </mat-hint>
+                </mat-form-field>
+            </span>
+            <mat-icon matSuffix class="send-icon pointer" [ngClass]="{ pink: input.value.length !== 0 }" (click)="sendMessage()"> send </mat-icon>
+        </div>
+        <div class="go-left">
+            <button
+                class="close-btn"
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                (click)="backToChannels()"
+            >
+                <i class="material-icons">keyboard_arrow_left</i>
+                <p
+                    class="all-channels"
+                    [ngClass]="{
+                        'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                    }"
+                >
+                    {{ 'CHAT.ALL_CHANNELS' | translate }}
+                </p>
+            </button>
+        </div>
+    </div>
+</div>

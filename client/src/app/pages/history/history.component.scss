@@ -1,0 +1,43 @@
+.title {
+    font-size: 3rem;
+    margin-bottom: 3%;
+    color: #0a436c;
+    margin-left: 30%;
+}
+
+.center {
+    justify-content: center;
+}
+
+.mat-table-container {
+    position: relative;
+    max-width: 900px;
+}
+
+.mat-table-history {
+    max-height: 50vh;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #e9f3fc;
+    min-width: none !important;
+}
+
+th, td {
+    font-size: 18px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#buttons {
+    border: none;
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    align-self: flex-end;
+    top: -8rem;
+    margin-bottom: 5px;
+}
+
+.buttons {
+    width: 20rem;
+    float: inline-end;
+}

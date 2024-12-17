@@ -1,0 +1,5 @@
+<!-- res/drawable/rounded_aqua_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/aqua"/> <!-- Aqua background color -->
+    <corners android:radius="16dp"/> <!-- Adjust the radius for the desired corner roundness -->
+</shape>

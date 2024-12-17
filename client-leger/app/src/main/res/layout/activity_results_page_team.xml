@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teamResultsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:layout_margin="50dp"
+    tools:context=".ResultsPageTeamActivity">
+
+    <TextView
+        android:id="@+id/soloResultsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teamResults"
+        android:textSize="40sp"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:textColor="?attr/historyTextColor"
+        android:layout_margin="30dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/teamResultsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:background="?attr/chatBackground"
+        >
+
+        <!-- Team Name Header -->
+        <TextView
+            android:id="@+id/headerTeamName"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/teamName"
+            android:textColor="?attr/historyTextColor"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Player1 (Score) Header -->
+        <TextView
+            android:id="@+id/headerPlayer1"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/teamPlayers"
+            android:textColor="?attr/historyTextColor"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Team Score Header -->
+        <TextView
+            android:id="@+id/headerTeamScore"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/teamScore"
+            android:textStyle="bold"
+            android:textColor="?attr/historyTextColor"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Team Bonuses Header -->
+        <TextView
+            android:id="@+id/headerTeamBonuses"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/teamBonus"
+            android:textStyle="bold"
+            android:textColor="?attr/historyTextColor"
+            android:textSize="22sp"
+            android:gravity="center" />
+
+        <!-- Winner Icon Placeholder (Optional) -->
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+    <!-- RecyclerView for Teams -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/teamResultsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backToHomeButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_orange_button"
+        android:text="@string/accueil"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+</LinearLayout>

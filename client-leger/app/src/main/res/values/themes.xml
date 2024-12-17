@@ -1,0 +1,159 @@
+<resources>
+    <!-- Base Light Theme -->
+    <style name="Theme.AndroidLogin.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Window Background -->
+        <item name="android:windowBackground">@drawable/home_page</item>
+
+        <!-- Custom Attributes -->
+        <item name="chatBackground">@drawable/rectangle_border</item>
+        <item name="historyBackground">@drawable/history_border</item>
+        <item name="frameBackground">@drawable/frame_background</item>
+        <item name="spinnerBackground">@color/white</item>
+        <item name="landscapeBackground">@drawable/home_page_landscape</item>
+
+        <item name="titleColor">@color/brown</item>
+        <item name="chatTextColor">@color/navyBlue</item>
+        <item name="historyTextColor">@color/navyBlue</item>
+        <item name="settingTextColor">@color/pink</item>
+        <item name="defaultTextColor">@color/black</item>
+
+        <item name="chatCloseIcon">@drawable/ic_exit</item>
+        <item name="chatBackIcon">@drawable/ic_back_arrow</item>
+        <item name="lockIcon">@drawable/locked</item>
+        <item name="editIcon">@drawable/edit_username</item>
+        <item name="addChannelIcon">@drawable/add_channels</item>
+        <item name="searchChannelIcon">@drawable/search_channel_list</item>
+        <item name="editChannelIcon">@drawable/edit_channels</item>
+        <item name="logo">@drawable/logo</item>
+
+        <item name="logoutButtonBackground">@drawable/rounded_logout_button</item>
+        <item name="joinGameButtonBackground">@drawable/rounded_orange_button</item>
+        <item name="createGameButtonBackground">@drawable/rounded_blue_button</item>
+        <item name="buttonWidth">450dp</item>
+        <item name="buttonHeight">100dp</item>
+        <item name="buttonTextSize">35sp</item>
+        <item name="settingSpinnerBackground">@drawable/spinner_background_with_arrow</item>
+        <item name="generalButtonBG">@color/teal_700</item>
+
+        <item name="channelButtonsStyle">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <!-- Dark Theme -->
+    <style name="Theme.AndroidLogin.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Window Background -->
+        <item name="android:windowBackground">@drawable/dark_home_page_portrait</item>
+
+        <!-- Custom Attributes -->
+        <item name="chatBackground">@drawable/rectangle_border_dark</item>
+        <item name="historyBackground">@drawable/history_border_dark</item>
+        <item name="frameBackground">@drawable/frame_background_dark</item>
+        <item name="spinnerBackground">@drawable/spinner_bg_dark</item>
+        <item name="landscapeBackground">@drawable/dark_home_page_land</item>
+        <item name="logo">@drawable/logo_white</item>
+
+        <item name="titleColor">@color/white</item>
+        <item name="chatTextColor">@color/lightBlue</item>
+        <item name="historyTextColor">@color/lightBlue</item>
+        <item name="settingTextColor">#b2695b</item>
+        <item name="defaultTextColor">@color/white</item>
+
+        <item name="chatCloseIcon">@drawable/ic_close</item>
+        <item name="chatBackIcon">@drawable/back_arrow_dark</item>
+        <item name="lockIcon">@drawable/lock_white</item>
+        <item name="editIcon">@drawable/edit_white</item>
+        <item name="addChannelIcon">@drawable/add_channels_w</item>
+        <item name="searchChannelIcon">@drawable/search_channel_list_w</item>
+        <item name="editChannelIcon">@drawable/edit_channels_w</item>
+
+        <item name="logoutButtonBackground">@drawable/rounded_logout_button_dark</item>
+        <item name="joinGameButtonBackground">@drawable/rounded_orange_button_dark</item>
+        <item name="createGameButtonBackground">@drawable/rounded_blue_button_dark</item>
+        <item name="buttonWidth">450dp</item>
+        <item name="buttonHeight">100dp</item>
+        <item name="buttonTextSize">35sp</item>
+        <item name="settingSpinnerBackground">@drawable/spinner_background_with_arrow_dark</item>
+        <item name="generalButtonBG">#014D4E</item>
+
+        <item name="channelButtonsStyle">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <!-- Valentine Theme -->
+    <style name="Theme.AndroidLogin.Valentine" parent="Theme.AndroidLogin.Light">
+        <!-- Window Background -->
+        <item name="android:windowBackground">@drawable/valentines_portrait</item>
+
+        <!-- Custom Attributes -->
+        <item name="chatBackground">@drawable/rectangle_border_valentine</item>
+        <item name="historyBackground">@drawable/rectangle_border_valentine</item>
+        <item name="frameBackground">@drawable/rectangle_border_valentine</item>
+        <item name="landscapeBackground">@drawable/valentines_landscape</item>
+
+        <item name="titleColor">#c84a4e</item>
+        <item name="chatTextColor">@color/navyBlue</item>
+        <item name="historyTextColor">@color/navyBlue</item>
+        <item name="settingTextColor">@color/pink</item>
+        <item name="spinnerBackground">@drawable/spinner_bg_valentine</item>
+        <item name="defaultTextColor">@color/white</item>
+
+        <item name="chatCloseIcon">@drawable/ic_exit</item>
+        <item name="chatBackIcon">@drawable/ic_back_arrow</item>
+        <item name="lockIcon">@drawable/locked</item>
+        <item name="editIcon">@drawable/edit_white</item>
+        <item name="addChannelIcon">@drawable/add_channels</item>
+        <item name="searchChannelIcon">@drawable/search_channel_list</item>
+        <item name="editChannelIcon">@drawable/edit_channels</item>
+        <item name="logo">@drawable/logo_pink</item>
+
+        <item name="logoutButtonBackground">@drawable/rounded_button_valentine</item>
+        <item name="joinGameButtonBackground">@drawable/rounded_button_valentine</item>
+        <item name="createGameButtonBackground">@drawable/rounded_button_valentine</item>
+        <item name="buttonWidth">450dp</item>
+        <item name="buttonHeight">100dp</item>
+        <item name="buttonTextSize">35sp</item>
+        <item name="settingSpinnerBackground">@drawable/spinner_background_with_arrow</item>
+        <item name="generalButtonBG">#AA336A</item>
+
+        <item name="channelButtonsStyle">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <!-- Christmas Theme -->
+    <style name="Theme.AndroidLogin.Christmas" parent="Theme.AndroidLogin.Light">
+        <!-- Window Background -->
+        <item name="android:windowBackground">@drawable/christmas_portrait</item>
+
+        <!-- Custom Attributes -->
+        <item name="chatBackground">@drawable/rectangle_border_christmas</item>
+        <item name="historyBackground">@drawable/rectangle_border_christmas</item>
+        <item name="spinnerBackground">@drawable/spinner_bg_christmas</item>
+        <item name="frameBackground">@drawable/rectangle_border_christmas</item>
+        <item name="landscapeBackground">@drawable/christmas_landscape</item>
+
+        <item name="titleColor">#9ec68f</item>
+        <item name="chatTextColor">@color/navyBlue</item>
+        <item name="historyTextColor">@color/navyBlue</item>
+        <item name="settingTextColor">@color/pink</item>
+        <item name="defaultTextColor">@color/white</item>
+
+        <item name="chatCloseIcon">@drawable/ic_exit</item>
+        <item name="chatBackIcon">@drawable/ic_back_arrow</item>
+        <item name="lockIcon">@drawable/locked</item>
+        <item name="editIcon">@drawable/edit_white</item>
+        <item name="addChannelIcon">@drawable/add_channels</item>
+        <item name="searchChannelIcon">@drawable/search_channel_list</item>
+        <item name="editChannelIcon">@drawable/edit_channels</item>
+        <item name="logo">@drawable/logo_green</item>
+
+        <item name="logoutButtonBackground">@drawable/rounded_green_button</item>
+        <item name="joinGameButtonBackground">@drawable/rounded_green_button</item>
+        <item name="createGameButtonBackground">@drawable/rounded_green_button</item>
+        <item name="buttonWidth">450dp</item>
+        <item name="buttonHeight">100dp</item>
+        <item name="buttonTextSize">35sp</item>
+        <item name="settingSpinnerBackground">@drawable/spinner_background_with_arrow</item>
+        <item name="generalButtonBG">#06402B</item>
+
+        <item name="channelButtonsStyle">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+</resources>
+
+

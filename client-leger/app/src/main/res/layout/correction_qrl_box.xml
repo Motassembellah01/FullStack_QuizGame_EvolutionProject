@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/orange_stroke"
+    android:gravity="center">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Évaluation des réponses des joueurs"
+        android:textSize="18sp"
+        android:textColor="@color/navyBlue"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/evaluatedStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evaluated 0 of 1"
+        android:textSize="16sp"
+        android:textColor="@color/teal_700"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <!-- Response Display Box -->
+    <TextView
+        android:id="@+id/playerResponseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reponse 1"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:background="@drawable/rectangle_aqua_box"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:gravity="center" />
+
+    <!-- Note Title -->
+    <TextView
+        android:id="@+id/noteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note"
+        android:textSize="16sp"
+        android:textColor="@color/teal_700"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp" />
+
+    <!-- Note Buttons -->
+    <LinearLayout
+        android:id="@+id/noteContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <!-- 0% -->
+        <Button
+            android:id="@+id/note0Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0%"
+            android:backgroundTint="#FFEDEB"
+            android:textColor="@color/black" />
+
+        <!-- 50% -->
+        <Button
+            android:id="@+id/note50Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="50%"
+            android:backgroundTint="#FFD4D1"
+            android:textColor="@color/black"
+            />
+
+        <!-- 100% -->
+        <Button
+            android:id="@+id/note100Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="100%"
+            android:backgroundTint="#FF9A94"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>

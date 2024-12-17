@@ -1,0 +1,24 @@
+mat-card {
+    padding: 10px;
+    width: fit-content;
+    background-color: #f7c8c8;
+    border-radius: 10px;
+    border: #db6a64 2px solid;
+    max-width: 50rem;
+    box-sizing: border-box;
+    color: #960e02;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: inline-flex;
+    align-items: center;
+}
+
+mat-icon {
+    margin-right: 5px;
+}

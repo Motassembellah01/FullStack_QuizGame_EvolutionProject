@@ -1,0 +1,474 @@
+<!-- res/layout/fragment_shop.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shopScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/shopLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/closeShopButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Close settings"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_close" />
+
+        <!-- Shop Title -->
+        <TextView
+            android:id="@+id/textview_shop_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shop"
+            android:textSize="45sp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textStyle="bold"
+            android:textColor="@color/brown"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Cookies Balance Display -->
+        <TextView
+            android:id="@+id/textview_cookies_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/defaultTextColor"
+            android:text="Cookies: 0"
+            android:textSize="26sp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Themes Section -->
+        <TextView
+            android:id="@+id/textview_themes"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="?attr/defaultTextColor"
+            android:layout_height="wrap_content"
+            android:text="@string/themes"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/themesLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
+
+            <!-- Christmas Theme -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_christmas_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/christmas_blurred"
+                    android:contentDescription="Christmas Theme"/>
+
+                <!-- Lock Overlay -->
+                <ImageView
+                    android:id="@+id/lock_christmas_theme"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/locked"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/text_already_owned_christmas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owned"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:background="#80000000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+
+                <!-- Price Tag with Cookie Icon -->
+                <LinearLayout
+                    android:id="@+id/price_christmas_theme_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/button_christmas_theme"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/price_christmas_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textColor="?attr/defaultTextColor"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="6dp"
+                        android:textSize="20sp"/>
+                    <ImageView
+                        android:id="@+id/icon_cookie_christmas_theme"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/cookies"
+                        android:contentDescription="Cookie Icon" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!-- Valentine Theme -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_valentine_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/valentines_blurred"
+                    android:contentDescription="Valentine Theme"/>
+
+                <!-- Lock Overlay -->
+                <ImageView
+                    android:id="@+id/lock_valentine_theme"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/locked"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/text_already_owned_valentine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owned"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:background="#80000000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+
+                <!-- Price Tag with Cookie Icon -->
+                <LinearLayout
+                    android:id="@+id/price_valentine_theme_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/button_valentine_theme"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/price_valentine_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:textColor="?attr/defaultTextColor"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:id="@+id/icon_cookie_valentine_theme"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/cookies"
+                    android:contentDescription="Cookie Icon" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Avatars Section -->
+        <TextView
+            android:id="@+id/textview_avatars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/avatars"
+            android:textColor="?attr/defaultTextColor"
+            android:fontFamily="@font/quicksand_bold"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/avatarsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Avatar 1 -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_akali"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/akali_blur"
+                    android:contentDescription="AKALI"/>
+
+                <!-- Lock Overlay -->
+                <ImageView
+                    android:id="@+id/lock_akali"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/lock_white"
+                    android:visibility="visible"/>
+                <TextView
+                    android:id="@+id/text_already_owned_akali"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owned"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:background="#80000000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+                <!-- Price Tag with Cookie Icon -->
+                <LinearLayout
+                    android:id="@+id/price_akali_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/button_akali"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/price_akali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="?attr/defaultTextColor"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="20sp"/>
+
+                    <ImageView
+                        android:id="@+id/icon_cookie_akali"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="Cookie Icon"
+                        android:src="@drawable/cookies" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Avatar 2 -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_ww"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ww_blur"
+                    android:contentDescription="WW"/>
+
+                <!-- Lock Overlay -->
+                <ImageView
+                    android:id="@+id/lock_ww"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/lock_white"
+                    android:visibility="visible"/>
+                <TextView
+                    android:id="@+id/text_already_owned_ww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owned"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:background="#80000000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+                <!-- Price Tag with Cookie Icon -->
+                <LinearLayout
+                    android:id="@+id/price_ww_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/button_ww"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/price_ww"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="?attr/defaultTextColor"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="20sp"/>
+                    <ImageView
+                        android:id="@+id/icon_cookie_ww"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/cookies"
+                        android:contentDescription="Cookie Icon" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Avatar 3 -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_yone"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/yone_blur"
+                    android:contentDescription="YONE"/>
+
+                <!-- Lock Overlay -->
+                <ImageView
+                    android:id="@+id/lock_yone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/lock_white"
+                    android:visibility="visible"/>
+                <TextView
+                    android:id="@+id/text_already_owned_yone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owned"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:background="#80000000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+                <!-- Price Tag with Cookie Icon -->
+                <LinearLayout
+                    android:id="@+id/price_yone_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/button_yone"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/price_yone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="?attr/defaultTextColor"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="20sp"/>
+                    <ImageView
+                        android:id="@+id/icon_cookie_yone"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/cookies"
+                        android:contentDescription="Cookie Icon" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Avatar 4 -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_ahri"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ahri_blur"
+                    android:contentDescription="AHRI"/>
+
+                <!-- Lock Overlay -->
+                <ImageView
+                    android:id="@+id/lock_ahri"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/lock_white"
+                    android:visibility="visible"/>
+                <TextView
+                    android:id="@+id/text_already_owned_ahri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owned"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:background="#80000000"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+                <!-- Price Tag with Cookie Icon -->
+                <LinearLayout
+                    android:id="@+id/price_ahri_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/button_ahri"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/price_ahri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="?attr/defaultTextColor"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="20sp"/>
+                    <ImageView
+                        android:id="@+id/icon_cookie_ahri"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/cookies"
+                        android:contentDescription="Cookie Icon" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

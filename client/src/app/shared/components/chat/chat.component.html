@@ -1,0 +1,45 @@
+<div class="flex chat-container">
+    <i
+        class="material-icons pointer color-blue"
+        id="chevron-left-icon"
+        [@chatAnimation]="!isChatVisible ? 'open' : 'closed'"
+        (click)="toggleChatVisibility()"
+        >chevron_left</i
+    >
+    <section [@chatAnimation]="isChatVisible ? 'open' : 'closed'" (@chatAnimation.done)="onAnimationDone()" class="chat-box relative justify-center">
+        <div class="close-icon material-icons pointer color-blue" (click)="toggleChatVisibility()">chevron_right</div>
+        <p class="title-chat color-blue">Clavardage</p>
+        <div class="chat-zone" #chatZone>
+            <app-chat-message *ngFor="let message of this.matchService.chatService.messagesList" [message]="message"></app-chat-message>
+        </div>
+        <mat-form-field appearance="fill">
+            <textarea
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="4"
+                class="italic input-field"
+                id="chat-field"
+                name="inputMessage"
+                (focus)="changeTypingState()"
+                (blur)="changeTypingState()"
+                [(ngModel)]="this.message"
+                (keydown)="onEntryKey($event)"
+                [disabled]="matchService.player.chatBlocked"
+                matInput
+                #input
+                maxlength="200"
+                [placeholder]="!matchService.player.chatBlocked ? 'Écrire ici...' : 'Clavardage désactivé'"
+            ></textarea>
+
+            <mat-icon
+                matSuffix
+                class="send-icon pointer"
+                [class.disabled]="this.matchService.player.chatBlocked"
+                [ngClass]="{ pink: input.value.length !== 0 && !this.matchService.player.chatBlocked }"
+                (click)="!this.matchService.player.chatBlocked && sendMsg(this.message)"
+                >send</mat-icon
+            >
+            <mat-hint align="end">{{ input.value.length }}/200 </mat-hint>
+        </mat-form-field>
+    </section>
+</div>

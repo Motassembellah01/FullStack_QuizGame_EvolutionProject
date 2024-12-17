@@ -1,0 +1,131 @@
+.nav-container {
+    margin-right: 2rem;
+    margin-left: 48vh;
+    margin-top: -11.1rem;
+    margin-bottom: 7rem;
+}
+
+button.nav-button {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+#game-name {
+    text-shadow: 0px 0px 4px #00000075;
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+
+#game-description {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    width: 70%;
+}
+
+#qcmTime {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.game-questions {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    margin-left: 7rem;
+}
+
+.question-container {
+    margin-left: 3rem;
+    width: 75%;
+}
+
+mat-icon {
+    font-size: 30px;
+    padding: 10px;
+    margin-right: 1rem;
+}
+
+mat-card {
+    background-color: #acd2d5;
+    margin-bottom: 20px;
+    width: 92%;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+mat-card-content {
+    font-size: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.styled-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.styled-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.styled-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+mat-dialog-content {
+    align-items: center;
+}
+
+.buttons-dialog {
+    font-size: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+#qcm-icon {
+    color: #1178c1;
+}
+
+#qrl-icon {
+    color: #1178c1;
+}
+
+#qre-icon {
+    color: #1178c1;
+}

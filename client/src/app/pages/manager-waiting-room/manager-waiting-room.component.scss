@@ -1,0 +1,152 @@
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+}
+
+#copy {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+#copy mat-icon {
+    color: #1178c1;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+nav {
+    left: 20%;
+    top: -2rem;
+}
+
+button.nav-button {
+    margin-right: 0.6rem;
+    font-size: 1.8rem;
+    top: 3rem;
+}
+
+.start {
+    height: 6rem;
+    border-radius: 0.5rem;
+}
+
+.players-title {
+    color: #ff6868;
+    font-size: 2rem;
+    margin: 1.5rem;
+}
+
+.layout-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.players-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    margin: 1.5rem;
+}
+
+.players-solo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 1.5rem;
+}
+
+.teams-container {
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Limit to 4 columns
+    grid-gap: 3rem;
+    max-height: calc(2 * 200px + 1rem); // 2 rows of team cards, each with a height of 200px, plus spacing
+    overflow-y: auto; // Enable vertical scrolling if there are more than 2 rows
+    padding-right: 1rem;
+}
+
+.team-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 200px; // Limit each team box height
+    width: 85%; // Set each team box to take up the full width of the column
+}
+
+.team-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #4a90e2;
+}
+
+.team-players {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 5px;
+}
+
+button.mode-toggle-button {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    background-color: #376aa7;
+    color: white;
+    cursor: pointer;
+    margin: auto;
+}
+
+button[disabled] {
+    border: 1px solid #999999 !important;
+    background-color: #cccccc !important;
+    color: #666666 !important;
+}
+
+.text-area {
+    position: relative;
+    display: inline-block;
+    height: 9rem;
+}
+
+.text-area .text-hover {
+    visibility: hidden;
+    width: 10rem;
+    background-color: rgb(173, 195, 209);
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    left: 1.4rem;
+    z-index: 1;
+    top: 9.5rem;
+    font-size: medium;
+}
+
+.text-area:hover .text-hover {
+    visibility: visible;
+}
+
+.access-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child:first-child {
+    margin-right: 40px;
+}

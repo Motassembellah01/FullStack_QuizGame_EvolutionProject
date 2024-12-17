@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrgInMatchActivity"
+    android:padding="16dp">
+
+<!--    <com.auth0.androidlogin.components.CommonHeader-->
+<!--        android:id="@+id/commonHeader"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+
+    <LinearLayout
+        android:id="@+id/innerConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"/>
+
+        <Button
+            android:id="@+id/quitButton"
+            android:fontFamily="@font/quicksand_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quit"
+            android:backgroundTint="@color/lightCoral"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/playersTitle"
+            tools:ignore="MissingConstraints,NotSibling" />
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="use chat"
+            android:scaleType="fitCenter"
+            android:src="@drawable/chat"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/playersTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/players"
+            android:textColor="?attr/chatTextColor"
+            android:textSize="30sp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quitButton" />
+
+        <RelativeLayout
+            android:id="@+id/playersTab"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playersTitle">
+
+            <include
+                android:id="@+id/playersTabHeader"
+                layout="@layout/match_players_tabheader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="-8dp" />
+
+            <!-- RecyclerView for Player Rows -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/playersTabHeader"
+                android:layout_marginTop="6dp"
+                tools:listitem="@layout/match_players_tab" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearTimer"
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playersTab"
+            android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/controlButtonsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playersTab"
+            tools:ignore="NotSibling">
+
+
+            <RelativeLayout
+                android:id="@+id/timerContainer"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints,NotSibling">
+
+                <TextView
+                    android:id="@+id/timerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="60"
+                    android:textColor="?attr/defaultTextColor"
+                    android:textSize="24sp" />
+
+                <ProgressBar
+                    android:id="@+id/timerProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/timer_progress"
+                    android:rotation="-90" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/panicButton"
+                android:layout_width="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_height="52dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:backgroundTint="@color/red"
+                android:text="@string/panicMode"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/pauseButton"
+                app:layout_constraintTop_toBottomOf="@id/timerContainer"
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/pauseButton"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="60dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/rectangle_light_green"
+                android:src="@drawable/ic_pause"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/timerContainer"
+                app:tint="@color/white"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/questionImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/questionContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearTimer">
+
+            <TextView
+                android:id="@+id/questionPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Pointage de la qs"
+                android:textColor="?attr/chatTextColor"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="600dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/questionPoints"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:background="@drawable/rectangle_aqua_box"
+                android:padding="10dp"
+                android:text="Parmi les pays suivant lequel/lesquels n'ont jamais remporté de coupe du monde"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/answersContainer"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:text="Answer 1"
+                android:textColor="@color/black"
+                android:textSize="20sp" >
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:foreground="?attr/selectableItemBackground"
+            android:backgroundTint="@color/lightGreen"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/questionContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+    <FrameLayout
+        android:id="@+id/channelsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <include layout="@layout/all_channels_page"/>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

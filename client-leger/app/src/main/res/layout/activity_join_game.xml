@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/joinGameFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JoinGameActivity">
+
+    <!-- Overlay Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- CommonHeader Component -->
+        <com.auth0.androidlogin.components.CommonHeader
+            android:id="@+id/commonHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Content Layout -->
+        <ScrollView
+            android:id="@+id/contentScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/commonHeader"
+            android:layout_marginTop="30dp">
+
+
+        <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/joinGameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/joinGame"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_marginBottom="30dp" />
+
+                <!-- Access Code Input -->
+                <EditText
+                    android:id="@+id/accessCodeEditText"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enterCode"
+                    android:textColorHint="?attr/defaultTextColor"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textColor="?attr/defaultTextColor"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/errorMessageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Join Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/joinButton"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/join"
+                    android:textSize="23sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_green_button"
+                    android:textColor="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/refreshButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/refresh"
+                android:scaleType="centerInside"
+                android:src="@drawable/refresh"
+                app:tint="?attr/defaultTextColor"
+                android:background="?attr/channelButtonsStyle" />
+
+                <!-- Current Matches Section -->
+                <TextView
+                    android:id="@+id/currentMatchesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_matches"
+                    android:textSize="27sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/quicksand_bold"
+
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="10dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/currentMatchesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Started Games Section -->
+                <TextView
+                    android:id="@+id/startedGamesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/started_games"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:textColor="@color/brown"
+                    android:textSize="27sp"
+                    android:layout_marginBottom="10dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/startedGamesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="20dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/backToHomeButton"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:background="@drawable/rounded_blue_button"
+                    android:text="@string/accueil"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Channels Container (If Needed) -->
+        <FrameLayout
+            android:id="@+id/channelsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <include layout="@layout/all_channels_page"/>
+        </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,242 @@
+<resources>
+    <string name="app_name">PolyQuiz</string>
+
+    <string name="edit_username">Modifier le nom</string>
+
+    <!-- main activity -->
+    <string name="welcome_to">Bienvenue à</string>
+    <string name="button_login">Connexion</string>
+    <string name="no_acc">Vous n\'avez pas de compte ?</string>
+    <string name="sign_up">Inscrivez-vous !</string>
+    <string name="error">Veuillez vous déconnecter de l\'autre session active, puis réessayez de vous connecter.</string>
+
+    <!-- home activity -->
+    <string name="joinGame">Joindre une partie</string>
+    <string name="createGame">Créer une partie</string>
+    <string name="button_logout">Déconnexion</string>
+    <string name="welcome">Bienvenue</string>
+
+    <!-- settings activity -->
+    <string name="upload_pic">Téléversez une photo de profile:</string>
+    <string name="choose_pic">Choisissez une photo de profile:</string>
+    <string-array name="theme_options">
+        <item>Clair</item>
+        <item>Sombre</item>
+        <item>Saint-Valentin</item>
+        <item>Noël</item>
+    </string-array>
+    <string name="language">Choisissez une langue:</string>
+    <string-array name="language_options">
+        <item>Français</item>
+        <item>Anglais</item>
+        <!-- Add other languages -->
+    </string-array>
+    <string name="visual">Choisissez un thème:</string>
+    <string name="camera_perm">L\'autorisation de la caméra est requise pour prendre une photo de profil.</string>
+    <string name="success_upload">Photo de profil mise à jour avec succès.</string>
+    <string name="failed_upload">Échec du téléchargement de la photo de profil.</string>
+    <string name="cancelled_or_failed">La capture d\'image a échoué ou a été annulée.</string>
+    <string name="themeLocked">Ce thème est vérouillé. Veuillez vous le procurer dans la boutique.</string>
+    <string name="or">OU</string>
+
+    <!-- chat-->
+    <string name="general">Général</string>
+    <string name="canaux">Canaux</string>
+
+    <!-- create game-->
+    <string name="creation">Création d\'une partie</string>
+    <string name="dispo">Jeux disponibles</string>
+    <string name="accueil">Accueil</string>
+
+    <!-- game preview-->
+    <string name="createMatch">Créer une partie</string>
+    <string name="back">Page précédente</string>
+    <string name="switchToTeamMode">Mode de jeu en équipe</string>
+    <string name="switchToClassicMode">Mode de jeu classique</string>
+    <string name="duration">Temps des QCM</string>
+    <string name="matchType">Type de match</string>
+    <string name="matchFee">Coût du match</string>
+    <string name="chooseFee">Choisissez un prix à la partie :</string>
+    <string name="solo">Match solo</string>
+    <string name="team">Match en équipe</string>
+    <string name="free">Match gratuit</string>
+    <string name="fee">Match payant</string>
+    <string name="enterFee">Entrez le prix ici</string>
+    <string name="enterValidFee">Veuillez entrer un montant d\'entrée valide</string>
+    <string name="createMatchDialogTitle">Configurer la partie</string>
+    <string name="accessibility">Accessibilité</string>
+    <string name="everyone">Tout le monde</string>
+    <string name="quitMatch">Êtes vous sûr de vouloir annuler cette partie ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+
+    <!-- waiting room-->
+    <string name="start">Commencer la partie</string>
+    <string name="lock">Vérouiller</string>
+    <string name="unlock">Dévérouiller</string>
+    <string name="createTeam">Créer une équipe</string>
+    <string name="teams">Équipes:</string>
+    <string name="players">Joueurs connectés</string>
+    <string name="quitTeam">Quitter l\équipe</string>
+    <string name="joinTeam">Rejoindre l\équipe</string>
+    <string name="nom_channel">Nom du channel</string>
+    <string name="createTeamName">Créez un nom d\'équipe:</string>
+    <string name="charExceeded">Le nom d\'équipe doit contenir entre 1 et 12 charactères.</string>
+    <string name="snackbar_joined_team">Vous avez rejoint %1$s.</string>
+    <string name="snackbar_team_created_and_joined">L\'équipe %1$s a été créée et vous avez rejoint.</string>
+    <string name="snackbar_quit_team">Vous avez quitté %1$s.</string>
+
+    <!-- joining page-->
+    <string name="join">Rejoindre</string>
+    <string name="enterCode">Entrez le code d\'accès</string>
+    <string name="error_failed_to_join">Ce code d\'accès n\'est associé à aucune partie.</string>
+    <string name="error_no_code">Veuillez inscrire un code d\'accès.</string>
+    <string name="error_4_digit">Veuillez inscrire un code à 4 chiffres.</string>
+    <string name="current_matches">Salles d\'attente</string>
+    <string name="started_games">Déjà commencé</string>
+    <string name="error_fetching_matches">Échec de la récupération des parties. Veuillez réessayer plus tard.</string>
+    <string name="error_no_match_found">Ce code ne correspond à aucune partie existante.</string>
+    <string name="error_not_accessible">Cette partie est vérrouillée.</string>
+    <string name="error_joining_game">Une erreur s\'est produite lors de la jonction à la partie. Veuillez réessayer.</string>
+    <string name="error_match_not_accessible">Cette partie n\'est pas accessible ou a déjà commencé.</string>
+    <string name="refresh">Rafraîchir</string>
+    <string name="survey_icon_desc">Icone jeu</string>
+    <string name="players_icon_desc">Icone joueurs</string>
+    <string name="game_questions">Questionnaire:</string>
+    <string name="close">Fermer le questionnaire</string>
+    <string name="general_error">Une erreur s\'est produite.</string>
+    <string name="try_again">Veuillez réessayer.</string>
+    <string name="snackbar_access_token_missing">Le jeton d\'accès est manquant.</string>
+    <string name="snackbar_no_questions_found">Aucune question trouvée pour ce jeu.</string>
+    <string name="snackbar_failed_retrieve_match_details">Échec de la récupération des détails du match.</string>
+    <string name="snackbar_error_fetching_match_details">Erreur lors de la récupération des détails du match.</string>
+    <!-- Avatar Selection Strings -->
+    <string name="avatar_image">Image de l\'avatar:</string>
+    <string name="select_avatar">Veuillez séléctionner un avatar ou téléverser une photo.</string>
+    <string name="submit">Confirmer</string>
+    <string name="failedAvatar">Une erreur s\'est produite. Veuillez réessayer.</string>
+    <string name="chooseAvatar">Choisissez votre avatar</string>
+
+    <!-- shop page -->
+    <string name="shop">Boutique</string>
+    <string name="purchase_confirm_title">Confirmer l\'achat</string>
+    <string name="purchase_confirm_message">Êtes-vous sûr de vouloir acheter %1$s pour %2$d cookies ?</string>
+    <string name="themes">Thèmes</string>
+    <string name="avatars">Avatars</string>
+    <string name="purchased">Vous avez acheté %1$s.</string>
+    <string name="not_enough_cookies">Vous n\'avez pas assez de cookies.</string>
+    <string name="owned">Possédé</string>
+    <string name="purchaseFailed">L\'achat a échoué.</string>
+
+    <!-- history page -->
+    <string name="profile_history">Mon Historique</string>
+    <string name="connection_history">Historique de connexion</string>
+    <string name="played_games_history">Historique de parties jouées</string>
+    <string name="victory">Victoire</string>
+    <string name="defeat">Défaite</string>
+
+    <!-- Statistiques -->
+    <string name="statistics_title">Statistiques</string>
+    <string name="statistics_played_games">Nombre de Parties Jouées</string>
+    <string name="statistics_won_games">Nombre de Parties Gagnées</string>
+    <string name="statistics_average_correct_answers">Moyenne de Questions Bien Répondues par Partie</string>
+    <string name="statistics_average_time_per_game">Temps Moyen par Partie</string>
+
+    <!-- Messages -->
+    <string name="no_history_available">Aucun historique de connexion disponible.</string>
+    <string name="error_loading_history">Échec du chargement de l\'historique des connexions.</string>
+    <!-- results pages -->
+    <string name="soloResults">Résultats de la partie - mode classique</string>
+    <string name="teamResults">Résultats de la partie - mode en équipe</string>
+    <string name="teamName">Nom d\'équipe</string>
+    <string name="teamPlayers">Joueurs</string>
+    <string name="teamScore">Score d\'équipe</string>
+    <string name="teamBonus">Bonus (20%)</string>
+    <string name="onPage">Vous êtes déjà sur la page d\'historique.</string>
+    <string name="priceSoloWinP">Bravo! Vous avez gagné 100 cookies + un prix bonus!</string>
+    <string name="priceSoloLoseP">Vous avez gagné 50 cookies + un prix de consolation.</string>
+    <string name="priceSoloWin">Bravo! Vous avez gagné 100 cookies.</string>
+    <string name="priceSoloLose">Vous avez gagné 50 cookies comme prix de consolation.</string>
+
+
+    <!-- reward page -->
+    <string name="claim">Réclamer</string>
+    <string name="chooseReward">Choisissez votre récompense:</string>
+    <!-- SnackBar messages-->
+    <string name="login_success_message">Successfully logged in! %1$s</string>
+    <string name="login_failure_message">L\'utilisateur est déjà connecté avec un autre client</string>
+    <string name="general_failure_with_exception_code">Failed - exception code: %1$s</string>
+    <string name="general_success_message">Succes!</string>
+    <string name="initial_title">Bienvenue dans l\'app!</string>
+    <string name="logged_in_title">Vous êtes connecté.</string>
+    <string name="logged_out_title">Vous êtes déconnecté.</string>
+    <string name="playerName">Nom</string>
+    <string name="chatAccess">Accès au clavardage</string>
+    <string name="panicMode">Mode Panique</string>
+    <string name="quit">Quitter</string>
+    <string name="next">Suivant</string>
+    <string name="send">Envoyer</string>
+    <string name="transitionToMatch">La partie commence dans : </string>
+
+    <string name="channels">Canaux</string>
+    <string name="writeMessage">Écrire un message...</string>
+    <string name="errorTeams">Au moins deux équipes pour commencer la partie.</string>
+    <string name="incompleteTeam">Chaque joueur doit avoir un coéquipier pour commencer la partie.</string>
+    <string name="noPlayer">Pas assez de joueurs pour commencer la partie.</string>
+
+    <string name="nextQuestion">Prochaine question dans ...</string>
+    <string name="questionPoints">Pointage de la question : </string>
+    <string name="limitChannelName">Le nom du canal ne doit pas dépasser 10 caractères!</string>
+    <string name="channelNameExists">Le nom de canal existe déjà!</string>
+    <string name="channel">Canal </string>
+    <string name="successCreationChannel"> créé avec succès!</string>
+    <string name="emptyChannelName">Le nom du canal ne peut être vide</string>
+    <string name="joinedChannel">Vous avez rejoint le canal </string>
+    <string name="joined">Rejoint</string>
+    <string name="joinChannel">Rejoindre</string>
+    <string name="leftChannel">Vous avez quitté le canal  </string>
+    <string name="playerScore">Score</string>
+    <string name="qsScore">Pointage de la question : </string>
+
+    <string name="modifyName">Modifier le nom d\'utilisateur.</string>
+    <string name="nameSuccess">Nom d\'utilisateur mis à jour avec succès.</string>
+    <string name="nameFailed">Ce nom d\'utilisateur n\'est pas disponible.</string>
+    <string name="nameEmpty">Le nom d\'utilisateur ne peut pas être vide.</string>
+    <string name="nameExceeded">Le nom d\'utilisateur doit contenir entre 1 et 12 charactères.</string>
+    <string name="cancel">Annuler</string>
+    <string name="community">Communauté</string>
+    <string name="friends">Amis</string>
+    <string name="friendRequests">Demandes d\'amis</string>
+    <string name="requested">En attente</string>
+    <string name="accept">Accepter</string>
+    <string name="decline">Refuser</string>
+    <string name="addFriend">Ajouter</string>
+    <string name="removeFriend">Retirer</string>
+    <string name="sentFriendRequest">Demande d\'ami envoyée.</string>
+    <string name="removedFriendText">Friend successfully removed</string>
+    <string name="friendRequestAccepted"> est maintenant votre ami !</string>
+    <string name="friendRequestRejected">Demande d\'ami de </string>
+    <string name="searchAccounts">Rechercher des comptes...</string>
+
+    <string name="fee_based_match">Partie payante</string>
+    <string name="cookie_deducted_successfully">%1$d cookies ont été déduits de votre solde.</string>
+    <string name="fee_dialog">Ce match coûte %1$d cookies. Êtes-vous sûr de vouloir rejoindre ?</string>
+    <string name="history">Historique</string>
+    <string name="stats">Statistiques</string>
+
+    <string name="balanceUpdated">Solde mis à jour sur le serveur.</string>
+    <string name="receivedReward">Vous avez reçu %1$d cookies !</string>
+    <string name="failedLogout">Échec de la terminaison de la session.</string>
+    <string name="accessCode">Code d\'accès:</string>
+    <string name="friendsMatch"> - Exclusif Ami </string>
+    <string name="error_manager_not_friend">Ceci est un match ami et l\'organisateur du match n\'est pas votre ami.</string>
+    <string name="blocked"> est bloqué.</string>
+    <string name="dialogConfirmationBlock">Êtes vous sure de vouloir bloquer  </string>
+    <string name="error_blocking_players_in_game">Vous n\'êtes pas autorisé à accèder à la partie. Un joueur vous a bloqué.</string>
+    <string name="blocked_users_in_match">Un des joueurs dans la salle d\'attente est dans votre liste de bloqués. Voulez vous tout de même poursuivre ?</string>
+    <string name="canceled_join_game">Vous avez décidez d\'annuler </string>
+
+    <string name="abandon">Abandonner</string>
+
+</resources>

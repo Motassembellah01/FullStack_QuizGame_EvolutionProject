@@ -1,0 +1,107 @@
+<div class="button-container">
+    <div *ngIf="matchService.match.observers.length > 0" class="observer-indicator">
+        <span
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+            >{{ matchService.match.observers.length }}</span
+        >
+        <mat-icon>visibility</mat-icon>
+    </div>
+    <button mat-raised-button class="background-red" (click)="finishMatch()">{{ 'NAV_BUTTONS.QUIT' | translate }}</button>
+</div>
+<div id="container">
+    <app-qrl-evaluation id="evaluation-container" *ngIf="this.listenerSrv.evaluationSrv.isEvaluatingQrlQuestions"></app-qrl-evaluation>
+    <div class="full-row">
+        <div id="players">
+            <h1
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                {{ 'TITLES.PLAYERS' | translate }}
+            </h1>
+            <app-players-list [isResultView]="false"></app-players-list>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div *ngIf="!this.listenerSrv.histogramSrv.isShowingQuestionResults && !this.isPanicMode" class="circle">
+            <div
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                {{ this.matchService.timeService.timer }}
+            </div>
+            <mat-progress-spinner mode="determinate" [value]="(this.matchService.timeService.timer * 100) / this.maxTime" class="spinner">
+            </mat-progress-spinner>
+        </div>
+        <div *ngIf="!this.listenerSrv.histogramSrv.isShowingQuestionResults && this.isPanicMode" class="circle panic-Circle">
+            <div
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                {{ this.matchService.timeService.timer }}
+            </div>
+            <mat-progress-spinner mode="determinate" [value]="(this.matchService.timeService.timer * 100) / this.maxTime" class="spinner">
+            </mat-progress-spinner>
+            <audio controls autoplay (ended)="restartAudio()" #audioZone>
+                <source src="assets/panic_music.mp3" type="audio/mp3" />
+            </audio>
+        </div>
+        <div class="full-row" *ngIf="!this.listenerSrv.histogramSrv.isShowingQuestionResults">
+            <button
+                mat-raised-button
+                class="panic-button buttons background-beige"
+                (click)="startPanicModeTimer()"
+                [disabled]="!isPanicModeSettable() || this.isPanicMode || isPaused"
+            >
+                {{ 'BUTTONS.PANIC_MODE' | translate }}
+            </button>
+            <button mat-raised-button class="panic-button buttons background-green" (click)="timerPauseHandler()">
+                <i class="material-icons pause pointer" *ngIf="!isPaused">pause</i>
+                <i class="material-icons resume pointer" *ngIf="isPaused">play_arrow</i>
+            </button>
+        </div>
+        <button
+            mat-raised-button
+            class="next-button buttons background-beige"
+            *ngIf="this.canMoveToNextQuestion() && !isObserver()"
+            (click)="onNextQuestion()"
+        >
+            {{ getTranslationNextQuestion() | translate }}
+        </button>
+
+        <button mat-raised-button class="next-button buttons background-beige" *ngIf="this.canMoveToNextQuestion() && isObserver()">
+            {{ getTranslationNextQuestion() | translate }}
+        </button>
+    </div>
+</div>
+
+<div class="flex-container">
+    <app-question-display class="questions" [question]="question"></app-question-display>
+
+    <div id="observer-controls" *ngIf="isObserver()">
+        <h2
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'TITLES.PLAYERS_TO_OBSERVE' | translate }}
+        </h2>
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'TITLES.PLAYERS' | translate }}</mat-label>
+            <mat-select [(value)]="selectedPlayer" (selectionChange)="onPlayerSelect($event.value)">
+                <mat-option *ngFor="let player of matchService.match.players" [value]="player.name">
+                    {{ player.name }}
+                </mat-option>
+                <mat-option [value]="matchService.match.managerName">{{ 'Manager' | translate }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

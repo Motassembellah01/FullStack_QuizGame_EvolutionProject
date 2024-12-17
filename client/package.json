@@ -1,0 +1,105 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "ng serve --open",
+        "build": "ng build",
+        "build:dev": "ng build --configuration=development --watch",
+        "build:prod": "ng build --configuration=production",
+        "deploy": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "format": "prettier --config ../.prettierrc.yaml --ignore-path ../.prettierignore --write \"src/**/*\"",
+        "test": "ng test",
+        "coverage": "ng test --code-coverage --source-map=true",
+        "lint": "ng lint --format stylish",
+        "lint:fix": "npm run lint -- --fix",
+        "electron": "electron main.js",
+        "electron:build": "ng build --configuration=production && electron-builder"
+    },
+    "build": {
+        "appId": "com.polyquiz.app",
+        "productName": "PolyQuiz",
+        "icon": "dist/client/browser/assets/Logo_Cooquiz_2.0",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "electron/**/*",
+            "dist/client/**/*",
+            "main.js",
+            "node_modules/**/*",
+            "package.json"
+        ],
+        "win": {
+            "target": "nsis"
+        },
+        "linux": {
+            "target": "AppImage"
+        },
+        "mac": {
+            "target": "dmg"
+        }
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "^18.2.2",
+        "@angular/cdk": "^18.2.14",
+        "@angular/common": "18.2.2",
+        "@angular/compiler": "18.2.2",
+        "@angular/core": "18.2.2",
+        "@angular/forms": "18.2.2",
+        "@angular/material": "^18.2.14",
+        "@angular/platform-browser": "18.2.2",
+        "@angular/platform-browser-dynamic": "18.2.2",
+        "@angular/router": "18.2.2",
+        "@auth0/auth0-angular": "^2.2.3",
+        "@ngx-translate/core": "^15.0.0",
+        "@ngx-translate/http-loader": "^8.0.0",
+        "axios": "^1.7.7",
+        "chart.js": "^4.4.0",
+        "date-fns": "^2.30.0",
+        "electron-store": "^10.0.0",
+        "jwt-decode": "^4.0.0",
+        "keytar": "^7.9.0",
+        "ng2-charts": "^5.0.3",
+        "rxjs": "^7.8.1",
+        "socket.io-client": "4.7.2",
+        "tslib": "2.4.0",
+        "zone.js": "0.14.10"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "18.2.1",
+        "@angular-eslint/builder": "16.1.0",
+        "@angular-eslint/eslint-plugin": "16.1.0",
+        "@angular-eslint/eslint-plugin-template": "16.1.0",
+        "@angular-eslint/schematics": "^18.3.0",
+        "@angular-eslint/template-parser": "16.1.0",
+        "@angular/cli": "18.2.1",
+        "@angular/compiler-cli": "18.2.2",
+        "@types/jasmine": "4.3.5",
+        "@types/node": "20.4.8",
+        "@typescript-eslint/eslint-plugin": "^6.2.1",
+        "@typescript-eslint/parser": "^6.2.1",
+        "electron": "^32.0.1",
+        "electron-builder": "^25.0.5",
+        "eslint": "8.46.0",
+        "eslint-config-prettier": "9.0.0",
+        "eslint-import-resolver-typescript": "3.5.5",
+        "eslint-plugin-deprecation": "1.5.0",
+        "eslint-plugin-import": "2.28.0",
+        "eslint-plugin-jsdoc": "46.4.6",
+        "eslint-plugin-prefer-arrow": "1.2.3",
+        "eslint-plugin-prettier": "5.0.0",
+        "eslint-plugin-unicorn": "48.0.1",
+        "jasmine-core": "^5.2.0",
+        "karma": "^6.4.4",
+        "karma-chrome-launcher": "3.2.0",
+        "karma-coverage": "2.2.1",
+        "karma-jasmine": "5.1.0",
+        "karma-jasmine-html-reporter": "2.1.0",
+        "nodemon": "^3.1.7",
+        "prettier": "^3.3.3",
+        "typescript": "5.4.5"
+    }
+}

@@ -1,0 +1,75 @@
+<div class="button-container">
+    <div *ngIf="matchSrv.match.observers.length > 0" class="observer-indicator">
+        <span
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+            >{{ matchSrv.match.observers.length }}</span
+        >
+        <mat-icon>visibility</mat-icon>
+    </div>
+    <button mat-raised-button class="background-red" (click)="handleQuitMatchActions()">{{ 'BUTTONS.ABANDON' | translate }}</button>
+</div>
+<div class="match-view-container relative">
+    <app-question-answer (keydown.enter)="this.onEnterKey()"></app-question-answer>
+    <div class="flex-center test">
+        <mat-card *ngIf="!matchSrv.match.isTeamMatch" class="blue-bg score-label">
+            <mat-card-content>{{ 'TITLES.SCORE' | translate }}{{ this.getScore() }} points</mat-card-content>
+        </mat-card>
+
+        <mat-card *ngIf="matchSrv.match.isTeamMatch" class="blue-bg score-label">
+            <mat-card-content
+                >Score de l'équipe :
+                {{ matchSrv.calculateTeamScore(matchSrv.getTeamByPlayerName(accountService.account.pseudonym)) }} points</mat-card-content
+            >
+        </mat-card>
+
+        <div *ngIf="!this.isPanicMode" class="circle">
+            <div
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                {{ this.matchSrv.timeService.timer }}
+            </div>
+            <mat-progress-spinner mode="determinate" [value]="(this.matchSrv.timeService.timer * 100) / this.maxTime" class="spinner">
+            </mat-progress-spinner>
+        </div>
+
+        <div *ngIf="this.isPanicMode" class="circle panic-Circle">
+            <div
+                [ngClass]="{
+                    'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+                {{ this.matchSrv.timeService.timer }}
+            </div>
+            <mat-progress-spinner mode="determinate" [value]="(this.matchSrv.timeService.timer * 100) / this.maxTime" class="spinner">
+            </mat-progress-spinner>
+            <audio controls autoplay (ended)="restartAudio()" #audioZone>
+                <source src="assets/panic_music.mp3" type="audio/mp3" />
+            </audio>
+        </div>
+    </div>
+</div>
+
+<div id="observer-controls" *ngIf="matchSrv.isObserver()">
+    <h2
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.PLAYERS_TO_OBSERVE' | translate }}
+    </h2>
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'TITLES.PLAYERS' | translate }}</mat-label>
+        <mat-select [(value)]="selectedPlayer" (selectionChange)="onPlayerSelect($event.value)">
+            <mat-option *ngFor="let player of matchSrv.match.players" [value]="player.name">
+                {{ player.name }}
+            </mat-option>
+            <mat-option [value]="matchSrv.match.managerName">{{ 'Manager' | translate }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

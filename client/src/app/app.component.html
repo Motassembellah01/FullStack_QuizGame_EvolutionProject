@@ -1,0 +1,10 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@200;700&display=swap" rel="stylesheet" />
+</head>
+<app-header class="header" *ngIf="this.showHeader && this.accountService.account && this.accountService.account.avatarUrl"> </app-header>
+<div class="pages" [style.paddingRight.px]="isSectionOpen ? 350 : 0" [ngClass]="{ 'light-mode': this.accountService.theme  === 'light' && this.showBackground,'dark-mode': this.accountService.theme === 'dark' && this.showBackground, 'christmas' : this.accountService.theme === 'christmas' && this.showBackground, 'valentines': this.accountService.theme === 'valentines' && this.showBackground}">
+    <router-outlet></router-outlet>
+</div>

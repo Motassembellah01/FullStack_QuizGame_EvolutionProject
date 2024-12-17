@@ -1,0 +1,156 @@
+<nav class="nav"><app-logo></app-logo></nav>
+<div id="players">
+    <h1
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.MATCH_RESULTS' | translate }}
+    </h1>
+    <app-players-list [isResultView]="true"></app-players-list>
+    <div class="feedbacks">
+        <h2
+            *ngIf="accountService.isWinnerPlayerName"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+        {{ 'PRICE_WON.WON' | translate }}
+        </h2>
+        <h2
+            *ngIf="accountService.isWinnerPlayerName && this.matchPlayerService.match.isPricedMatch"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+        {{ 'PRICE_WON.WON_PRICE' | translate }}
+        </h2>
+        <h2
+            *ngIf="!accountService.isWinnerPlayerName && this.accountService.account.pseudonym !== this.matchPlayerService.match.managerName"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+        {{ 'PRICE_WON.LOST' | translate }}
+        </h2>
+        <h2
+            *ngIf="
+                !accountService.isWinnerPlayerName &&
+                this.matchPlayerService.match.isPricedMatch &&
+                this.accountService.account.pseudonym !== this.matchPlayerService.match.managerName
+            "
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+        {{ 'PRICE_WON.LOST_PRICE' | translate }}
+        </h2>
+    </div>
+</div>
+
+<button
+    mat-raised-button
+    color="primary"
+    class="evaluate"
+    (click)="openEvaluateGame()"
+    *ngIf="this.accountService.account.pseudonym !== this.matchPlayerService.match.managerName"
+    [disabled]="isSubmited"
+>
+{{ 'EVALUATION.OPEN' | translate }}
+</button>
+
+<ng-template #evaluateGame>
+    <div
+        class="rating-container"
+        [ngClass]="{
+            'light-mode': this.accountService.theme === 'light',
+            'dark-mode': this.accountService.theme === 'dark',
+            christmas: this.accountService.theme === 'christmas',
+            valentines: this.accountService.theme === 'valentines',
+        }"
+    >
+        <h1
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+        {{ 'EVALUATION.TITLE' | translate }}
+        </h1>
+
+        <div class="stars">
+            <ng-container *ngFor="let star of stars; let index = index">
+                <span class="star" [class.filled]="index < selectedRating" (click)="setRating(index + 1)"> ★ </span>
+            </ng-container>
+        </div>
+
+        <div class="toggle-group">
+            <h3
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+            {{ 'EVALUATION.DIFFICULTY' | translate }}
+            </h3>
+            <div class="toggle-container">
+                <input type="radio" id="facile" name="difficulty" value="Facile" [(ngModel)]="selectedLabels.difficulty" />
+                <label for="facile">{{ 'EVALUATION.EASY' | translate }}</label>
+
+                <input type="radio" id="moyenne" name="difficulty" value="Moyenne" [(ngModel)]="selectedLabels.difficulty" />
+                <label for="moyenne">{{ 'EVALUATION.MEDIUM' | translate }}</label>
+
+                <input type="radio" id="difficile" name="difficulty" value="Difficile" [(ngModel)]="selectedLabels.difficulty" />
+                <label for="difficile">{{ 'EVALUATION.HARD' | translate }}</label>
+            </div>
+        </div>
+
+        <div class="toggle-group">
+            <h3
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+            {{ 'EVALUATION.INTEREST' | translate }}
+            </h3>
+            <div class="toggle-container">
+                <input type="radio" id="ennuyant" name="interest" value="Ennuyant" [(ngModel)]="selectedLabels.interest" />
+                <label for="ennuyant">{{ 'EVALUATION.BORING' | translate }}</label>
+
+                <input type="radio" id="drole" name="interest" value="Intéressant" [(ngModel)]="selectedLabels.interest" />
+                <label for="drole">{{ 'EVALUATION.INTERESTING' | translate }}</label>
+            </div>
+        </div>
+
+        <div class="toggle-group">
+            <h3
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+            >
+            {{ 'EVALUATION.DURATION' | translate }}
+            </h3>
+            <div class="toggle-container">
+                <input type="radio" id="court" name="duration" value="Court" [(ngModel)]="selectedLabels.duration" />
+                <label for="court">{{ 'EVALUATION.SHORT' | translate }}</label>
+
+                <input type="radio" id="long" name="duration" value="Long" [(ngModel)]="selectedLabels.duration" />
+                <label for="long">{{ 'EVALUATION.LONG' | translate }}</label>
+            </div>
+        </div>
+        <button
+            align="end"
+            mat-raised-button
+            mat-dialog-close
+            color="primary"
+            (click)="onSubmit()"
+            [disabled]="!this.selectedRating || !this.selectedLabels.difficulty || !this.selectedLabels.interest || !this.selectedLabels.duration"
+            class="submit-btn"
+        >
+            {{ 'BUTTONS.SUBMIT' | translate }}
+        </button>
+    </div>
+</ng-template>

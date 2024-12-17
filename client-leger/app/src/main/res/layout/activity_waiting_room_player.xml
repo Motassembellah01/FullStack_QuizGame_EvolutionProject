@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/waitingRoomFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WaitingRoomActivity">
+
+    <!-- Overlay Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp">
+        <!-- CommonHeader Component -->
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="use chat"
+            android:scaleType="fitCenter"
+            android:src="@drawable/chat"
+            android:visibility="visible"
+            android:layout_marginTop="50dp"
+            tools:layout_editor_absoluteX="697dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+                <!-- Buttons Container -->
+                <LinearLayout
+                    android:id="@+id/buttonsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="150dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                </LinearLayout>
+
+                <!-- Back Button -->
+                <Button
+                    android:id="@+id/backToJoinButton"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FF6868"
+                    android:text="@string/abandon"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/accessCodeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:padding="10dp"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="-5"
+                    android:shadowDy="5"
+                    android:shadowRadius="4"
+                    android:text="ABC123"
+                    android:textColor="?attr/chatTextColor"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Solo Players Section -->
+            <LinearLayout
+                android:id="@+id/soloSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/accessCodeTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Solo Players RecyclerView Title -->
+                <TextView
+                    android:id="@+id/soloTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/players"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="#FF6868" />
+
+                <!-- RecyclerView for Solo Players -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/soloPlayersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+
+            <!-- Teams Section -->
+            <LinearLayout
+                android:id="@+id/teamsSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/soloSection"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone">
+
+                <!-- Teams RecyclerView Title -->
+                <TextView
+                    android:id="@+id/teamsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/teams"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="#FF6868"/>
+
+                <!-- RecyclerView for Teams -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/teamsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:scrollbars="vertical" />
+
+                <!-- Create Team Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/createTeamButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/createTeam"
+                    android:padding="15dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_green_button"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Channels Container -->
+        <FrameLayout
+            android:id="@+id/channelsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <include layout="@layout/all_channels_page"/>
+        </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

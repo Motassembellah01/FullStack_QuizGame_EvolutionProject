@@ -1,0 +1,37 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="10dp">
+
+    <!-- The main button with the background -->
+    <TextView
+        android:id="@+id/channelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:fontFamily="@font/quicksand_bold"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:text="Channel Name"/>
+
+    <!-- The red circle positioned at the top left of the button -->
+    <TextView
+        android:id="@+id/red_circle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/red_circle"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@android:color/white" />
+
+</FrameLayout>

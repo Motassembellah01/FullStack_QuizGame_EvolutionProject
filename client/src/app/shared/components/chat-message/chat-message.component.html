@@ -1,0 +1,21 @@
+<div *ngIf="isSender" class="message-right flex-end">
+    <div class="container relative c-right">
+        <p class="name-player-right absolute">{{ message.playerName }}</p>
+        <p class="chat-content">{{ message.data }}</p>
+        <div class="under-message-right absolute">
+            <div class="time italic">{{ message.time }}</div>
+        </div>
+    </div>
+    <div class="arrow a-right"></div>
+</div>
+
+<div *ngIf="!isSender" class="message-left flex-start">
+    <div class="arrow a-left"></div>
+    <p class="name-player-left absolute">{{ message.playerName }}</p>
+    <div class="container relative c-left">
+        <p class="chat-content">{{ message.data }}</p>
+        <div class="under-message-left absolute">
+            <p class="time italic">{{ message.time }}</p>
+        </div>
+    </div>
+</div>

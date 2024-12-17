@@ -1,0 +1,67 @@
+<div>
+    <button mat-raised-button class="button background-blue" (click)="navigateToNewPlayerName()">
+        <h2>{{ 'PROFILE.USER_NAME' | translate }}</h2>
+    </button>
+    <button mat-raised-button class="button background-blue" (click)="navigateToAvatar()"><h2>Avatar</h2></button>
+    <button mat-raised-button (click)="toggleSettings()" class="button background-blue" [class.toggled]="isSettingsOpen">
+        <h2>{{ 'PROFILE.SETTINGS' | translate }}</h2>
+        <i class="material-icons">settings_suggest</i>
+    </button>
+    <div *ngIf="isSettingsOpen" class="button-container">
+        <h2
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Mode
+        </h2>
+        <div class="div-buttons">
+            <button
+                class="buttons background-blue"
+                mat-raised-button
+                (click)="changeTheme('light')"
+                [disabled]="this.accountService.theme === 'light'"
+            >
+                <img class="themes-icons" src="assets/themes/light.png" />
+            </button>
+            <button class="buttons background-blue" mat-raised-button (click)="changeTheme('dark')" [disabled]="this.accountService.theme === 'dark'">
+                <img class="themes-icons" src="assets/themes/dark.png" />
+            </button>
+            <button
+                class="buttons background-blue"
+                *ngIf="accountService.isThemeOwned('christmas')"
+                mat-raised-button
+                (click)="changeTheme('christmas')"
+                [disabled]="this.accountService.theme === 'christmas'"
+            >
+                <img class="themes-icons" src="assets/themes/christmas.png" />
+            </button>
+            <button
+                class="buttons background-blue"
+                *ngIf="accountService.isThemeOwned('valentines')"
+                mat-raised-button
+                (click)="changeTheme('valentines')"
+                [disabled]="this.accountService.theme === 'valentines'"
+            >
+                <img class="themes-icons" src="assets/themes/valentines.png" />
+            </button>
+        </div>
+        <h2
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'PROFILE.LANGUAGE' | translate }}
+        </h2>
+        <div class="div-buttons language">
+            <button mat-raised-button class="background-beige" (click)="changeLang('fr')" [disabled]="isFrenchSelected">
+                {{ 'PROFILE.FRENCH' | translate }}
+            </button>
+            <button mat-raised-button class="background-beige" (click)="changeLang('en')" [disabled]="!isFrenchSelected">
+                {{ 'PROFILE.ENGLISH' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

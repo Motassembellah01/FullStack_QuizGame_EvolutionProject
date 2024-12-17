@@ -1,0 +1,36 @@
+.form-group {
+    margin: 0px auto;
+    width: 80%;
+}
+
+#input-form {
+    width: 50%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.label {
+    font-size: 1.5rem;
+    margin-bottom: 2.5%;
+}
+
+#top-button {
+    margin: 0;
+    border: 0;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    left: 67%;
+    top: 1.5rem;
+}
+
+mat-hint {
+    color: #5c5959;
+    margin-top: -25px;
+    z-index: 10;
+}

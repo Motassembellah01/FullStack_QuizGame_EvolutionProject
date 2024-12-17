@@ -1,0 +1,171 @@
+<h1 class="timer color-red bold italic" *ngIf="matchSrv.match.testing">
+    {{ transitionText }} {{ 'GENERAL.IN' | translate }} {{ this.timer }} {{ 'GENERAL.SECONDS' | translate }}
+</h1>
+
+<div class="button-container">
+    <div *ngIf="matchSrv.match.observers.length > 0" class="observer-indicator">
+        <span
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+            >{{ matchSrv.match.observers.length }}</span
+        >
+        <mat-icon>visibility</mat-icon>
+    </div>
+    <button mat-raised-button class="abandon background-red" (click)="quitMatch()">{{ 'BUTTONS.ABANDON' | translate }}</button>
+</div>
+<div class="full-row p-20">
+    <div *ngIf="!matchSrv.isObserver()" class="flex-center">
+        <h1
+            class="bold title flex-center"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'TITLES.QUESTION_RESULT' | translate }}
+        </h1>
+        <p
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            <strong>{{ accountService.account.pseudonym }}</strong
+            >, {{ this.matchSrv.feedBackMessages[0] }}
+        </p>
+        <p
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ this.matchSrv.feedBackMessages[1] }}
+        </p>
+        <mat-card class="blue-bg points" *ngIf="!matchSrv.match.isTeamMatch">
+            <mat-card-content>{{ 'TITLES.SCORE' | translate }}{{ matchSrv.player.score }} points</mat-card-content>
+        </mat-card>
+
+        <p
+            *ngIf="matchSrv.match.isTeamMatch"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Ton score: {{ matchSrv.player.score }}
+        </p>
+        <p
+            *ngIf="matchSrv.match.isTeamMatch && matchSrv.getTeammate(accountService.account.pseudonym)!.isActive"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Score de <strong>{{ matchSrv.getTeammate(accountService.account.pseudonym)!.name }}</strong> :
+            {{ matchSrv.getTeammate(accountService.account.pseudonym)!.score }}
+        </p>
+        <p
+            *ngIf="matchSrv.match.isTeamMatch && !matchSrv.getTeammate(accountService.account.pseudonym)!.isActive"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            <strong>{{ matchSrv.getTeammate(accountService.account.pseudonym)!.name }}</strong> a quitté la partie avec un score de
+            {{ matchSrv.getTeammate(accountService.account.pseudonym)!.score }}
+        </p>
+
+        <mat-card class="blue-bg points" *ngIf="matchSrv.match.isTeamMatch">
+            <mat-card-content
+                >Score de l’équipe :
+                {{ matchSrv.calculateTeamScore(matchSrv.getTeamByPlayerName(accountService.account.pseudonym)) }} points</mat-card-content
+            >
+        </mat-card>
+    </div>
+
+    <div *ngIf="matchSrv.isObserver()" class="flex-center">
+        <h1
+            class="bold title flex-center"
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'TITLES.QUESTION_RESULT' | translate }}
+        </h1>
+        <p
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            <strong>{{ matchSrv.getObservedName() }}</strong
+            >, {{ this.matchSrv.feedBackMessages[0] }}
+        </p>
+        <p
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ this.matchSrv.feedBackMessages[1] }}
+        </p>
+        <mat-card class="blue-bg points" *ngIf="!matchSrv.match.isTeamMatch">
+            <mat-card-content
+                >{{ 'TITLES.SCORE' | translate }}{{ matchSrv.match.getScoreOfPlayerByName(matchSrv.getObservedName()) }} points</mat-card-content
+            >
+        </mat-card>
+
+        <p
+            *ngIf="matchSrv.match.isTeamMatch"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Ton score: {{ matchSrv.match.getScoreOfPlayerByName(matchSrv.getObservedName()) }}
+        </p>
+        <p
+            *ngIf="matchSrv.match.isTeamMatch && matchSrv.getTeammate(matchSrv.getObservedName())!.isActive"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Score de <strong>{{ matchSrv.getTeammate(matchSrv.getObservedName())!.name }}</strong> :
+            {{ matchSrv.getTeammate(matchSrv.getObservedName())!.score }}
+        </p>
+        <p
+            *ngIf="matchSrv.match.isTeamMatch && !matchSrv.getTeammate(matchSrv.getObservedName())!.isActive"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            <strong>{{ matchSrv.getTeammate(matchSrv.getObservedName())!.name }}</strong> a quitté la partie avec un score de
+            {{ matchSrv.getTeammate(matchSrv.getObservedName())!.score }}
+        </p>
+
+        <mat-card class="blue-bg points" *ngIf="matchSrv.match.isTeamMatch">
+            <mat-card-content
+                >Score de l’équipe :
+                {{ matchSrv.calculateTeamScore(matchSrv.getTeamByPlayerName(matchSrv.getObservedName())) }} points</mat-card-content
+            >
+        </mat-card>
+    </div>
+</div>
+
+<div class="flex-container">
+    <app-question-answer class="p-20"></app-question-answer>
+</div>
+<div id="observer-controls" *ngIf="matchSrv.isObserver()">
+    <h2
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.PLAYERS_TO_OBSERVE' | translate }}
+    </h2>
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'TITLES.PLAYERS' | translate }}</mat-label>
+        <mat-select [(value)]="selectedPlayer" (selectionChange)="onPlayerSelect($event.value)">
+            <mat-option *ngFor="let player of matchSrv.match.players" [value]="player.name">
+                {{ player.name }}
+            </mat-option>
+            <mat-option [value]="matchSrv.match.managerName">{{ 'Manager' | translate }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

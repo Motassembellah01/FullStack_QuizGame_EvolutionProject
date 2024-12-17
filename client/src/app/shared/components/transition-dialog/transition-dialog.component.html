@@ -1,0 +1,19 @@
+<div>
+    <div
+        class="title"
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ this.data.transitionText }}
+    </div>
+    <div class="circle">
+        <div
+            class="text"
+        >
+            {{ this.timeService.timer }}
+        </div>
+        <mat-progress-spinner mode="determinate" [value]="(this.timeService.timer * 100) / this.data.maxTime" class="spinner"> </mat-progress-spinner>
+    </div>
+</div>

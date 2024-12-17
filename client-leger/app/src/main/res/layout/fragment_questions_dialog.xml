@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:background="?attr/chatBackground">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_exit"
+            android:tint="?attr/chatTextColor"
+            android:contentDescription="@string/close" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_questions"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="?attr/chatTextColor"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/quicksand_bold" />
+
+    <LinearLayout
+        android:id="@+id/blockedWarningLayout"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/banIconImageView"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ban_icon" />
+        <TextView
+            android:id="@+id/blockMessageTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/blocked_users_in_match"
+            android:textColor="?attr/defaultTextColor"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/feeWarningLayout"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/cookieIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/cookies" />
+        <TextView
+            android:id="@+id/feeMessageTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fee_dialog"
+            android:textColor="?attr/defaultTextColor"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/questionsRecyclerView"
+        android:layout_width="500dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/joinButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/join"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_green_button"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand_bold" />
+</LinearLayout>

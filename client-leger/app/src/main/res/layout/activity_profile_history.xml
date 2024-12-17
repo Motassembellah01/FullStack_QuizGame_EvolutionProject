@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profileHistoryFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!-- Top Bar with Home Button and Title -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp">
+
+<!--        &lt;!&ndash; CommonHeader Component &ndash;&gt;-->
+<!--        <com.auth0.androidlogin.components.CommonHeader-->
+<!--            android:id="@+id/commonHeader"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="use chat"
+            android:scaleType="fitCenter"
+            android:src="@drawable/chat"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="697dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/chatButton"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/profileHistoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_history"
+                android:textSize="40sp"
+                android:fontFamily="@font/quicksand_bold"
+                android:textColor="@color/brown"
+                android:textStyle="bold"
+                android:layout_centerInParent="true" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Connection History Section -->
+            <TextView
+                android:id="@+id/connectionHistoryHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/connection_history"
+                android:textSize="30sp"
+                android:textColor="?attr/historyTextColor"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/connectionHistoryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginVertical="16dp" />
+
+            <!-- Played Games History Section -->
+            <TextView
+                android:id="@+id/playedGamesHistoryHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/played_games_history"
+                android:textSize="30sp"
+                android:textColor="?attr/historyTextColor"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/playedGamesHistoryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backToHomeButton"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:background="?attr/createGameButtonBackground"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <!-- Channels Container (If Needed) -->
+        <FrameLayout
+            android:id="@+id/channelsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <include layout="@layout/all_channels_page"/>
+        </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

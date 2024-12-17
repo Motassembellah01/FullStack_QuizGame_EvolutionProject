@@ -1,0 +1,2 @@
+* text=auto eol=lf
+executables/PolyQuiz[[:space:]]Setup[[:space:]]1.0.0.exe filter=lfs diff=lfs merge=lfs -text

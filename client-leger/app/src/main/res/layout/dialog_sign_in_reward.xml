@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/chatBackground"
+    android:gravity="center_horizontal">
+
+    <!-- Dialog Title -->
+    <TextView
+        android:id="@+id/textViewDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chooseReward"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/brown"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Gifts Container -->
+    <LinearLayout
+        android:id="@+id/giftsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="3">
+
+        <!-- Gift 1 -->
+        <LinearLayout
+            android:id="@+id/gift1Container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageViewGift1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/gift"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/Gift1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/textViewGift1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="?attr/defaultTextColor"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+                <ImageView
+                    android:id="@+id/imgGift1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/cookies"
+                    android:visibility="gone"
+                    android:contentDescription="Cookie Icon" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Gift 2 -->
+        <LinearLayout
+            android:id="@+id/gift2Container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageViewGift2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/gift"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/Gift2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/textViewGift2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="?attr/defaultTextColor"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:id="@+id/imgGift2"
+                    android:layout_width="30dp"
+                    android:visibility="gone"
+                    android:layout_height="30dp"
+                    android:src="@drawable/cookies"
+                    android:contentDescription="Cookie Icon" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Gift 3 -->
+        <LinearLayout
+            android:id="@+id/gift3Container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageViewGift3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/gift"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/Gift3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/textViewGift3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textColor="?attr/defaultTextColor"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:id="@+id/imgGift3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:src="@drawable/cookies"
+                    android:contentDescription="Cookie Icon" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Dialog Buttons -->
+    <LinearLayout
+        android:id="@+id/dialogButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonClaim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:paddingHorizontal="50dp"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_green_button"
+            android:text="@string/claim"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="bold">{{ gameDirective.title }}</h2>
+    <div class="text">
+        <p class="italic">{{ 'GAME_PANEL.MODIFICATION_DATE' | translate }}{{ gameDirective.lastModification }}</p>
+        <p class="italic">{{ 'GAME_PANEL.CREATOR_NAME' | translate }}{{ creatorName }}</p>
+    </div>
+
+    <div class="icons relative">
+        <div *ngIf="accountService.account.pseudonym === creatorName">
+            <i class="material-icons visibility pointer" (click)="toggleVisibility()" *ngIf="isVisible; else notVisible">visibility</i>
+        </div>
+        <ng-template #notVisible><i class="material-icons visibility pointer" (click)="toggleVisibility()">visibility_off</i> </ng-template>
+        <i class="material-icons modify pointer" (click)="navigateModify()">edit</i>
+        <i class="material-icons export pointer" (click)="export()">file_download</i>
+        <i class="material-icons delete pointer" (click)="deleteGameWithConfirmation()">delete</i>
+    </div>
+</div>

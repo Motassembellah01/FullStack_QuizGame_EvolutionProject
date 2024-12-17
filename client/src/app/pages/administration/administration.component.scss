@@ -1,0 +1,27 @@
+h1 {
+    font-size: 3rem;
+    margin-bottom: 3%;
+}
+.body-container {
+    position: relative;
+}
+
+button.nav-button {
+    border: none;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+nav {
+    right: 40vw;
+    top: 20px;
+    border-bottom: 2rem;
+}
+
+#gameImport {
+    display: none;
+}

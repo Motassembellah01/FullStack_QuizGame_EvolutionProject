@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="end"
+    android:layout_marginBottom="8dp">
+
+    <!-- Username TextView -->
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="?attr/defaultTextColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="-3dp" />
+
+    <!-- RelativeLayout pour gérer le positionnement du triangle et de la bulle -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Triangle bleu à droite, aligné en haut -->
+        <ImageView
+            android:id="@+id/userAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/avatar_border" />
+
+        <!-- Conteneur du message -->
+        <LinearLayout
+            android:id="@+id/messageContainerRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_bubble_background"
+            android:padding="8dp"
+            android:layout_toLeftOf="@id/userAvatar"
+            android:layout_marginRight="0dp"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <!-- Message TextView -->
+            <TextView
+                android:id="@+id/messageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
+                android:maxWidth="500dp"
+                android:text="Message goes here"
+                android:textColor="@android:color/black" />
+
+            <!-- Timestamp TextView -->
+            <TextView
+                android:id="@+id/timestampTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="10:00 AM"
+                android:fontFamily="@font/quicksand_bold"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

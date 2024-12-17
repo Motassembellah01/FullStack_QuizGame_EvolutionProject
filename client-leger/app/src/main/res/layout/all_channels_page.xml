@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?attr/chatBackground"
+
+    android:id="@+id/channels_fragment">
+
+    <ImageButton
+        android:id="@+id/exitButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="fitCenter"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="?attr/chatCloseIcon"
+        android:layout_gravity="end" />
+
+    <TextView
+        android:id="@+id/chatMenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/channels"
+        android:fontFamily="@font/quicksand_bold"
+        android:layout_gravity="center"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textColor="?attr/chatTextColor"
+        />
+
+    <LinearLayout
+        android:id="@+id/channelMenu"
+        android:layout_width="730dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="16dp">
+
+        <ImageButton
+            android:id="@+id/addChannelButton"
+            android:layout_width="50dp"
+            android:scaleType="fitCenter"
+            android:layout_height="50dp"
+            android:src="?attr/addChannelIcon"
+            android:background="?attr/channelButtonsStyle"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+        <ImageButton
+            android:id="@+id/editChannelsButton"
+            android:layout_width="50dp"
+            android:scaleType="fitCenter"
+            android:layout_height="50dp"
+            android:background="?attr/channelButtonsStyle"
+            android:src="?attr/editChannelIcon" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/searchChannelsButton"
+            android:layout_width="50dp"
+            android:scaleType="fitCenter"
+            android:layout_height="50dp"
+            android:background="?attr/channelButtonsStyle"
+            android:src="?attr/searchChannelIcon" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/channelScrollView"
+        android:layout_width="730dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="?attr/chatBackground"
+        >
+
+        <LinearLayout
+            android:id="@+id/channelLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/generalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="?attr/generalButtonBG"
+                android:fontFamily="@font/quicksand_bold"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/chat_container"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <include layout="@layout/chat"/>
+    </FrameLayout>
+
+</LinearLayout>

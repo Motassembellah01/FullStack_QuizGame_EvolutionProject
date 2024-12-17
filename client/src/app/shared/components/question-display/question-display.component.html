@@ -1,0 +1,30 @@
+<div class="question-answer relative">
+    <div class="question-title flex">
+        <mat-icon *ngIf="question.type === 'QCM'" id="qcm-icon">format_list_bulleted</mat-icon>
+        <mat-icon *ngIf="question.type === 'QRL'" id="qrl-icon">edit_note</mat-icon>
+        <mat-icon *ngIf="question.type === 'QRE'" id="qre-icon">compare_arrows</mat-icon>
+        <p
+            class="question-num"
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'QUESTIONS.POINTS' | translate }}{{ question.points }} points
+        </p>
+    </div>
+    <mat-card class="question-container">
+        <mat-card-content>{{ question.text }}</mat-card-content>
+    </mat-card>
+
+    <div *ngIf="question.type !== 'QCM' && this.question.image" class="img-container">
+        <img [src]="this.question.image" alt="Uploaded Image" class="image-preview" />
+    </div>
+    <div class="row align-items-center" *ngFor="let choice of question.choices; index as i">
+        <mat-card class="qcm-answer-container">
+            <mat-card-content>{{ i + 1 }}. {{ choice.text }}</mat-card-content>
+        </mat-card>
+        <div class="p-20">
+            <mat-icon [ngClass]="getAnswerIcon(choice)">{{ getAnswerIcon(choice) }}</mat-icon>
+        </div>
+    </div>
+</div>

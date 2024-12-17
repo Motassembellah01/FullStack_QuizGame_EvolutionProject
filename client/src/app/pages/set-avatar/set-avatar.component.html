@@ -1,0 +1,36 @@
+<app-logo></app-logo>
+<div class="avatar-selection-container">
+    <h1 class="title color-blue margin">{{ 'SET_AVATAR.SELECT_AVATAR' | translate }}</h1>
+
+    <div *ngIf="selectedAvatar" class="avatar-preview">
+        <h2>{{ 'SET_AVATAR.SELECTED_AVATAR' | translate }}</h2>
+        <img [src]="accountService.getLocalAvatar(selectedAvatar)" alt="Selected Avatar" class="nft-avatar-preview" />
+    </div>
+
+    <div class="submit-container">
+        <button mat-raised-button color="primary" (click)="submitAvatar()" [disabled]="!selectedAvatar" class="submit-btn">
+            {{ 'BUTTONS.SUBMIT' | translate }}
+        </button>
+    </div>
+
+    <div class="upload-avatar">
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" id="avatar-upload" hidden />
+        <button mat-raised-button color="accent" (click)="triggerFileInput()">{{ 'SET_AVATAR.UPLOAD_AVATAR' | translate }}</button>
+    </div>
+
+    <div class="avatar-grid">
+        <div class="avatar-card" *ngFor="let avatar of avatars" (click)="selectAvatar(avatar)" [class.selected]="avatar === selectedAvatar">
+            <img [src]="accountService.getLocalAvatar(avatar)" alt="Avatar" class="nft-avatar" />
+            <button mat-button *ngIf="avatar === selectedAvatar" color="primary" class="selected-btn">{{ 'SET_AVATAR.SELECTED' | translate }}</button>
+        </div>
+        <div
+            class="avatar-card"
+            *ngFor="let avatar of accountService.ownedAvatars"
+            (click)="selectAvatar(avatar)"
+            [class.selected]="avatar === selectedAvatar"
+        >
+            <img [src]="accountService.getLocalAvatar(avatar)" alt="Avatar" class="nft-avatar" />
+            <button mat-button *ngIf="avatar === selectedAvatar" color="primary" class="selected-btn">{{ 'SET_AVATAR.SELECTED' | translate }}</button>
+        </div>
+    </div>
+</div>

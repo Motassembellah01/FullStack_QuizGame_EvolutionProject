@@ -1,0 +1,11 @@
+<div class="button-container">
+    <button mat-raised-button (click)="openHistory()" class="history button background-blue">
+        <h2>{{ 'PROFILE.HISTORY' | translate }}</h2>
+    </button>
+    <button mat-raised-button (click)="openStatistics()" class="statiscs button background-blue">
+        <h2>{{ 'PROFILE.STATISTICS' | translate }}</h2>
+    </button>
+    <button class="button logout" mat-raised-button (click)="onLogout()">
+        {{ 'PROFILE.LOGOUT' | translate }} <i class="material-icons">logout</i>
+    </button>
+</div>

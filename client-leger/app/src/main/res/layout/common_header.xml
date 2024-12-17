@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="32dp">
+
+    <LinearLayout
+        android:id="@+id/profileLayout"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp">
+
+        <ImageButton
+            android:id="@+id/imageview_user"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/avatar_border"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+            android:id="@+id/textview_user_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text=""
+            android:textColor="?attr/defaultTextColor"
+            android:textSize="18sp"
+            android:gravity="center_horizontal" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="280dp">
+
+        <!-- Friends Button -->
+        <ImageButton
+            android:id="@+id/friendsButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Friends Button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_friends"
+            android:visibility="visible" />
+
+        <!-- Badge for Friends Button -->
+        <TextView
+            android:id="@+id/requestBadge"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/red_circle"
+            android:textSize="10sp"
+            android:layout_alignEnd="@id/friendsButton"
+            android:layout_marginEnd="2dp"
+            android:elevation="4dp"/>
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/moneyButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="370dp"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="use chat"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        android:src="@drawable/cookies"/>
+
+    <TextView
+        android:id="@+id/money_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="430dp"
+        android:layout_marginTop="15dp"
+        android:adjustViewBounds="true"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="0"
+        android:textColor="?attr/defaultTextColor"
+        android:textSize="20sp"
+        android:scaleType="fitCenter"
+        android:visibility="visible"/>
+
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="130dp"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Settings"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_settings"
+        app:tint="#22c3e6" />
+
+    <ImageButton
+        android:id="@+id/chatButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="205dp"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="use chat"
+        android:scaleType="fitCenter"
+        android:src="@drawable/chat"
+        android:visibility="visible" />
+</RelativeLayout>

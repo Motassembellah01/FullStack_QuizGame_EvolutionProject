@@ -1,0 +1,35 @@
+<!-- <app-logo></app-logo>
+<nav class="row justify-content-end">
+    <button mat-raised-button class="background-beige" id="buttons" (click)="deleteMatchHistory()">Effacer</button>
+    <button class="background-turquoise" mat-raised-button id="buttons" routerLink="/home">Accueil</button>
+</nav>    
+
+<h1 class="title">Historique de parties jouées</h1>
+<div class="row center">
+    <div class="mat-table-container p-20">
+        <mat-table
+            [dataSource]="dataSource"
+            matSort
+            class="mat-elevation-z8 mat-table-history"
+        >
+            <ng-container matColumnDef="gameName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by game name">Jeu</th>
+                <td mat-cell *matCellDef="let element">{{ element.gameName }}</td>
+            </ng-container>
+            <ng-container matColumnDef="bestScore">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by best score">Meilleur pointage</th>
+                <td mat-cell *matCellDef="let element">{{ element.bestScore }}</td>
+            </ng-container>
+            <ng-container matColumnDef="nStartPlayers">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nStartPlayers">Nombre de joueurs</th>
+                <td mat-cell *matCellDef="let element">{{ element.nStartPlayers }}</td>
+            </ng-container>
+            <ng-container matColumnDef="startTime">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by startTime">Heure de debut</th>
+                <td mat-cell *matCellDef="let element">{{ element.startTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </mat-table>
+    </div>
+</div> -->

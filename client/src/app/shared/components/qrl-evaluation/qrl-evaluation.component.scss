@@ -1,0 +1,71 @@
+#container {
+    max-width: 28rem;
+    border: 0.15rem solid #f7b380;
+    padding: 0.4rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.title {
+    color: #127D87;
+    font-weight: 600;
+    font-size:larger;
+    text-align: center;
+}
+
+.note-title {
+    margin-top: 0.4rem;
+}
+
+.note-button {
+    font-weight: 500;
+}
+
+#answer {
+    text-align: justify;
+    max-width: 95%;
+    word-wrap: break-word;
+}
+
+#answer-container {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;  
+}
+
+.card {
+    margin-left: 0.1rem;
+    width: 99%;
+    background-color: #E4F1F2;
+}
+
+#notes-container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+p > #player-name {
+    color: black;
+    text-decoration: underline #abe2e6;
+}
+
+
+#note-0 {
+    background-color: #FFEEEB;
+}
+
+#note-50 {
+    background-color: #FBD7D0;
+}
+
+#note-100 {
+    background-color: #FFBCAF;
+}
+
+.color-pink {
+    color: #C25E4A !important;
+    font-weight: 500;
+    text-align: center;
+}

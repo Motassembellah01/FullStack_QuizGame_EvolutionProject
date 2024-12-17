@@ -1,0 +1,76 @@
+.title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.timer {
+    font-size: 2rem;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.points {
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    float: right;
+    margin-right: 80px;
+    margin-top: 30px;
+
+    .observer-indicator {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 14px;
+        color: #555;
+
+        mat-icon {
+            color: red;
+            font-size: 18px;
+            margin-top: 0.3rem;
+        }
+    }
+}
+
+button {
+    float: right;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+
+.blue-bg {
+    background-color: #79b5eb;
+    color: white !important;
+}
+
+app-chat {
+    margin-top: -150px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#observer-controls {
+    position: fixed;
+    bottom: 16px; 
+    right: 16px;
+    z-index: 1000;
+}
+
+.abandon  {
+    margin-top: -0.4rem;
+}

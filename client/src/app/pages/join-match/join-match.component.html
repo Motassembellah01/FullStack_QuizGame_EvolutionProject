@@ -1,0 +1,201 @@
+<app-logo></app-logo>
+<div class="form-group flex-center" id="space-between">
+    <h1
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.JOIN_MATCH' | translate }}
+    </h1>
+    <app-error-message class="block"></app-error-message>
+    <mat-form-field id="input-form">
+        <mat-label>{{ 'JOIN_MATCH.ACCESS_CODE' | translate }} </mat-label>
+        <input maxlength="4" type="text" matInput [(ngModel)]="accessCode" required />
+        <mat-hint align="end">{{ accessCode.length }}/4 </mat-hint>
+    </mat-form-field>
+    <div class="action-buttons">
+        <button class="background-green block" mat-raised-button (click)="onJoinMatch()">{{ 'JOIN_MATCH.JOIN' | translate }}</button>
+    </div>
+    <div *ngIf="accessCodeError" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>
+
+<div class="game-container">
+    <div class="game-section">
+        <h2
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'JOIN_MATCH.WAITING_ROOM' | translate }}
+        </h2>
+        <div class="scrollable-container">
+            <div *ngIf="getWaitingGames().length > 0">
+                <ng-container *ngFor="let game of getWaitingGames()">
+                    <mat-card [ngClass]="{ accessible: game.isAccessible, locked: !game.isAccessible }" class="game-card">
+                        <mat-card-content>
+                            <h3 *ngIf="game.isFriendMatch && organiserIsFriend(game.managerId)">
+                                {{ game.accessCode }} - Exclusif Ami {{ game.managerName }}
+                            </h3>
+                            <h3 *ngIf="!game.isFriendMatch">{{ game.accessCode }} - Public</h3>
+                            <h3 *ngIf="!((game.isFriendMatch && organiserIsFriend(game.managerId)) || !game.isFriendMatch)">
+                                {{ game.accessCode }} - Exclusif Ami {{ game.managerName }}
+                            </h3>
+                            <div class="game-details">
+                                <div class="game-detail">
+                                    <span>
+                                        <img width="35" height="35" src="https://img.icons8.com/ios/50/survey.png" alt="survey" />
+                                    </span>
+                                    <span class="value">{{ game.quizName }}</span>
+                                </div>
+                                <div *ngIf="game.isPricedMatch" class="game-detail">
+                                    <span class="icon" class="material-icons">attach_money</span>
+                                    <p>
+                                        <span class="value">{{ game.priceMatch }}</span>
+                                    </p>
+                                </div>
+                                <div class="game-detail">
+                                    <span class="icon">👥</span>
+                                    <p>
+                                        <span class="value">{{ game.playersCount }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <button mat-raised-button color="primary" *ngIf="game.isAccessible" (click)="joinGame(game.accessCode)">Rejoindre</button>
+                            <p *ngIf="!game.isAccessible" class="locked"><span class="icon">🔒</span> <strong>Partie verrouillée</strong></p>
+                        </mat-card-content>
+                    </mat-card>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <button mat-icon-button (click)="refreshGames()">
+        <mat-icon>refresh</mat-icon>
+    </button>
+
+    <div class="game-section">
+        <h2
+            [ngClass]="{
+                'color-white': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            {{ 'JOIN_MATCH.ALREADY_STARTED' | translate }}
+        </h2>
+        <div class="scrollable-container">
+            <div *ngIf="getOnGoingGames().length > 0">
+                <mat-card *ngFor="let game of getOnGoingGames()" class="game-card ongoing">
+                    <mat-card-content>
+                        <h3 *ngIf="game.isFriendMatch && organiserIsFriend(game.managerId)">
+                            {{ game.accessCode }} - Exclusif Ami {{ game.managerName }} <mat-icon>check_circle</mat-icon>
+                        </h3>
+                        <h3 *ngIf="!game.isFriendMatch">{{ game.accessCode }} - Public</h3>
+                        <h3 *ngIf="!((game.isFriendMatch && organiserIsFriend(game.managerId)) || !game.isFriendMatch)">
+                            {{ game.accessCode }} - Exclusif Ami {{ game.managerName }} <mat-icon>block</mat-icon>
+                        </h3>
+                        <div class="game-details">
+                            <div class="game-detail">
+                                <span>
+                                    <img width="35" height="35" src="https://img.icons8.com/ios/50/survey.png" alt="survey" />
+                                </span>
+                                <span class="value">{{ game.quizName }}</span>
+                            </div>
+                            <div class="game-detail">
+                                <button mat-icon-button (click)="joinAsObserver(game.accessCode)">
+                                    <mat-icon>visibility</mat-icon>
+                                </button>
+                                <span class="value">{{ game.observersCount }}</span>
+                                <span class="icon">👥</span>
+                                <p>
+                                    <span class="value">{{ game.playersCount }}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="locked">
+                            <span class="icon">🔒</span> <strong>{{ 'JOIN_MATCH.LOCKED_GAME' | translate }}</strong>
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #confirmJoinMatchDialog>
+    <div
+        [ngClass]="{
+            'light-mode': this.accountService.theme === 'light',
+            'dark-mode': this.accountService.theme === 'dark',
+            valentines: this.accountService.theme === 'valentines',
+            christmas: this.accountService.theme === 'christmas',
+        }"
+    >
+        <h2
+            mat-dialog-title
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Confirmer
+        </h2>
+        <mat-dialog-content
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+            >Match payant ! Voulez-vous vraiment rejoindre ce match ?</mat-dialog-content
+        >
+        <mat-dialog-actions align="end">
+            <button mat-raised-button class="background-red" mat-dialog-close="cancel">Annuler</button>
+            <button mat-raised-button class="background-green" mat-dialog-close="confirm" color="primary">Confirmer</button>
+        </mat-dialog-actions>
+    </div>
+</ng-template>
+
+<ng-template #insufficientFundsDialog>
+    <div
+        class="dialog-container"
+        [ngClass]="{
+            'light-mode': this.accountService.theme === 'light',
+            'dark-mode': this.accountService.theme === 'dark',
+            christmas: this.accountService.theme === 'christmas',
+            valentines: this.accountService.theme === 'valentines',
+        }"
+    >
+        <h2
+            mat-dialog-title
+            [ngClass]="{
+                'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+            }"
+        >
+            Fonds insuffisants
+        </h2>
+        <div class="dialog-content">
+            <img class="no-cookies" src="assets/no_cookies.png" alt="No cookies" />
+            <mat-dialog-content
+                [ngClass]="{
+                    'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+                    'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+                }"
+                >Vous avez mangé tous les cookies.</mat-dialog-content
+            >
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button class="background-beige" mat-dialog-close>OK</button>
+    </mat-dialog-actions>
+</ng-template>
+
+<!-- <div class="quiz-list">
+    <h2>Available Quizzes</h2>
+    <ul>
+        <li *ngFor="let quiz of quizzes">
+            <strong>{{ quiz.quizName }}</strong> - {{ quiz.matchType }} Match
+            <button (click)="getGameDetails(quiz.quizName)">View Details</button>
+        </li>
+    </ul>
+</div> -->

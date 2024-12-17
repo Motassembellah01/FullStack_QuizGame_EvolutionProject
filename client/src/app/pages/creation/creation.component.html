@@ -1,0 +1,14 @@
+<app-logo></app-logo>
+<div class="vue-creation-partie flex-center">
+    <p
+        class="bold"
+        [ngClass]="{
+            'color-blue': this.accountService.theme === 'light' || this.accountService.theme === 'valentines',
+            'color-brown': this.accountService.theme === 'christmas' || this.accountService.theme === 'dark',
+        }"
+    >
+        {{ 'TITLES.CREATE_MATCH' | translate }}
+    </p>
+    <p class="color-red bold">{{ 'TITLES.GAMES_AVAILABLE' | translate }}</p>
+    <app-paginator></app-paginator>
+</div>

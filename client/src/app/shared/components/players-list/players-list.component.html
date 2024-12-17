@@ -1,0 +1,69 @@
+<mat-table
+    [dataSource]="this.matchPlayerService.dataSource"
+    id="players-list"
+    matSort
+    class="mat-elevation-z8"
+    [ngClass]="{ 'results-view-list': isResultView, 'match-list': !isResultView }"
+    *ngIf="!matchPlayerService.match.isTeamMatch"
+>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name" (click)="clearSortingByPlayersState()">Nom</th>
+        <td mat-cell *matCellDef="let element" [style.color]="getDisplayColor(element.name)" [ngClass]="{ 'strike-through-text': !element.isActive }">
+            {{ element.name }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number" (click)="clearSortingByPlayersState()">Score</th>
+        <td mat-cell *matCellDef="let element">{{ element.score }}</td>
+    </ng-container>
+
+    <ng-container *ngIf="isResultView" matColumnDef="nBonusObtained">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">Fréquence Bonus 20%</th>
+        <td mat-cell *matCellDef="let element">{{ element.nBonusObtained }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</mat-table>
+
+<mat-table
+    [dataSource]="matchPlayerService.dataSourceTeam"
+    id="players-list"
+    matSort
+    class="mat-elevation-z8"
+    [ngClass]="{ 'results-view-list': isResultView, 'match-list': !isResultView }"
+    *ngIf="matchPlayerService.match.isTeamMatch"
+>
+    <ng-container matColumnDef="team">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by team">Équipe</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="players">
+        <th mat-header-cell *matHeaderCellDef>Joueurs</th>
+        <td mat-cell *matCellDef="let element">
+            <div *ngFor="let player of element.players">
+                <span
+                    [style.color]="getDisplayColor(player)"
+                    [ngClass]="{ 'strike-through-text': !matchPlayerService.match.findPlayerByName(player)?.isActive }"
+                >
+                    {{ player }} ({{ matchPlayerService.match.getScoreOfPlayerByName(player) }})
+                </span>
+            </div>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="teamScore">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by team score">Score d'Équipe</th>
+        <td mat-cell *matCellDef="let element">{{ matchPlayerService.calculateTeamScore(element) }}</td>
+    </ng-container>
+
+    <ng-container *ngIf="isResultView" matColumnDef="nBonusObtained">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">Fréquence Bonus 20%</th>
+        <td mat-cell *matCellDef="let element">{{ calculateTeamBonus(element) }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</mat-table>

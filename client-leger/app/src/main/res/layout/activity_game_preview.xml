@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Overlay Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp">
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="use chat"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            android:src="@drawable/chat"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Bottom Buttons (back and Create Match) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
+            <!-- Accueil Button -->
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="100dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:backgroundTint="#F7B380"
+                android:text="@string/back"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <!-- Create Match Button -->
+            <Button
+                android:id="@+id/createMatchButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/createMatchDialogTitle"
+                android:textSize="20dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:backgroundTint="#F7B380"
+                android:textColor="@color/black"
+                android:layout_marginEnd="50dp"/>
+        </LinearLayout>
+
+        <!-- Game Title -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="95dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Game Title"
+            android:textColor="#FF6868"
+            android:textSize="40dp"
+            android:layout_marginTop="40dp"/>
+
+        <!-- Game Description -->
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game Description"
+            android:textSize="30dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="?attr/defaultTextColor"/>
+
+        <!-- Game Duration -->
+        <TextView
+            android:id="@+id/durationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration: 0 s"
+            android:textSize="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FF6868" />
+
+        <!-- Questions RecyclerView Title -->
+        <TextView
+            android:id="@+id/questionsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Questions:"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="?attr/defaultTextColor"/>
+
+        <!-- RecyclerView for Questions -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/questionsList"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_marginTop="16dp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+        <!-- Channels Container -->
+        <FrameLayout
+            android:id="@+id/channelsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <include layout="@layout/all_channels_page"/>
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>
+

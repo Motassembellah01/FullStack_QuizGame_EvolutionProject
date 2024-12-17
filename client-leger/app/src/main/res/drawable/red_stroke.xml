@@ -1,0 +1,8 @@
+<!-- res/drawable/correct_answer_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#9E9E9E" />
+    <stroke
+        android:width="3dp"
+        android:color="@color/red" /> <!-- Green border color -->
+    <corners android:radius="8dp" /> <!-- Rounded corners, optional -->
+</shape>

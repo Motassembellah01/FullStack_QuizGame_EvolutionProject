@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/grey_box_stroke">
+
+    <!-- Dialog Message -->
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Êtes-vous sûr de vouloir bloquer cet utilisateur ?"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/quicksand_bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Buttons Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/dialog_negative_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Non"
+            android:backgroundTint="@color/t_red"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/quicksand_bold"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="10dp">
+        </View>
+        <Button
+            android:id="@+id/dialog_positive_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Oui"
+            android:backgroundTint="@color/lightGreen"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/quicksand_bold" />
+    </LinearLayout>
+</LinearLayout>

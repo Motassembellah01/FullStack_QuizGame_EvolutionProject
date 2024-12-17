@@ -1,0 +1,21 @@
+.circle {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .title{
+    font-size: xx-large;
+    margin: 5%;
+    text-align:center;
+    line-height: 1.5;
+  }
+  .spinner {
+    position: absolute;
+  }
+  .text {
+    font-size: xxx-large;
+  }

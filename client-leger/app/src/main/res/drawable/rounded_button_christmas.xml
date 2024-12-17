@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Striped Background with Rounded Corners -->
+    <item>
+        <bitmap
+            android:src="@drawable/christmas_button"
+            android:gravity="fill" />
+    </item>
+
+</layer-list>
