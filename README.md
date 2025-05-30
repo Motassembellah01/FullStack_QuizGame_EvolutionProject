@@ -1,4 +1,4 @@
-# LOG2990 - Code de base
+# LOG3900 - Projet d'évolution d'un logiciel
 
 Code de base à utiliser pour démarrer le développement de votre projet.
 Le code contient 2 projets séparés :
